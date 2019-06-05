@@ -12,14 +12,20 @@ import blogReducer from './reducers/blogReducer';
 
 import Home from './Home';
 
+import NavBar from './components/NavBar';
+
 import * as serviceWorker from './serviceWorker';
 
 const store = createStore(blogReducer, applyMiddleware(thunk));
+
+const Header = () =>
+  <header><NavBar /></header>;
 
 ReactDOM.render((
   <Provider store={store}>
     <Router>
       <React.Fragment>
+      <Header />
         <Route exact path="/" component={Home} />
         <App />
       </React.Fragment>
