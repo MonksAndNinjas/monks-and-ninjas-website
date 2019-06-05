@@ -1,5 +1,8 @@
 import React from 'react';
 
+import { connect } from 'react-redux';
+import { fetchBlogPosts } from '../actions/fetch';
+
 class BlogContainer extends React.Component {
   render() {
     return (
@@ -8,6 +11,16 @@ class BlogContainer extends React.Component {
       </div>
     );
   }
+
+  componentDidMount() {
+    this.props.fetchBlogPosts()
+  }
 }
 
-export default BlogContainer;
+const mapStateToProps = state => {
+  return({
+    blogPosts: state.blogPosts
+  })
+}
+
+export default connect(mapStateToProps, { fetchBlogPosts })(BlogContainer);
