@@ -14,7 +14,6 @@ export default function blogReducer(
         return {loading: false, posts: action.payload}
 
       default:
-        return state
+        return state;
     }
-  }
-)
+  };
