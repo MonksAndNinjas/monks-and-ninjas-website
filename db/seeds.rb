@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# test blog post
+date = Time.now.strftime("%A, %d %Y - %T - %Z")
+post = Post.create(title: 'test', content: 'this is a test post', datePublished: date, lastPublished: date)
