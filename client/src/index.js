@@ -11,6 +11,7 @@ import { BrowserRouter as Router, Route }from 'react-router-dom'
 import blogReducer from './reducers/blogReducer';
 
 import Home from './Home';
+import BlogContainer from './containers/BlogContainer';
 
 import NavBar from './components/NavBar';
 
@@ -27,6 +28,7 @@ ReactDOM.render((
       <React.Fragment>
       <Header />
         <Route exact path="/" component={Home} />
+        <Route exact path="/blog" component={BlogContainer} />
         <App />
       </React.Fragment>
     </Router>
