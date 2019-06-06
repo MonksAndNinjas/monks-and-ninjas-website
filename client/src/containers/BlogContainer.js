@@ -3,8 +3,19 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchBlogPosts } from '../actions/fetch';
 import { fetchPostsFromGithub } from '../actions/fetch';
+import { handleGitPosts } from '../helpers/gitPosts';
 
 class BlogContainer extends React.Component {
+
+  fetchGitPost = (gitPosts) => {
+    console.log(gitPosts)
+  //  if (gitPosts !== undefined) {
+    //  gitPosts.forEach((post) => {
+      //  console.log(post)
+      //});
+  //  }
+  }
+
   render() {
     return (
       <div>
@@ -20,9 +31,9 @@ class BlogContainer extends React.Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state)
   return({
-    blogPosts: state.posts
+    posts: state.posts,
+    gitPosts: this.fetchGitPost(state.gitPosts)
   })
 }
 
