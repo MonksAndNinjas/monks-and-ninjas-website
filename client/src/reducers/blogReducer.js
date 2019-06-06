@@ -6,7 +6,6 @@ export default function blogReducer(
     switch (action.type) {
 
       case 'LOADING_POSTS':
-        console.log('blog reducer loading posts')
         return {...state, loading: true};
 
       case 'FETCH_BLOG_POSTS':

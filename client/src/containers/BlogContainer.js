@@ -2,6 +2,7 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 import { fetchBlogPosts } from '../actions/fetch';
+import { fetchPostsFromGithub } from '../actions/fetch';
 
 class BlogContainer extends React.Component {
   render() {
@@ -14,6 +15,7 @@ class BlogContainer extends React.Component {
 
   componentDidMount() {
     this.props.fetchBlogPosts()
+    this.props.fetchPostsFromGithub()
   }
 }
 
@@ -23,4 +25,4 @@ const mapStateToProps = state => {
   })
 }
 
-export default connect(mapStateToProps, { fetchBlogPosts })(BlogContainer);
+export default connect(mapStateToProps, { fetchBlogPosts, fetchPostsFromGithub })(BlogContainer);
