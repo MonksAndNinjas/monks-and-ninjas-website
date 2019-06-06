@@ -9,6 +9,7 @@ import { handleGitPosts } from '../helpers/gitPosts';
 class BlogContainer extends React.Component {
 
   render() {
+    console.log(this.props.gitPosts)
     return (
       <div>
         <h1>I'm the blog page!</h1>
