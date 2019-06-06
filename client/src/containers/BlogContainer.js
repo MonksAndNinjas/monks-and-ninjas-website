@@ -20,8 +20,9 @@ class BlogContainer extends React.Component {
 }
 
 const mapStateToProps = state => {
+  console.log(state)
   return({
-    blogPosts: state.blogPosts
+    blogPosts: state.posts
   })
 }
 

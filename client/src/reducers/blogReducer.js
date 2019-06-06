@@ -9,8 +9,10 @@ export default function blogReducer(
         return {...state, loading: true};
 
       case 'FETCH_BLOG_POSTS':
-        console.log('blog reducer fetch posts')
         return {loading: false, posts: action.payload}
+
+      case 'FETCH_GITHUB_POSTS':
+        return {loading: false, gitPosts: action.payload};
 
       default:
         return state;
