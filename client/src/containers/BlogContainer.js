@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Blog from '../components/Blog';
+
 import { connect } from 'react-redux';
 import { fetchBlogPosts } from '../actions/fetch';
 import { fetchGitHubPosts } from '../actions/fetch';
@@ -8,11 +10,16 @@ import { handleGitPosts } from '../helpers/gitPosts';
 
 class BlogContainer extends React.Component {
 
-  render() {
+  addGitPosts = () => {
     console.log(this.props.gitPosts)
+  }
+
+  render() {
     return (
       <div>
-        <h1>I'm the blog page!</h1>
+        <h1>Blog</h1>
+
+        <Blog />
       </div>
     );
   }
