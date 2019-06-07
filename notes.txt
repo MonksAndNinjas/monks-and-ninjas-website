@@ -1,0 +1,16 @@
+What is this app?
+
+  A webpage for my coding blog, maybe even fitness blog (later). It will also
+  display portfolio and working code for main projects. It will also display art from my
+  my former art website.
+
+What am I currently working on?
+
+  => apply css for blog
+  => most recent posts in home page
+  => display list of blogs and display one full post at a time on the same page
+
+What are some things to work on later?
+
+  => portfolio project and their live code
+  => most recent projects displayed in home page
