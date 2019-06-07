@@ -1,5 +1,5 @@
 import React from 'react';
-
+// renders post data passed down from blog container
 class Blog extends React.Component {
 
   render() {

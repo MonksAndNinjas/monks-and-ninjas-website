@@ -1,20 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-
+// imports for creating and handling store
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk';
-
+// import for creating Routes
 import { BrowserRouter as Router, Route }from 'react-router-dom'
-
+// imports for reducers
 import { combineReducers } from 'redux';
 import gitReducer from './reducers/gitReducer';
 import blogReducer from './reducers/blogReducer';
-
+// imports pages for rendering routes
 import Home from './Home';
 import BlogContainer from './containers/BlogContainer';
-
+import App from './App';
+// imports nav bar for all routes
 import NavBar from './components/NavBar';
 
 import * as serviceWorker from './serviceWorker';

@@ -1,3 +1,4 @@
+// handles data from Github API for use in store
 export default function gitReducer(
   state={
     loading: false,

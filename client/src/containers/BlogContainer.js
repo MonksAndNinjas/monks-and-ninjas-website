@@ -1,14 +1,13 @@
 import React from 'react';
-
+// imports blog component
 import Blog from '../components/Blog';
-
+// connects to store and allows use of functions in /actions
 import { connect } from 'react-redux';
 import { fetchBlogPosts } from '../actions/fetch';
 import { fetchGitHubPosts } from '../actions/fetch';
-import { addBlogPost } from '../actions/blog';
-
+// allows use of function to compile post data in proper format
 import { handleGitPosts } from '../helpers/gitPosts';
-
+// handles all blog data
 class BlogContainer extends React.Component {
   render() {
     return (
@@ -23,13 +22,13 @@ class BlogContainer extends React.Component {
       </div>
     );
   }
-
+  // fetch data from API's
   componentDidMount() {
     this.props.fetchBlogPosts()
     this.props.fetchGitHubPosts()
   }
 }
-
+// makes blog data from store accessable
 const mapStateToProps = state => {
   return({
     posts: state.posts,
@@ -37,4 +36,4 @@ const mapStateToProps = state => {
   })
 }
 
-export default connect(mapStateToProps, { fetchBlogPosts, fetchGitHubPosts, addBlogPost })(BlogContainer);
+export default connect(mapStateToProps, { fetchBlogPosts, fetchGitHubPosts })(BlogContainer);

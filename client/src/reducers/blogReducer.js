@@ -1,3 +1,4 @@
+// handles blog posts data from Rails API for use in store
 export default function blogReducer(
   state ={
     loading: false,
