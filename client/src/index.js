@@ -8,6 +8,8 @@ import thunk from 'redux-thunk';
 
 import { BrowserRouter as Router, Route }from 'react-router-dom'
 
+import { combineReducers } from 'redux';
+import gitReducer from './reducers/gitReducer';
 import blogReducer from './reducers/blogReducer';
 
 import Home from './Home';
@@ -17,7 +19,12 @@ import NavBar from './components/NavBar';
 
 import * as serviceWorker from './serviceWorker';
 
-const store = createStore(blogReducer, applyMiddleware(thunk));
+const rootReducer = combineReducers({
+  posts: blogReducer,
+  gitPosts: gitReducer
+})
+
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 const Header = () =>
   <header><NavBar /></header>;
