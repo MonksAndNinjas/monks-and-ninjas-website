@@ -5,21 +5,17 @@ import Blog from '../components/Blog';
 import { connect } from 'react-redux';
 import { fetchBlogPosts } from '../actions/fetch';
 import { fetchGitHubPosts } from '../actions/fetch';
+import { addBlogPost } from '../actions/blog';
 
 import { handleGitPosts } from '../helpers/gitPosts';
 
 class BlogContainer extends React.Component {
-
-  addGitPosts = () => {
-    console.log(this.props.gitPosts)
-  }
-
   render() {
     return (
       <div>
         <h1>Blog</h1>
 
-        <Blog />
+        <Blog gitPosts={this.props.gitPosts} blogPosts={this.posts} />
       </div>
     );
   }
@@ -31,10 +27,11 @@ class BlogContainer extends React.Component {
 }
 
 const mapStateToProps = state => {
+  console.log(state)
   return({
     posts: state.posts,
     gitPosts: handleGitPosts(state)
   })
 }
 
-export default connect(mapStateToProps, { fetchBlogPosts, fetchGitHubPosts })(BlogContainer);
+export default connect(mapStateToProps, { fetchBlogPosts, fetchGitHubPosts, addBlogPost })(BlogContainer);

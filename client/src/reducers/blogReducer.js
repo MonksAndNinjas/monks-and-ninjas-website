@@ -7,6 +7,7 @@ export default function blogReducer(
     gitPosts: [],
   }, action) {
     switch (action.type) {
+
       case 'LOADING_POSTS':
         return {...state, loading: true};
 
@@ -17,7 +18,7 @@ export default function blogReducer(
         return {...state, postLoading: true};
 
       case 'FETCH_BLOG_POSTS':
-        return {loading: false, gitPosts: state.posts}
+        return {loading: false, posts: state.posts}
 
       case 'FETCH_GITHUB_POST':
         return {postLoading: false, gitPosts: [...state.gitPosts, action.payload]}
