@@ -11,8 +11,9 @@ export const handleGitPosts = (gitPosts) => {
 
       let addPost = {
         title: parseHeader[1],
-        date: parseHeader[0],
-        content: parseData[2]
+        content: parseData[2],
+        datePublished: new Date(parseHeader[0]).toString(),
+        lastPublished: new Date(parseHeader[0]).toString()
       }
 
       return addPost
