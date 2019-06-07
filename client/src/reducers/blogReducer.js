@@ -9,7 +9,7 @@ export default function blogReducer(
         return {...state, loading: true};
 
       case 'FETCH_BLOG_POSTS':
-        return {loading: false, posts: state.posts}
+        return {loading: false, posts: action.payload}
 
       default:
         return state;

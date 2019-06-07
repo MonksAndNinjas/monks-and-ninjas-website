@@ -6,10 +6,10 @@ export default function gitReducer(
   }, action) {
     switch (action.type) {
 
-      case 'LOADING_POSTS':
+      case 'LOADING_GIT_POSTS':
         return {...state, loading: true};
 
-      case 'LOADING_POST':
+      case 'LOADING_GIT_POST':
         return {...state, postLoading: true};
 
       case 'FETCH_GITHUB_POSTS':
@@ -20,4 +20,5 @@ export default function gitReducer(
 
       default:
         return state;
-)
+  }
+}

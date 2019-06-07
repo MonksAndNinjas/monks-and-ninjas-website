@@ -15,7 +15,11 @@ class BlogContainer extends React.Component {
       <div>
         <h1>Blog</h1>
 
-        <Blog gitPosts={this.props.gitPosts} blogPosts={this.posts} />
+        { (this.props.posts !== undefined && this.props.gitPosts !== undefined && this.props.gitPosts.gitPosts.length > 0 && this.props.gitPosts.loading === false && this.props.posts.loading === false) ? (
+            <Blog posts={[...this.props.posts.posts, ...handleGitPosts(this.props.gitPosts)]} />
+          ) : (
+            null
+          )}
       </div>
     );
   }
@@ -27,10 +31,9 @@ class BlogContainer extends React.Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state)
   return({
     posts: state.posts,
-    gitPosts: handleGitPosts(state)
+    gitPosts: state.gitPosts
   })
 }
 
