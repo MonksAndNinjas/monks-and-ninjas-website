@@ -1,6 +1,6 @@
 import React from 'react';
 // imports blog component
-import Blog from '../components/Blog';
+import BlogsList from '../components/BlogsList';
 // connects to store and allows use of functions in /actions
 import { connect } from 'react-redux';
 // allows use of functions in helpers directory
@@ -21,6 +21,9 @@ class BlogContainer extends React.Component {
     return (
       <div className="container">
         <h1>Blog</h1>
+
+        <div className="postsList">Display list of all posts here!</div>
+        <div className="postDisplay">Display post content and info here!</div>
       </div>
     );
   }
