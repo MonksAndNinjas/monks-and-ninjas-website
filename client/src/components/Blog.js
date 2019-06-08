@@ -11,7 +11,7 @@ class Blog extends React.Component {
     const renderPosts = this.props.posts.map((post, index) => (
       <ul id={`blog-${index}`} key={index}>
         <h3>Title: {post.title}</h3>
-        <p>Content: <ReactMarkdown source={post.content} /></p>
+        <p>Content: {post.content}</p>
         <span>Date Published:
           {(post.datePublished === post.lastPublished) ? post.datePublished : post.lastPublished}
         </span>
