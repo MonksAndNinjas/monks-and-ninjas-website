@@ -3,8 +3,9 @@ import React from 'react';
 import Blog from '../components/Blog';
 // connects to store and allows use of functions in /actions
 import { connect } from 'react-redux';
-// allows use of function to compile post data in proper format
+// allows use of functions in helpers directory
 import { handleGitPosts } from '../helpers/gitPosts';
+import { dateSort } from '../helpers/dateSort.js';
 // handles all blog data
 class BlogContainer extends React.Component {
   render() {
@@ -13,7 +14,7 @@ class BlogContainer extends React.Component {
         <h1>Blog</h1>
 
         { (this.props.posts !== undefined && this.props.gitPosts !== undefined && this.props.gitPosts.gitPosts.length > 0 && this.props.gitPosts.loading === false && this.props.posts.loading === false) ? (
-            <Blog posts={[...this.props.posts.posts, ...handleGitPosts(this.props.gitPosts)]} />
+            <Blog posts={[...this.props.posts.posts.sort(dateSort), ...handleGitPosts(this.props.gitPosts).sort(dateSort)]} />
           ) : (
             null
           )}
