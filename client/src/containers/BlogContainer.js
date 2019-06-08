@@ -1,6 +1,7 @@
 import React from 'react';
 // imports blog component
 import BlogsList from '../components/BlogsList';
+import Blog from '../components/Blog';
 // connects to store and allows use of functions in /actions
 import { connect } from 'react-redux';
 // allows use of functions in helpers directory
@@ -22,8 +23,12 @@ class BlogContainer extends React.Component {
       <div className="container">
         <h1>Blog</h1>
 
-        <div className="postsList">Display list of all posts here!</div>
-        <div className="postDisplay">Display post content and info here!</div>
+        { this.displayBlogPosts() ? (
+            <BlogList posts={[...this.props.posts.posts.sort(dateSort), ...handleGitPosts(this.props.gitPosts).sort(dateSort)]} />
+            <Blog posts={[...this.props.posts.posts.sort(dateSort), ...handleGitPosts(this.props.gitPosts).sort(dateSort)]} />
+          ) : (
+            null
+          )}
       </div>
     );
   }
@@ -37,12 +42,3 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps)(BlogContainer);
-
-
-/*
-{ this.displayBlogPosts() ? (
-    <Blog posts={[...this.props.posts.posts.sort(dateSort), ...handleGitPosts(this.props.gitPosts).sort(dateSort)]} />
-  ) : (
-    null
-  )}
-*/

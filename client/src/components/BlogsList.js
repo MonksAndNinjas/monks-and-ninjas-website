@@ -17,8 +17,8 @@ class BlogsList extends React.Component {
     ));
 
     return (
-      <div>
-        { renderPosts }
+      <div className="postsList">
+        Display list of all posts here!
       </div>
     );
   }
