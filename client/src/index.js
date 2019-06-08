@@ -10,6 +10,8 @@ import { BrowserRouter as Router, Route }from 'react-router-dom'
 import { combineReducers } from 'redux';
 import gitReducer from './reducers/gitReducer';
 import blogReducer from './reducers/blogReducer';
+// styling
+import './index.css';
 // imports pages for rendering routes
 import Home from './Home';
 import BlogContainer from './containers/BlogContainer';
@@ -29,6 +31,9 @@ const store = createStore(rootReducer, applyMiddleware(thunk));
 const Header = () =>
   <header><NavBar /></header>;
 
+const Footer = () =>
+  <footer></footer>;
+
 ReactDOM.render((
   <Provider store={store}>
     <Router>
@@ -36,6 +41,7 @@ ReactDOM.render((
       <Header />
         <Route exact path="/" component={Home} />
         <Route exact path="/blog" component={BlogContainer} />
+        <Footer />
         <App />
       </React.Fragment>
     </Router>
