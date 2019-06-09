@@ -24,6 +24,11 @@ class BlogArchive extends React.Component {
       </div>
     );
   }
+
+  componentDidMount() {
+    var buttonActive = document.querySelectorAll('button')[0]
+    buttonActive.setAttribute("class", "activePost");
+  }
 }
 
 export default BlogArchive;

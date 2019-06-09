@@ -29,12 +29,13 @@ class BlogContainer extends React.Component {
   }
 
   changeStyle = (index) => {
-    console.log(index, this.state.postIndex)
     var buttonActive = document.querySelectorAll('button')[index]
     var buttonPrev = document.querySelectorAll('button')[this.state.postIndex]
 
-    buttonActive.style.backgroundColor = "red";
-      buttonPrev.style.backgroundColor = "white";
+    if (index !== this.state.postIndex) {
+      buttonActive.setAttribute("class", "activePost");
+      buttonPrev.removeAttribute("class")
+    }
   }
 
   render() {
