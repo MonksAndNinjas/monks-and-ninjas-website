@@ -1,6 +1,6 @@
 import React from 'react';
 // imports blog component
-import BlogsList from '../components/BlogsList';
+import BlogArchive from '../components/BlogArchive';
 import Blog from '../components/Blog';
 // connects to store and allows use of functions in /actions
 import { connect } from 'react-redux';
@@ -24,8 +24,10 @@ class BlogContainer extends React.Component {
         <h1>Blog</h1>
 
         { this.displayBlogPosts() ? (
-            <BlogList posts={[...this.props.posts.posts.sort(dateSort), ...handleGitPosts(this.props.gitPosts).sort(dateSort)]} />
-            <Blog posts={[...this.props.posts.posts.sort(dateSort), ...handleGitPosts(this.props.gitPosts).sort(dateSort)]} />
+            <div className="blogWrapper">
+              <BlogArchive posts={[...this.props.posts.posts.sort(dateSort), ...handleGitPosts(this.props.gitPosts).sort(dateSort)]} />
+              <Blog posts={[...this.props.posts.posts.sort(dateSort), ...handleGitPosts(this.props.gitPosts).sort(dateSort)]} />
+            </div>
           ) : (
             null
           )}

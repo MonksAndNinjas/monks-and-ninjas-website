@@ -13,3 +13,16 @@ class Blog extends React.Component {
 }
 
 export default Blog;
+
+
+/*
+const renderPosts = this.props.posts.map((post, index) => (
+  <ul id={`blog-${index}`} key={index}>
+    <h3>Title: {post.title}</h3>
+    <ReactMarkdown source={post.content} />
+    <span>Date Published:
+      {(post.datePublished === post.lastPublished) ? post.datePublished : post.lastPublished}
+    </span>
+  </ul>
+));
+*/
