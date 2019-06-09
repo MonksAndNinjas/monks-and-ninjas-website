@@ -13,7 +13,7 @@ html, body {
   padding: 10px;
   padding-bottom: 60px;
   margin: auto;
-  max-width: 500px;
+  max-width: 90%;
 }
 
 body div#root {

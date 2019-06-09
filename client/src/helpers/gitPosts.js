@@ -12,7 +12,7 @@ export const handleGitPosts = (gitPosts) => {
       let parseHeader = parseData[1].split("title:")[1].split("date:       ")[1].split("permalink: ")
       // post hash used for rendering github posts
       let gitPost = {
-        title: parseHeader[1],
+        title: parseHeader[1].split("_").join(" "),
         content: parseData[2],
         datePublished: new Date(parseHeader[0]).toString(),
         lastPublished: new Date(parseHeader[0]).toString()

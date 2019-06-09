@@ -1,8 +1,12 @@
 import React from 'react';
-// used for translating markdown code
-const ReactMarkdown = require('react-markdown')
 // renders post data passed down from blog container
 class BlogArchive extends React.Component {
+
+  handleClick = event => {
+    event.preventDefault();
+    this.props.displayPost(event.target.value);
+    this.props.changeStyle(event.target.value);
+  }
 
   render() {
 
@@ -13,7 +17,7 @@ class BlogArchive extends React.Component {
     ));
 
     return (
-      <div className="postsList">
+      <div className="postsWrapper">
         Display list of all posts here!
 
         {renderPosts}

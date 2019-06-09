@@ -7,8 +7,14 @@ import { connect } from 'react-redux';
 // allows use of functions in helpers directory
 import { handleGitPosts } from '../helpers/gitPosts';
 import { dateSort } from '../helpers/dateSort.js';
+// styling
+import './blogContainer.css';
 // handles all blog data
 class BlogContainer extends React.Component {
+
+  state = {
+    postIndex: 0
+  }
   // should blog posts be displayed?
   displayBlogPosts = () => {
     let blogPosts = this.props.posts
@@ -18,6 +24,19 @@ class BlogContainer extends React.Component {
     return (blogPosts !== undefined && gitPosts !== undefined && gitPostsSize > 0 && gitPosts.loading === false && blogPosts.loading === false)
   }
 
+  displayPost = (index) => {
+    this.setState({ postIndex: index })
+  }
+
+  changeStyle = (index) => {
+    console.log(index, this.state.postIndex)
+    var buttonActive = document.querySelectorAll('button')[index]
+    var buttonPrev = document.querySelectorAll('button')[this.state.postIndex]
+
+    buttonActive.style.backgroundColor = "red";
+      buttonPrev.style.backgroundColor = "white";
+  }
+
   render() {
     return (
       <div className="container">
@@ -25,8 +44,8 @@ class BlogContainer extends React.Component {
 
         { this.displayBlogPosts() ? (
             <div className="blogWrapper">
-              <BlogArchive posts={[...this.props.posts.posts.sort(dateSort), ...handleGitPosts(this.props.gitPosts).sort(dateSort)]} />
-              <Blog posts={[...this.props.posts.posts.sort(dateSort), ...handleGitPosts(this.props.gitPosts).sort(dateSort)]} />
+              <BlogArchive changeStyle={this.changeStyle} displayPost={this.displayPost} posts={[...this.props.posts.posts.sort(dateSort), ...handleGitPosts(this.props.gitPosts).sort(dateSort)]} />
+              <Blog postIndex={this.state.postIndex} posts={[...this.props.posts.posts.sort(dateSort), ...handleGitPosts(this.props.gitPosts).sort(dateSort)]} />
             </div>
           ) : (
             null
