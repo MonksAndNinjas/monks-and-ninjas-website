@@ -27,6 +27,7 @@ class BlogArchive extends React.Component {
 
   componentDidMount() {
     var buttonActive = document.querySelectorAll('button')[0]
+
     buttonActive.setAttribute("class", "activePost");
   }
 }
