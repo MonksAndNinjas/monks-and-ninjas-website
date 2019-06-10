@@ -10,6 +10,13 @@ class PortfolioContainer extends React.Component {
   state = {
     projectIndex: 0        // index of project to be displayed, default is most recent post
   }
+  // should project be displayed?
+  displayProjects = () => {
+    let projects = this.props.projects
+    let projectsSize = this.props.projects.projects.length
+
+    return (projects !== undefined && projectsSize > 0 && projects.loading === false)
+  }
   // sets state of post to display
   displayProject = (index) => {
     this.setState({ projectIndex: index })
@@ -29,8 +36,15 @@ class PortfolioContainer extends React.Component {
     return (
       <div className="container">
         Portfolio info goes here!!
-        <ProjectArchive changeStyle={this.changeStyle} displayProject={this.displayProject} projects={this.props.projects.projects} />
-        <Project projectIndex={this.state.projectIndex} projects={this.props.projects.projects}/>
+
+        { this.displayProjects() ? (
+            <div className="portfolioWrapper">
+              <ProjectArchive changeStyle={this.changeStyle} displayProject={this.displayProject} projects={this.props.projects.projects} />
+              <Project projectIndex={this.state.projectIndex} projects={this.props.projects.projects}/>
+            </div>
+          ) : (
+            null
+        )}
       </div>
     )
   }
