@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Route }from 'react-router-dom'
 import { combineReducers } from 'redux';
 import gitReducer from './reducers/gitReducer';
 import blogReducer from './reducers/blogReducer';
+import projectReducer from './reducers/projectReducer';
 // styling
 import './index.css';
 // imports pages for rendering routes
@@ -24,7 +25,8 @@ import * as serviceWorker from './serviceWorker';
 
 const rootReducer = combineReducers({
   posts: blogReducer,
-  gitPosts: gitReducer
+  gitPosts: gitReducer,
+  projects: projectReducer
 })
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
