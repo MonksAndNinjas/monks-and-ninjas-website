@@ -23,7 +23,8 @@ class App extends React.Component {
 const mapStateToProps = state => {
   return({
     posts: state.posts,
-    gitPosts: state.gitPosts
+    gitPosts: state.gitPosts,
+    projects: state.projects
   })
 }
 
