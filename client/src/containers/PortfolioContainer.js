@@ -1,5 +1,5 @@
 import React from 'react';
-
+// handles portfolio data
 class PortfolioContainer extends React.Component {
   render() {
     return (

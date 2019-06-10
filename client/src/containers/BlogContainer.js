@@ -13,7 +13,7 @@ import './blogContainer.css';
 class BlogContainer extends React.Component {
 
   state = {
-    postIndex: 0
+    postIndex: 0        // index of post to be displayed, default is most recent post
   }
   // should blog posts be displayed?
   displayBlogPosts = () => {
@@ -23,11 +23,11 @@ class BlogContainer extends React.Component {
 
     return (blogPosts !== undefined && gitPosts !== undefined && gitPostsSize > 0 && gitPosts.loading === false && blogPosts.loading === false)
   }
-
+  // sets state of post to display
   displayPost = (index) => {
     this.setState({ postIndex: index })
   }
-
+  // changes styling of button to signify that post was selected and displayed
   changeStyle = (index) => {
     var buttonActive = document.querySelectorAll('button')[index]
     var buttonPrev = document.querySelectorAll('button')[this.state.postIndex]

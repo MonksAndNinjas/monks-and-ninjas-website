@@ -1,10 +1,10 @@
 import React from 'react';
-// renders post data passed down from blog container
+// renders posts data passed down from blog container
 class BlogArchive extends React.Component {
-
+  // displays clicked post
   handleClick = event => {
     event.preventDefault();
-    
+    // sets postIndex state and then changes styling of selected post to signify active
     this.props.displayPost(event.target.value);
     this.props.changeStyle(event.target.value);
   }
@@ -23,7 +23,7 @@ class BlogArchive extends React.Component {
       </div>
     );
   }
-
+  // designates active post, changes class to appy css to it
   componentDidMount() {
     var buttonActive = document.querySelectorAll('button')[0]
 
