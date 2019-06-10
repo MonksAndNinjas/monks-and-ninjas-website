@@ -10,13 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_05_173854) do
+ActiveRecord::Schema.define(version: 2019_06_10_192359) do
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.string "content"
     t.string "datePublished"
     t.string "lastPublished"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.string "date"
+    t.string "github"
+    t.string "video"
+    t.string "embed"
   end
 
 end

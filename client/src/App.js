@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchBlogPosts } from './actions/fetch';
 import { fetchGitHubPosts } from './actions/fetch';
+import { fetchProjects } from './actions/fetch';
 // nothing is handled in here yet
 class App extends React.Component {
   render() {
@@ -15,6 +16,7 @@ class App extends React.Component {
   componentDidMount() {
     this.props.fetchBlogPosts()
     this.props.fetchGitHubPosts()
+    this.props.fetchProjects()
   }
 }
 
@@ -25,4 +27,4 @@ const mapStateToProps = state => {
   })
 }
 
-export default connect(mapStateToProps, { fetchBlogPosts, fetchGitHubPosts })(App);
+export default connect(mapStateToProps, { fetchBlogPosts, fetchGitHubPosts, fetchProjects })(App);
