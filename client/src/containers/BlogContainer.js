@@ -41,7 +41,7 @@ class BlogContainer extends React.Component {
   render() {
     return (
       <div className="container">
-        <h1>Blog</h1>
+        <h1>Monks and Ninjas Bizarre Coding Adventures</h1>
 
         { this.displayBlogPosts() ? (
             <div className="blogWrapper">

@@ -15,6 +15,7 @@ import './index.css';
 // imports pages for rendering routes
 import Home from './Home';
 import BlogContainer from './containers/BlogContainer';
+import PortfolioContainer from './containers/PortfolioContainer';
 import App from './App';
 // imports nav bar for all routes
 import NavBar from './components/NavBar';
@@ -41,6 +42,7 @@ ReactDOM.render((
       <Header />
         <Route exact path="/" component={Home} />
         <Route exact path="/blog" component={BlogContainer} />
+        <Route exact path="/portfolio" component={PortfolioContainer} />
         <Footer />
         <App />
       </React.Fragment>

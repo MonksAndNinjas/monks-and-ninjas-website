@@ -4,6 +4,7 @@ class BlogArchive extends React.Component {
 
   handleClick = event => {
     event.preventDefault();
+    
     this.props.displayPost(event.target.value);
     this.props.changeStyle(event.target.value);
   }
@@ -18,8 +19,6 @@ class BlogArchive extends React.Component {
 
     return (
       <div className="postsWrapper">
-        Display list of all posts here!
-
         {renderPosts}
       </div>
     );

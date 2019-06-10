@@ -10,11 +10,11 @@ class Blog extends React.Component {
 
     return(
       <div className="postWrapper">
-        Display post content and info here!
-
         <h2>{renderPost.title}</h2>
+
         <ReactMarkdown source={renderPost.content} />
-        <span>{renderPost.lastPublished}</span>
+
+        <span style={{ 'color': 'grey'}}>Date Published: {renderPost.lastPublished}</span>
       </div>
     )
   }
