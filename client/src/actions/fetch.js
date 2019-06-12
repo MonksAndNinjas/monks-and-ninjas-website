@@ -40,6 +40,17 @@ export function fetchProjects() {
     return fetch('api/projects',{
       accept: 'application/json',
     }).then(response => response.json())
-      .then(projects => dispatch({ type: 'FETCH_PROJECTS', payload: projects}))
+      .then(projects => dispatch({ type: 'FETCH_PROJECTS', payload: projects }))
+  }
+}
+// fetches photos from GITHUB
+export function fetchPhotos() {
+  return (dispatch) => {
+    dispatch({ type: 'LOADING_PHOTOS' });
+
+    return fetch('https://api.github.com/repos/MonksAndNinjas/MonksAndNinjas.github.io/contents/img', {
+      accept: 'application/json',
+    }).then(response => response.json())
+      .then(photos => dispatch({ type: 'FETCH_PHOTOS', payload: photos }))
   }
 }

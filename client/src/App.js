@@ -26,7 +26,8 @@ const mapStateToProps = state => {
   return({
     posts: state.posts,
     gitPosts: state.gitPosts,
-    projects: state.projects
+    projects: state.projects,
+    photos: state.photos
   })
 }
 
