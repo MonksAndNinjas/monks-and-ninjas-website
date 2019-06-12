@@ -10,7 +10,7 @@ import rails from '../images/RailsJS.png';
 import sinatra from '../images/sinatra.png';
 import cli from '../images/cli.png';
 
-import './projects.css';
+import './projectContainer.css';
 // handles portfolio data
 class PortfolioContainer extends React.Component {
 

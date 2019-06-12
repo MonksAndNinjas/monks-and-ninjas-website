@@ -5,7 +5,6 @@ class ProjectArchive extends React.Component {
   handleClick = event => {
     event.preventDefault();
     let target = (event.target.value) ? event.target.value : event.target.id
-    console.log(target)
     // sets postIndex state and then changes styling of selected post to signify active
     this.props.displayProject(target);
     this.props.changeStyle(target);
@@ -31,6 +30,13 @@ class ProjectArchive extends React.Component {
       </div>
     )
   }
+
+  componentDidMount() {
+    var buttonActive = document.querySelectorAll('button')[0]
+
+    buttonActive.setAttribute("class", "activeProject");
+  }
+
 }
 
 export default ProjectArchive;

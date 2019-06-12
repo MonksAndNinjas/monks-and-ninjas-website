@@ -19,7 +19,7 @@ class Project extends React.Component {
 
         <br/><br/>
 
-        <span>Date: {renderProject.date}</span>
+        <span style={{ color: 'grey' }}>Date: {renderProject.date}</span>
       </div>
     )
   }

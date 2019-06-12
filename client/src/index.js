@@ -17,6 +17,7 @@ import './index.css';
 import Home from './Home';
 import BlogContainer from './containers/BlogContainer';
 import PortfolioContainer from './containers/PortfolioContainer';
+import ArtContainer from './containers/ArtContainer';
 import App from './App';
 // imports nav bar for all routes
 import NavBar from './components/NavBar';
@@ -45,6 +46,7 @@ ReactDOM.render((
         <Route exact path="/" component={Home} />
         <Route exact path="/blog" component={BlogContainer} />
         <Route exact path="/portfolio" component={PortfolioContainer} />
+        <Route exact path="/art" component={ArtContainer} />
         <Footer />
         <App />
       </React.Fragment>

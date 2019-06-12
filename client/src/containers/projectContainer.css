@@ -15,6 +15,12 @@ div.portfolioWrapper ul button {
   padding-top: 5px;
 }
 
+div.projectWrapper {
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 1%;
+  margin-top: 3%;
+}
+
 @keyframes button-clicked {
   0% {
   }
@@ -35,4 +41,19 @@ div.projectArchiveWrapper button.activeProject {
   animation: button-clicked;
   animation-duration: 3s;
   animation-fill-mode: forwards;
+}
+
+div.projectArchiveWrapper button.activeProject:after {
+  content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-top-color: lightgrey;
+	border-bottom: 0;
+	border-left: 0;
+	margin-left: -10px;
+	margin-bottom: -20px;
 }
