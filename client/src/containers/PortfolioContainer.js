@@ -27,13 +27,13 @@ class PortfolioContainer extends React.Component {
   }
   // sets state of post to display
   displayProject = (index) => {
-    console.log(index)
     this.setState({ projectIndex: index })
   }
   // changes styling of button to signify that post was selected and displayed
   changeStyle = (index) => {
     var buttonActive = document.querySelectorAll('button')[index]
     var buttonPrev = document.querySelectorAll('button')[this.state.projectIndex]
+
 
     if (index !== this.state.projectIndex) {
       buttonActive.setAttribute("class", "activeProject");
@@ -66,3 +66,5 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps)(PortfolioContainer);
+
+//<Project projectIndex={this.state.projectIndex} projects={this.props.projects.projects}/>
