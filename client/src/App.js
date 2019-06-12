@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { fetchBlogPosts } from './actions/fetch';
 import { fetchGitHubPosts } from './actions/fetch';
 import { fetchProjects } from './actions/fetch';
+import { fetchPhotos } from './actions/fetch';
 // nothing is handled in here yet
 class App extends React.Component {
   render() {
@@ -17,6 +18,7 @@ class App extends React.Component {
     this.props.fetchBlogPosts()
     this.props.fetchGitHubPosts()
     this.props.fetchProjects()
+    this.props.fetchPhotos()
   }
 }
 
@@ -28,4 +30,4 @@ const mapStateToProps = state => {
   })
 }
 
-export default connect(mapStateToProps, { fetchBlogPosts, fetchGitHubPosts, fetchProjects })(App);
+export default connect(mapStateToProps, { fetchBlogPosts, fetchGitHubPosts, fetchProjects, fetchPhotos })(App);
