@@ -15,7 +15,8 @@ class NavBar extends React.Component {
           <div className="dropdown-content">
             <NavLink to="/" exact activeStyle={{ background: 'grey' }}>Home</NavLink>
             <NavLink to="/blog" exact activeStyle={{ background: 'grey' }}>Blog</NavLink>
-            <NavLink to ="/portfolio" exact activeStyle={{ background: 'grey' }}>Portfolio</NavLink>
+            <NavLink to="/portfolio" exact activeStyle={{ background: 'grey' }}>Portfolio</NavLink>
+            <NavLink to="/art" exact activeStyle={{ background: 'grey' }}>Art</NavLink>
           </div>
       </div>
     );
