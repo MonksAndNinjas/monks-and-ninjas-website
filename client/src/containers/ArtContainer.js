@@ -1,4 +1,6 @@
 import React from 'react';
+// connects to store and allows use of functions in /actions
+import { connect } from 'react-redux';
 
 class ArtContainer extends React.Component {
   render() {
@@ -9,5 +11,12 @@ class ArtContainer extends React.Component {
     )
   }
 }
+// makes photos from store accessable
+const mapStateToProps = state => {
+  console.log(state)
+  return({
+    photos: state.photos
+  })
+}
 
-export default ArtContainer;
+export default connect(mapStateToProps)(ArtContainer);

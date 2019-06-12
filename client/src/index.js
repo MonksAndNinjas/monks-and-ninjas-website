@@ -11,6 +11,7 @@ import { combineReducers } from 'redux';
 import gitReducer from './reducers/gitReducer';
 import blogReducer from './reducers/blogReducer';
 import projectReducer from './reducers/projectReducer';
+import photoReducer from './reducers/photoReducer';
 // styling
 import './index.css';
 // imports pages for rendering routes
@@ -27,7 +28,8 @@ import * as serviceWorker from './serviceWorker';
 const rootReducer = combineReducers({
   posts: blogReducer,
   gitPosts: gitReducer,
-  projects: projectReducer
+  projects: projectReducer,
+  photos: photoReducer
 })
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
