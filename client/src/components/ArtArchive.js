@@ -12,7 +12,7 @@ class ArtArchive extends React.Component {
     const renderDigital = this.props.photos[0].map((photo, index) => (
         <ul id={`digital-${index}`} key={index}>
           <button value={index} onClick={event => this.handleClick(event)}>
-            <img id={index} style={{ width: '20%', height: '20%' }} src={photo.download_url} alt={photo.name} />
+            <img id={index} style={{ width: '100%', height: '100%' }} src={photo.download_url} alt={photo.name} />
           </button>
         </ul>
     ));
@@ -20,7 +20,7 @@ class ArtArchive extends React.Component {
     const renderDrawings = this.props.photos[1].map((photo, index) => (
         <ul id={`drawing-${index}`} key={index}>
           <button value={index} onClick={event => this.handleClick(event)}>
-            <img id={index} style={{ width: '20%', height: '20%' }} src={photo.download_url} alt={photo.name} />
+            <img id={index} style={{ width: '100%', height: '100%' }} src={photo.download_url} alt={photo.name} />
           </button>
         </ul>
     ));
@@ -28,22 +28,21 @@ class ArtArchive extends React.Component {
     const renderPaintings = this.props.photos[2].map((photo, index) => (
         <ul id={`painting-${index}`} key={index}>
           <button value={index} onClick={event => this.handleClick(event)}>
-            <img id={index} style={{ width: '20%', height: '20%' }} src={photo.download_url} alt={photo.name} />
+            <img id={index} style={{ width: '100%', height: '100%' }} src={photo.download_url} alt={photo.name} />
           </button>
         </ul>
     ));
 
     const renderSignatures = this.props.photos[3].map((photo, index) => (
-        <ul id={`painting-${index}`} key={index}>
+        <ul id={`signature-${index}`} key={index}>
           <button value={index} onClick={event => this.handleClick(event)}>
-            <img id={index} style={{ width: '20%', height: '20%' }} src={photo.download_url} alt={photo.name} />
+            <img id={index} style={{ width: '100%', height: '100%' }} src={photo.download_url} alt={photo.name} />
           </button>
         </ul>
     ));
 
     return (
       <div className="artsWrapper">
-        Art work goes here!!
         {renderSignatures}
         {renderPaintings}
         {renderDigital}

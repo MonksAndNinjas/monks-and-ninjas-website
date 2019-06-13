@@ -1,0 +1,8 @@
+div.artsWrapper ul button{
+  display: inline-block;
+  width: 10%;
+}
+
+div.artsWrapper ul {
+  display: inline;
+}

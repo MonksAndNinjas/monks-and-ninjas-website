@@ -4,6 +4,8 @@ import ArtArchive from '../components/ArtArchive';
 import Art from '../components/Art';
 // connects to store and allows use of functions in /actions
 import { connect } from 'react-redux';
+// styling
+import './artContainer.css';
 
 class ArtContainer extends React.Component {
 
