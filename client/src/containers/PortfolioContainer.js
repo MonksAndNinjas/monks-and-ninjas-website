@@ -66,5 +66,3 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps)(PortfolioContainer);
-
-//<Project projectIndex={this.state.projectIndex} projects={this.props.projects.projects}/>

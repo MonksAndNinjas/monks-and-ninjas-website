@@ -15,7 +15,7 @@ class ProjectArchive extends React.Component {
     const renderProjects = this.props.projects.map((project, index) => (
       <ul id={`project-${index}`} key={index}>
         <button value={index} onClick={event => this.handleClick(event)}>
-          <img id ={index} src={this.props.images[index]} alt={project.title} />
+          <img id={index} src={this.props.images[index]} alt={project.title} />
 
           <br/><br/>
 

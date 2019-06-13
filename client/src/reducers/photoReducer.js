@@ -10,7 +10,7 @@ export default function blogReducer(
         return {...state, loading: true};
 
       case 'FETCH_PHOTOS':
-        return {loading: false, posts: action.payload}
+        return {loading: false, photos: action.payload}
 
       default:
         return state;
