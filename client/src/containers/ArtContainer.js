@@ -50,7 +50,7 @@ class ArtContainer extends React.Component {
 }
 // makes photos from store accessable
 const mapStateToProps = state => {
-  console.log(state)
+  //console.log(state)
   return({
     photos: state.photos
   })

@@ -2,15 +2,22 @@
 export default function blogReducer(
   state ={
     loading: false,
+    photosLoading: false,
     photos: [],
   }, action) {
     switch (action.type) {
 
-      case 'LOADING_PHOTOS':
+      case 'LOADING_PHOTOS_DATA':
         return {...state, loading: true};
 
+      case 'LOADING_PHOTOS':
+        return {...state, photosLoading: true};
+
+      case 'FETCH_PHOTOS_DATA':
+        return {loading: false, photos: state.photos}
+
       case 'FETCH_PHOTOS':
-        return {loading: false, photos: action.payload}
+        return {photosLoading: false, photos: [...state.photos, action.payload]}
 
       default:
         return state;
