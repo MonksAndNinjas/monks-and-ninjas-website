@@ -5,6 +5,7 @@
   "proxy": "http://localhost:3001/",
   "dependencies": {
     "babel-preset-env": "^1.7.0",
+    "imagesloaded": "^4.1.4",
     "js-base64": "^2.5.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

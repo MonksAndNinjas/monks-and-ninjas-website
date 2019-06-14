@@ -58,7 +58,7 @@ export function fetchPhotos() {
           return fetch('https://api.github.com/repos/MonksAndNinjas/MonksAndNinjas.github.io/contents/img/' + photos.name, {
             accept: 'application/json',
           }).then(response => response.json())
-            .then(photo => dispatch({ type: 'FETCH_PHOTOS', payload: photo }))
+            .then(photo => dispatch({ type: 'FETCH_PHOTOS', name: photos.name, payload: photo }))
         })
         // makes sure all promises have been complete before continuing
         return Promise.all(photoPromises)

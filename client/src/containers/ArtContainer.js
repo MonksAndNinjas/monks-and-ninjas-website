@@ -4,7 +4,7 @@ import ArtArchive from '../components/ArtArchive';
 import Art from '../components/Art';
 // connects to store and allows use of functions in /actions
 import { connect } from 'react-redux';
-// styling
+// styling and masonry Layout
 import './artContainer.css';
 
 class ArtContainer extends React.Component {
@@ -14,10 +14,9 @@ class ArtContainer extends React.Component {
   }
   // should photos be displayed?
   displayPhotos = () => {
-    let photos = this.props.photos
-    let photosSize = this.props.photos.photos.length
+    let photos = this.props.photos.photos
 
-    return (photos !== undefined && photosSize > 0 && photos.loading === false)
+    return (photos.drawings.length > 0 && photos.digital.length > 0 && photos.signature.length > 0 && photos.paintings.length > 0)
   }
   // sets state of photo to display
   displayPhoto = (index) => {
@@ -52,7 +51,6 @@ class ArtContainer extends React.Component {
 }
 // makes photos from store accessable
 const mapStateToProps = state => {
-  //console.log(state)
   return({
     photos: state.photos
   })
