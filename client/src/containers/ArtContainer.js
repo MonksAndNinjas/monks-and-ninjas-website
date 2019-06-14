@@ -36,7 +36,7 @@ class ArtContainer extends React.Component {
   render() {
     return (
       <div className="container">
-        <h2>Art</h2>
+        <h1>Art</h1>
 
         { this.displayPhotos() ? (
             <div className="photoWrapper">
@@ -58,4 +58,4 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps)(ArtContainer);
 
-//              <Art postIndex={this.state.photoIndex} photos={this.props.photos.photos} />
+// <Art postIndex={this.state.photoIndex} photos={this.props.photos.photos} />
