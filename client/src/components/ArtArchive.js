@@ -9,18 +9,34 @@ class ArtArchive extends React.Component {
 
   handleClick = event => {
     event.preventDefault();
+    event.persist();
 
+    if (event.target.attributes[1]) {
+      var modalImg = document.getElementsByClassName('modal-content')[0]
+      var modal = document.getElementById('myModal')
+      var imgData = event.target.attributes[1].value.split("-")
+
+      var category = imgData[0]
+      var imgId = imgData[1]
+
+      modalImg.setAttribute('src', this.props.photos[`${category}`][imgId].download_url)
+      modal.style.display = 'block';
+    }
   }
 
   render() {
 
     const renderDigital = this.props.photos.digital.map((photo, index) => (
-        <div id={`digital-${index}`} className="item" key={index}>
-          <button value={index} className="art" onClick={event => this.handleClick(event)}>
-            <img id={index} src={photo.download_url} alt={photo.name} />
+        <div className="item" key={index}>
+          <button className="art" onClick={event => this.handleClick(event)}>
+            <img id={index} value={`digital-${index}`} src={photo.download_url} alt={photo.name} />
             <div className="middle">
               <div className="text">
                 <span>{photo.name}</span>
+
+                <br/><br/>
+
+                <span>View</span>
               </div>
             </div>
           </button>
@@ -28,12 +44,16 @@ class ArtArchive extends React.Component {
     ));
 
     const renderDrawings = this.props.photos.drawings.map((photo, index) => (
-        <div id={`drawing-${index}`} className="item" key={index}>
-          <button value={index} className="art" onClick={event => this.handleClick(event)}>
-            <img id={index} src={photo.download_url} alt={photo.name} />
+        <div className="item" key={index}>
+          <button className="art" onClick={event => this.handleClick(event)}>
+            <img id={index} value={`drawings-${index}`} src={photo.download_url} alt={photo.name} />
             <div className="middle">
               <div className="text">
                 <span>{photo.name}</span>
+
+                <br/><br/>
+
+                <span>View</span>
               </div>
             </div>
           </button>
@@ -41,12 +61,16 @@ class ArtArchive extends React.Component {
     ));
 
     const renderPaintings = this.props.photos.paintings.map((photo, index) => (
-        <div id={`painting-${index}`} className="item" key={index}>
-          <button value={index} className="art" onClick={event => this.handleClick(event)}>
-            <img id={index} src={photo.download_url} alt={photo.name} />
+        <div className="item" key={index}>
+          <button className="art" onClick={event => this.handleClick(event)}>
+            <img id={index} value={`paintings-${index}`} src={photo.download_url} alt={photo.name} />
             <div className="middle">
               <div className="text">
                 <span>{photo.name}</span>
+
+                <br/><br/>
+
+                <span>View</span>
               </div>
             </div>
           </button>
@@ -54,12 +78,16 @@ class ArtArchive extends React.Component {
     ));
 
     const renderSignatures = this.props.photos.signature.map((photo, index) => (
-        <div id={`signature-${index}`} className="item" key={index}>
-          <button value={index} className="art" onClick={event => this.handleClick(event)}>
-            <img id={index} src={photo.download_url} alt={photo.name} />
+        <div className="item" key={index}>
+          <button className="art" onClick={event => this.handleClick(event)}>
+            <img id={index} value={`signature-${index}`} src={photo.download_url} alt={photo.name} />
             <div className="middle">
               <div className="text">
                 <span>{photo.name}</span>
+
+                <br/><br/>
+
+                <span>View</span>
               </div>
             </div>
           </button>
@@ -86,7 +114,6 @@ class ArtArchive extends React.Component {
     window.onload = resizeAllGridItems()
     window.addEventListener("resize", resizeAllGridItems)
   }
-
 }
 
 export default ArtArchive;
