@@ -1,6 +1,8 @@
 import React from 'react';
 
 import HomeAnchor from '../components/Home/HomeAnchor';
+// styling
+import '../css/homeContainer.css'
 // renders Home page
 class HomeContainer extends React.Component {
 
@@ -15,11 +17,12 @@ class HomeContainer extends React.Component {
     return (
       <div className="container">
         <h1>Home Page!</h1>
-        <button className="button" value="postAnchor" onClick={event => this.handleClick(event)}>Blog</button>
-        <button className="button" value="projectAnchor" onClick={event => this.handleClick(event)}>Portfolio</button>
-        <button className="button" value="artAnchor" onClick={event => this.handleClick(event)}>Art</button>
-        <button className="button" value="aboutAnchor" onClick={event => this.handleClick(event)}>About Me</button>
-
+        <div className="homeButtonWrapper">
+          <button value="postAnchor" onClick={event => this.handleClick(event)}><span>Posts</span></button><br/>
+          <button value="projectAnchor" onClick={event => this.handleClick(event)}><span>Projects</span></button><br/>
+          <button value="artAnchor" onClick={event => this.handleClick(event)}><span>Art</span></button><br/>
+          <button value="aboutAnchor" onClick={event => this.handleClick(event)}><span>About Me</span></button><br/>
+        </div>
 
         <HomeAnchor anchorId={"postAnchor"} header={"Posts News"} />
         <HomeAnchor anchorId={"projectAnchor"} header={"Project News"} />
