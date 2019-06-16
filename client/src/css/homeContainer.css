@@ -3,18 +3,25 @@
   padding: 5px;
   margin: 4px 2px;
   border-radius: 50%;
+  box-shadow: 0px 8px 7px 0px rgba(0,0,0,0.2);
 }
 
 .homeButtonWrapper button:hover {
   border: 2px solid black;
+  box-shadow: 0px 8px 7px 0px rgba(0,0,0,0.2);
 }
 
 .homeButtonWrapper span {
   position: absolute;
   opacity: 0;
+  text-shadow: 1px 1px 6px grey;
 }
 
 div.homeButtonWrapper button:hover span {
   opacity: 1;
   left: 8%;
+}
+
+div.homeContentWrapper .content {
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }

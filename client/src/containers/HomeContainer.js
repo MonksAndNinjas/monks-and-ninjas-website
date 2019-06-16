@@ -24,10 +24,12 @@ class HomeContainer extends React.Component {
           <button value="aboutAnchor" onClick={event => this.handleClick(event)}><span>About Me</span></button><br/>
         </div>
 
-        <HomeAnchor anchorId={"postAnchor"} header={"Posts News"} />
-        <HomeAnchor anchorId={"projectAnchor"} header={"Project News"} />
-        <HomeAnchor anchorId={"artAnchor"} header={"Art News"} />
-        <HomeAnchor anchorId={"aboutAnchor"} header={"About Me"} />
+        <div className="homeContentWrapper">
+          <HomeAnchor anchorId={"postAnchor"} header={"Posts News"} />
+          <HomeAnchor anchorId={"projectAnchor"} header={"Project News"} />
+          <HomeAnchor anchorId={"artAnchor"} header={"Art News"} />
+          <HomeAnchor anchorId={"aboutAnchor"} header={"About Me"} />
+        </div>
       </div>
     )
   }
