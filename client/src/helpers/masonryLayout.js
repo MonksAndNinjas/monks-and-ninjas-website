@@ -15,7 +15,7 @@ export const resizeInstance = (instance) => {
 }
 
 export const resizeAllGridItems = () =>  {
-  var allArt = document.getElementsByClassName("item")
+  var allArt = document.getElementsByClassName("artArchiveWrapper")
 
   for(var x = 0; x < allArt.length; x++){
     resizeGridItem(allArt[x]);
