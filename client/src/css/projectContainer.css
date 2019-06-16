@@ -3,10 +3,6 @@ div.portfolioWrapper ul button img {
   height: 100%;
 }
 
-div.portfolioWrapper ul {
-  display: contents;
-}
-
 div.portfolioWrapper ul button {
   width: 25%;
   text-align: center;
@@ -15,34 +11,22 @@ div.portfolioWrapper ul button {
   padding-top: 5px;
 }
 
+div.portfolioWrapper ul {
+  display: contents;
+}
+
 div.projectWrapper {
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   padding: 1%;
   margin-top: 3%;
 }
-
-@keyframes button-clicked {
-  0% {
-  }
-  100% {
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
-    background-color: lightgrey;
-  }
-}
-
-div.projectArchiveWrapper {
-  display: inline-flex;
-  left: 0;
-  top: 0;
-}
-
+/* to fade image to monotone */
 div.projectArchiveWrapper button.activeProject {
   animation: button-clicked;
   animation-duration: 3s;
   animation-fill-mode: forwards;
 }
-
+/* adds comic bubble under selected project*/
 div.projectArchiveWrapper button.activeProject:after {
   content: '';
 	position: absolute;
@@ -56,4 +40,18 @@ div.projectArchiveWrapper button.activeProject:after {
 	border-left: 0;
 	margin-left: -10px;
 	margin-bottom: -20px;
+}
+
+div.projectArchiveWrapper {
+  display: inline-flex;
+}
+/* makes the image monotone when clicked */
+@keyframes button-clicked {
+  0% {
+  }
+  100% {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    background-color: lightgrey;
+  }
 }

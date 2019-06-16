@@ -1,7 +1,7 @@
 import React from 'react';
 // imports project components
-import ProjectArchive from '../components/ProjectArchive';
-import Project from '../components/Project';
+import ProjectArchive from '../components/Portfolio/ProjectArchive';
+import Project from '../components/Portfolio/Project';
 // connects to store and allows use of functions in /actions
 import { connect } from 'react-redux';
 // import images for project headers
@@ -10,18 +10,18 @@ import rails from '../images/RailsJS.png';
 import sinatra from '../images/sinatra.png';
 import cli from '../images/cli.png';
 
-import './projectContainer.css';
+import '../css/projectContainer.css';
 // handles portfolio data
 class PortfolioContainer extends React.Component {
 
   state = {
-    projectImages: [cli, sinatra, rails, rails, react],
+    projectImages: [cli, sinatra, rails, rails, react], // this should be moved to Rails CLI
     projectIndex: 0        // index of project to be displayed, default is most recent post
   }
   // should project be displayed?
   displayProjects = () => {
-    let projects = this.props.projects
-    let projectsSize = this.props.projects.projects.length
+    let projects = this.props.projectsData
+    let projectsSize = this.props.projectsData.projects.length
 
     return (projects !== undefined && projectsSize > 0 && projects.loading === false)
   }
@@ -48,8 +48,8 @@ class PortfolioContainer extends React.Component {
 
         { this.displayProjects() ? (
             <div className="portfolioWrapper">
-              <ProjectArchive images={this.state.projectImages} changeStyle={this.changeStyle} displayProject={this.displayProject} projects={this.props.projects.projects} />
-              <Project projectIndex={this.state.projectIndex} projects={this.props.projects.projects}/>
+              <ProjectArchive images={this.state.projectImages} changeStyle={this.changeStyle} displayProject={this.displayProject} projects={this.props.projectsData.projects} />
+              <Project projectIndex={this.state.projectIndex} projects={this.props.projectsData.projects}/>
             </div>
           ) : (
             null
@@ -61,7 +61,7 @@ class PortfolioContainer extends React.Component {
 // makes projects data from store accessable
 const mapStateToProps = state => {
   return({
-    projects: state.projects
+    projectsData: state.projects
   })
 }
 

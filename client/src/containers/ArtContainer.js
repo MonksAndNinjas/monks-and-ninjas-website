@@ -1,20 +1,20 @@
 import React from 'react';
 // imports art component
-import ArtArchive from '../components/ArtArchive';
-import Art from '../components/Art';
+import ArtArchive from '../components/Art/ArtArchive';
+import Art from '../components/Art/Art';
 // connects to store and allows use of functions in /actions
 import { connect } from 'react-redux';
-// styling and masonry Layout
-import './artContainer.css';
-
+// styling
+import '../css/artContainer.css';
+// handles rendering of all art elements
 class ArtContainer extends React.Component {
 
   state = {
-    photoIndex: 0        // index of post to be displayed, default is most recent post
+    photoIndex: 0        // index of photo to be displayed, default is most recent post
   }
   // should photos be displayed?
   displayPhotos = () => {
-    let photos = this.props.photos.photos
+    let photos = this.props.photosData.photos
 
     return (photos.drawings.length > 0 && photos.digital.length > 0 && photos.signature.length > 0 && photos.paintings.length > 0)
   }
@@ -40,7 +40,7 @@ class ArtContainer extends React.Component {
 
         { this.displayPhotos() ? (
             <div className="photoWrapper">
-              <ArtArchive changeStyle={this.changeStyle} displayPhoto={this.displayPhoto} photos={this.props.photos.photos} />
+              <ArtArchive changeStyle={this.changeStyle} displayPhoto={this.displayPhoto} photos={this.props.photosData.photos} />
             </div>
           ) : (
             null
@@ -52,7 +52,7 @@ class ArtContainer extends React.Component {
 // makes photos from store accessable
 const mapStateToProps = state => {
   return({
-    photos: state.photos
+    photosData: state.photos
   })
 }
 

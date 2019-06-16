@@ -1,3 +1,4 @@
+/*displays masonry layout in art page*/
 function resizeGridItem(art) {
   var grid = document.getElementsByClassName('artsWrapper')[0]
   var rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));

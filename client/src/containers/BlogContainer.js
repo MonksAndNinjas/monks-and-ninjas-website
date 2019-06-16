@@ -1,14 +1,14 @@
 import React from 'react';
 // imports blog component
-import BlogArchive from '../components/BlogArchive';
-import Blog from '../components/Blog';
+import BlogArchive from '../components/Blog/BlogArchive';
+import Blog from '../components/Blog/Blog';
 // connects to store and allows use of functions in /actions
 import { connect } from 'react-redux';
 // allows use of functions in helpers directory
 import { handleGitPosts } from '../helpers/gitPosts';
 import { dateSort } from '../helpers/dateSort.js';
 // styling
-import './blogContainer.css';
+import '../css/blogContainer.css';
 // handles all blog data
 class BlogContainer extends React.Component {
 
@@ -17,8 +17,8 @@ class BlogContainer extends React.Component {
   }
   // should blog posts be displayed?
   displayBlogPosts = () => {
-    let blogPosts = this.props.posts
-    let gitPosts = this.props.gitPosts
+    let blogPosts = this.props.postsData
+    let gitPosts = this.props.gitPostsData
     let gitPostsSize = gitPosts.gitPosts.length
 
     return (blogPosts !== undefined && gitPosts !== undefined && gitPostsSize > 0 && gitPosts.loading === false && blogPosts.loading === false)
@@ -45,8 +45,8 @@ class BlogContainer extends React.Component {
 
         { this.displayBlogPosts() ? (
             <div className="blogWrapper">
-              <BlogArchive changeStyle={this.changeStyle} displayPost={this.displayPost} posts={[...this.props.posts.posts.sort(dateSort), ...handleGitPosts(this.props.gitPosts).sort(dateSort)]} />
-              <Blog postIndex={this.state.postIndex} posts={[...this.props.posts.posts.sort(dateSort), ...handleGitPosts(this.props.gitPosts).sort(dateSort)]} />
+              <BlogArchive changeStyle={this.changeStyle} displayPost={this.displayPost} posts={[...this.props.postsData.posts.sort(dateSort), ...handleGitPosts(this.props.gitPostsData).sort(dateSort)]} />
+              <Blog postIndex={this.state.postIndex} posts={[...this.props.postsData.posts.sort(dateSort), ...handleGitPosts(this.props.gitPostsData).sort(dateSort)]} />
             </div>
           ) : (
             null
@@ -58,8 +58,8 @@ class BlogContainer extends React.Component {
 // makes blog data from store accessable
 const mapStateToProps = state => {
   return({
-    posts: state.posts,
-    gitPosts: state.gitPosts
+    postsData: state.posts,
+    gitPostsData: state.gitPosts
   })
 }
 

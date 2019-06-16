@@ -1,17 +1,15 @@
-.postWrapper {
-  float: left;
-  width: 60%;
-  border: 20px solid transparent;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+.postWrapper p img {
+  width: 70%;
+  height: 70%;
 }
-
+/* computer syntax referenced in blog is allowed to scroll */
 .postWrapper pre {
   overflow: scroll;
   background-color: lightgrey;
 }
-.postWrapper p img {
-  width: 70%;
-  height: 70%;
+.postsWrapper ul {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #d5d5d5;
 }
 
 .postsWrapper {
@@ -20,19 +18,15 @@
   padding-right: 10px;
 }
 
-.postsWrapper ul {
-  padding-bottom: 20px;
-  border-bottom: 1px solid #d5d5d5;
+.postWrapper {
+  float: left;
+  width: 60%;
+  border: 20px solid transparent;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
 .blogWrapper {
   display: flex;
-}
-
-button {
-  background-color: white;
-  border: 0;
-  text-align: left;
 }
 
 button:hover {
@@ -46,4 +40,10 @@ button.activePost {
   -moz-box-shadow: 0 0 10px grey;
   -webkit-box-shadow: 0 0 10px grey;
   box-shadow: 0 0 10px grey;
+}
+
+button {
+  background-color: white;
+  border: 0;
+  text-align: left;
 }

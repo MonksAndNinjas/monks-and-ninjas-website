@@ -13,7 +13,7 @@ import blogReducer from './reducers/blogReducer';
 import projectReducer from './reducers/projectReducer';
 import photoReducer from './reducers/photoReducer';
 // styling
-import './index.css';
+import './css/index.css';
 // imports pages for rendering routes
 import Home from './Home';
 import BlogContainer from './containers/BlogContainer';

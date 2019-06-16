@@ -1,16 +1,16 @@
 import React from 'react';
-
-import { resizeAllGridItems } from './masonryLayout.js';
-import { resizeInstance } from './masonryLayout.js';
-
+// imports functions to apply masonry layout
+import { resizeAllGridItems } from '../../helpers/masonryLayout.js';
+import { resizeInstance } from '../../helpers/masonryLayout.js';
+// allows use of imagesLoaded
 var imagesLoaded = require('imagesloaded');
-
+// renders all artwork, applies listeners, and masonry layout
 class ArtArchive extends React.Component {
-
+  // when photo is clicked a window pops up to display enlarged photo
   handleClick = event => {
     event.preventDefault();
     event.persist();
-
+    // if clicked on the correct portion of theimage
     if (event.target.attributes[1]) {
       var modalImg = document.getElementsByClassName('modal-content')[0]
       var modal = document.getElementById('myModal')
@@ -18,12 +18,12 @@ class ArtArchive extends React.Component {
 
       var category = imgData[0]
       var imgId = imgData[1]
-
+      // changes style of modal so it can show individual enlarged photo
       modalImg.setAttribute('src', this.props.photos[`${category}`][imgId].download_url)
       modal.style.display = 'block';
     }
   }
-
+  // probably will move const render categories to a different component to simplify code
   render() {
 
     const renderDigital = this.props.photos.digital.map((photo, index) => (
@@ -103,10 +103,10 @@ class ArtArchive extends React.Component {
       </div>
     )
   }
-
+  // sets listeners and initiates functions to display masonry layout
   componentDidMount() {
     var allArt = document.getElementsByClassName("item")
-
+    // makes sure all images have loaded before applying styles and retrieving information
     for(var x = 0; x < allArt.length; x++){
       imagesLoaded(allArt[x], resizeInstance);
     }

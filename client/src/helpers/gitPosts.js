@@ -1,10 +1,10 @@
 // import for decoding content from Github API
 import { Base64 } from 'js-base64';
 // helper function that compiles github data into proper format
-export const handleGitPosts = (gitPosts) => {
+export const handleGitPosts = (gitPostsData) => {
   // don't do anything if there are no gitPosts data to compile
-  if (gitPosts.loading === false && gitPosts.gitPosts.length > 0) {
-    let posts = gitPosts.gitPosts
+  if (gitPostsData.loading === false && gitPostsData.gitPosts.length > 0) {
+    let posts = gitPostsData.gitPosts
     // parses and collects all the post data
     let contentArray = posts.map((post) => {
       let data = Base64.decode(post.content)

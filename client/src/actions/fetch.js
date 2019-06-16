@@ -13,7 +13,7 @@ export function fetchBlogPosts() {
 export function fetchGitHubPosts() {
   return (dispatch) => {
     dispatch({ type: 'LOADING_GIT_POSTS' });
-    // fetches all posts within repository
+    // fetches all posts within directory
     return fetch('https://api.github.com/repos/MonksAndNinjas/MonksAndNinjas.github.io/contents/_posts', {
       accept: 'application/json',
     }).then(response => response.json())
@@ -43,11 +43,11 @@ export function fetchProjects() {
       .then(projects => dispatch({ type: 'FETCH_PROJECTS', payload: projects }))
   }
 }
-// fetches photos from GITHUB
+// fetches photos of artwork from GITHUB
 export function fetchPhotos() {
   return (dispatch) => {
     dispatch({ type: 'LOADING_PHOTOS_DATA' });
-
+    // fetches all photos within directory
     return fetch('https://api.github.com/repos/MonksAndNinjas/MonksAndNinjas.github.io/contents/img', {
       accept: 'application/json',
     }).then(response => response.json())

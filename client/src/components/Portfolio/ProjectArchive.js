@@ -1,5 +1,5 @@
 import React from 'react';
-
+// renders all projects
 class ProjectArchive extends React.Component {
 
   handleClick = event => {
@@ -30,7 +30,7 @@ class ProjectArchive extends React.Component {
       </div>
     )
   }
-
+  // designates active project, changes class to appy css to it
   componentDidMount() {
     var buttonActive = document.querySelectorAll('button')[0]
 
