@@ -47,10 +47,6 @@ class ArtArchive extends React.Component {
                 <div className="middle">
                   <div className="text">
                     <span>{this.parseTitle(photo.name)}</span>
-
-                    <br/><br/>
-
-                    <span>View</span>
                   </div>
                 </div>
               </button>

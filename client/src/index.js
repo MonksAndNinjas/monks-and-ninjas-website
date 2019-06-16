@@ -15,7 +15,7 @@ import photoReducer from './reducers/photoReducer';
 // styling
 import './css/index.css';
 // imports pages for rendering routes
-import Home from './Home';
+import HomeContainer from './containers/HomeContainer';
 import BlogContainer from './containers/BlogContainer';
 import PortfolioContainer from './containers/PortfolioContainer';
 import ArtContainer from './containers/ArtContainer';
@@ -45,7 +45,7 @@ ReactDOM.render((
     <Router>
       <React.Fragment>
       <Header />
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={HomeContainer} />
         <Route exact path="/blog" component={BlogContainer} />
         <Route exact path="/portfolio" component={PortfolioContainer} />
         <Route exact path="/art" component={ArtContainer} />

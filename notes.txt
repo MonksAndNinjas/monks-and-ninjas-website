@@ -6,11 +6,14 @@ What is this app?
 
 What am I currently working on?
 
-  => apply css for blog
-  => most recent posts in home page
-  => display list of blogs and display one full post at a time on the same page
+  => Home page layout
+  => setup anchors
+  => most recent posts in home page (3 most recent, with pictures)
+  => most recent project displayed in home page (1 project)
+  => artwork spotlight (1 piece), most recent (1 piece)
+  => About me philosophy, bio, hobbies
 
 What are some things to work on later?
 
-  => portfolio project and their live code
-  => most recent projects displayed in home page
+  => add artwork data to rails API to display alongside art modal
+  => delete unneeded npms (google-sign-in, google-picker)
