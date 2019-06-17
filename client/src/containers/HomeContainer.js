@@ -1,5 +1,7 @@
 import React from 'react';
-
+// connects to store
+import { connect } from 'react-redux';
+// renders content for it's respective anchor
 import HomeBlog from '../components/Home/HomeBlog';
 import HomePortfolio from '../components/Home/HomePortfolio';
 import HomeArt from '../components/Home/HomeArt';
@@ -17,7 +19,7 @@ class HomeContainer extends React.Component {
       top.scrollIntoView();
     }
   }
-
+  // consider moving homeHeaderWrapper and homeAnchorWrapper to their own component
   render() {
     return (
       <div className="container">
@@ -65,4 +67,13 @@ class HomeContainer extends React.Component {
   }
 }
 
-export default HomeContainer;
+const mapStateToProps = state => {
+  return({
+    postsData: state.posts,
+    gitPostsData: state.gitPosts,
+    projectsData: state.projects,
+    photosData: state.photos
+  })
+}
+
+export default connect(mapStateToProps)(HomeContainer);
