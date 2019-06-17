@@ -1,9 +1,9 @@
 import React from 'react';
 
-class HomeArt extends React.Component {
+class HomeAbout extends React.Component {
   render() {
     return (
-      <div id="homeArtWrapper">
+      <div id="homeAboutWrapper">
         <h2>Most Recent and content spotlight</h2>
         <div id="mostRecent" className="news" style={{ height: '250px', width: '250px' }}></div>
         <div id="hightlight" className="news" style={{ height: '250px', width: '250px' }}></div>
@@ -12,4 +12,4 @@ class HomeArt extends React.Component {
   }
 }
 
-export default HomeArt;
+export default HomeAbout;

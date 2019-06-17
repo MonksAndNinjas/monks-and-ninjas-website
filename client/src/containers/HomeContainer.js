@@ -42,7 +42,7 @@ class HomeContainer extends React.Component {
           <div id="portfolioAnchor">
             <h1>Project News</h1>
             <div className="content" style={{ height: '500px' }}>
-              <HomeProject />
+              <HomePortfolio />
             </div>
           </div>
 

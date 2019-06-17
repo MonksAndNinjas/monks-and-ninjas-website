@@ -35,7 +35,7 @@ div.homeButtonWrapper {
   padding-left: 2%;
 }
 
-div.homeContentWrapper {
+#homeBlogWrapper, #homePortfolioWrapper, #homeArtWrapper, #homeAboutWrapper {
   text-align:center;
   position: relative;
   left: 50%;
