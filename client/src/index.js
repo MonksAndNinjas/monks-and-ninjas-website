@@ -19,6 +19,7 @@ import HomeContainer from './containers/HomeContainer';
 import BlogContainer from './containers/BlogContainer';
 import PortfolioContainer from './containers/PortfolioContainer';
 import ArtContainer from './containers/ArtContainer';
+import ResumeContainer from './containers/ResumeContainer';
 import App from './App';
 // imports nav bar for all routes
 import NavBar from './components/NavBar';
@@ -49,6 +50,7 @@ ReactDOM.render((
         <Route exact path="/blog" component={BlogContainer} />
         <Route exact path="/portfolio" component={PortfolioContainer} />
         <Route exact path="/art" component={ArtContainer} />
+        <Route exact path="/resume" component={ResumeContainer} />
         <Footer />
         <App />
       </React.Fragment>

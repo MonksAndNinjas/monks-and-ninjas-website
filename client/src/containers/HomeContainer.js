@@ -17,11 +17,13 @@ class HomeContainer extends React.Component {
     return (
       <div className="container">
         <h1>Home Page!</h1>
-        <div className="homeButtonWrapper">
-          <button value="postAnchor" onClick={event => this.handleClick(event)}><span>Posts</span></button><br/>
-          <button value="projectAnchor" onClick={event => this.handleClick(event)}><span>Projects</span></button><br/>
-          <button value="artAnchor" onClick={event => this.handleClick(event)}><span>Art</span></button><br/>
-          <button value="aboutAnchor" onClick={event => this.handleClick(event)}><span>About Me</span></button><br/>
+        <div className="homeHeaderWrapper" style={{ height: '500px' }}>
+          <div className="homeButtonWrapper">
+            <button value="postAnchor" onClick={event => this.handleClick(event)}><span>Posts</span></button><br/>
+            <button value="projectAnchor" onClick={event => this.handleClick(event)}><span>Projects</span></button><br/>
+            <button value="artAnchor" onClick={event => this.handleClick(event)}><span>Art</span></button><br/>
+            <button value="aboutAnchor" onClick={event => this.handleClick(event)}><span>About Me</span></button><br/>
+          </div>
         </div>
 
         <div className="homeContentWrapper">
