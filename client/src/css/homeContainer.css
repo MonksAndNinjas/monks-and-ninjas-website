@@ -22,8 +22,8 @@ div.homeButtonWrapper button:hover span {
   padding-left: 15px;
 }
 
-div.homeContentWrapper .content, div.homeHeaderWrapper {
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+div.homeAnchorWrapper .content, div.homeHeaderWrapper {
+      border-bottom: 1px solid #d5d5d5;
 }
 
 div.homeButtonWrapper {
@@ -33,4 +33,18 @@ div.homeButtonWrapper {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   padding-left: 2%;
+}
+
+div.homeContentWrapper {
+  text-align:center;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+div.news {
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  margin-right: 15px;
+  display: inline-block;
 }
