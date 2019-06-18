@@ -1,10 +1,12 @@
 import React from 'react';
+// renders viewer to display resume
+import ResumeViewer from '../components/Resume/ResumeViewer';
 
 class ResumeContainer extends React.Component {
   render() {
     return (
       <div className="container">
-        <h1>Resume goes Here!!</h1>
+        <ResumeViewer />
       </div>
     )
   }

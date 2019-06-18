@@ -10,6 +10,7 @@ import { dateSort } from '../helpers/dateSort.js';
 // styling
 import '../css/blogContainer.css';
 // handles all blog data
+// decided not to use postsData in store so should be removed from here
 class BlogContainer extends React.Component {
 
   state = {
