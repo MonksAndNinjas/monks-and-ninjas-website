@@ -12,6 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+ @import url(https://fonts.googleapis.com/css?family=Droid+Sans:regular,bold);
+ @import url(prefixes.css);
 
 .textLayer {
   position: absolute;
@@ -583,6 +585,7 @@ html[dir='rtl'] #outerContainer.sidebarOpen #sidebarContainer {
 }
 
 #mainContainer {
+  background-image: linear-gradient(grey, white);
   position: absolute;
   top: 0;
   right: 0;
@@ -656,6 +659,18 @@ html[dir='rtl'] #outerContainer.sidebarOpen #viewerContainer:not(.pdfPresentatio
 
 #toolbarContainer {
   width: 100%;
+}
+
+
+#toolbarViewer {
+  background-image: -webkit-repeating-linear-gradient(left, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0)   6%, hsla(0,0%,100%, .1) 7.5%),
+    -webkit-repeating-linear-gradient(left, hsla(0,0%,  0%,0) 0%, hsla(0,0%,  0%,0)   4%, hsla(0,0%,  0%,.03) 4.5%),
+    -webkit-repeating-linear-gradient(left, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0) 1.2%, hsla(0,0%,100%,.15) 2.2%),
+
+    linear-gradient(180deg, hsl(0,0%,78%)  0%, hsl(0,0%,90%) 47%,
+    hsl(0,0%,78%) 53%,
+    hsl(0,0%,70%)100%);
+    box-shadow: 0 3px 6px grey;
 }
 
 #toolbarSidebar {

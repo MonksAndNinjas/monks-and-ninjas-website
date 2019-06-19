@@ -16,7 +16,7 @@ What am I currently working on?
 What are some things to work on later?
 
   => add artwork data to rails API to display alongside art modal
-  => delete unneeded npms (google-sign-in, google-picker)
+  => delete unneeded npms (google-sign-in, google-picker, react-pdf)
   => add now loading display funcitonality
   => remove last border css from home page
   => have projects able to link to it's blog post

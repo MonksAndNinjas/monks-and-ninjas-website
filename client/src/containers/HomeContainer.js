@@ -36,28 +36,28 @@ class HomeContainer extends React.Component {
         <div className="homeAnchorWrapper">
           <div id="postAnchor">
             <h1>Posts News</h1>
-            <div className="content" style={{ height: '500px' }}>
+            <div className="content">
               <HomeBlog />
             </div>
           </div>
 
           <div id="portfolioAnchor">
             <h1>Project News</h1>
-            <div className="content" style={{ height: '500px' }}>
+            <div className="content">
               <HomePortfolio />
             </div>
           </div>
 
           <div id="artAnchor">
             <h1>Art News</h1>
-            <div className="content" style={{ height: '500px' }}>
+            <div className="content">
               <HomeArt />
             </div>
           </div>
 
           <div id="aboutAnchor">
             <h1>About Me</h1>
-            <div className="content" style={{ height: '500px' }}>
+            <div className="content">
               <HomeAbout />
             </div>
           </div>
