@@ -22,8 +22,12 @@ What are some things to work on later?
   => have projects able to link to it's blog post
   => have correct labeling of class or id for use in css. Sometimes when I have class it should be id.
   => add ability to subscribe to blog or newsletter type thing, notificaitons for new additions
+  => add title info for art anchor
 
 bugs?
 
   => portfolio images padding change height at times. needs to be consistent
   => React youtube video in portfolio not working
+  => not easy to click on bullet to go to anchors
+  => set easing for speed of scroll to anchor
+  => navbar only displays when hovering over logo not to the right of it

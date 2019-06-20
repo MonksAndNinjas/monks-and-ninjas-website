@@ -5,8 +5,8 @@ class HomePortfolio extends React.Component {
     return (
       <div id="homePortfolioWrapper">
         <h2>Most Recent and project spotlight</h2>
-        <div id="mostRecent project" className="news" style={{ height: '250px', width: '250px' }}></div>
-        <div id="project hightlight" className="news" style={{ height: '250px', width: '250px' }}></div>
+        <div id="mostRecent project" className="news"></div>
+        <div id="project hightlight" className="news"></div>
       </div>
     )
   }

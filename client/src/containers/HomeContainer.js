@@ -19,6 +19,12 @@ class HomeContainer extends React.Component {
       top.scrollIntoView();
     }
   }
+
+  displayPhotos = () => {
+    let photos = this.props.photosData.photos
+
+    return (photos.drawings.length > 0 && photos.digital.length > 0 && photos.signature.length > 0 && photos.paintings.length > 0)
+  }
   // consider moving homeHeaderWrapper and homeAnchorWrapper to their own component
   render() {
     return (
@@ -37,21 +43,25 @@ class HomeContainer extends React.Component {
           <div id="postAnchor">
             <h1>Posts News</h1>
             <div className="content">
-              <HomeBlog />
+              <HomeBlog posts={this.props.gitPostsData} />
             </div>
           </div>
 
           <div id="portfolioAnchor">
             <h1>Project News</h1>
             <div className="content">
-              <HomePortfolio />
+              <HomePortfolio projects={this.props.projectsData} />
             </div>
           </div>
 
           <div id="artAnchor">
             <h1>Art News</h1>
             <div className="content">
-              <HomeArt />
+              { this.displayPhotos() ? (
+                  <HomeArt photos={this.props.photosData.photos} />
+                ) : (
+                  null
+              )}
             </div>
           </div>
 
