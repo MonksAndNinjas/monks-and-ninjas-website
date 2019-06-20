@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 // allows use of functions in helpers directory
 import { handleGitPosts } from '../helpers/gitPosts';
 import { dateSort } from '../helpers/dateSort.js';
+import { displayBlogPosts } from '../helpers/displayContent';
 // styling
 import '../css/blogContainer.css';
 // handles all blog data
@@ -15,14 +16,6 @@ class BlogContainer extends React.Component {
 
   state = {
     postIndex: 0        // index of post to be displayed, default is most recent post
-  }
-  // should blog posts be displayed?
-  displayBlogPosts = () => {
-    let blogPosts = this.props.postsData
-    let gitPosts = this.props.gitPostsData
-    let gitPostsSize = gitPosts.gitPosts.length
-
-    return (blogPosts !== undefined && gitPosts !== undefined && gitPostsSize > 0 && gitPosts.loading === false && blogPosts.loading === false)
   }
   // sets state of post to display
   displayPost = (index) => {
@@ -44,10 +37,10 @@ class BlogContainer extends React.Component {
       <div className="container">
         <h1>Monks and Ninjas Bizarre Coding Adventures</h1>
 
-        { this.displayBlogPosts() ? (
+        { displayBlogPosts(this.props.gitPostsData) ? (
             <div className="blogWrapper">
-              <BlogArchive changeStyle={this.changeStyle} displayPost={this.displayPost} posts={[...this.props.postsData.posts.sort(dateSort), ...handleGitPosts(this.props.gitPostsData).sort(dateSort)]} />
-              <Blog postIndex={this.state.postIndex} posts={[...this.props.postsData.posts.sort(dateSort), ...handleGitPosts(this.props.gitPostsData).sort(dateSort)]} />
+              <BlogArchive changeStyle={this.changeStyle} displayPost={this.displayPost} posts={handleGitPosts(this.props.gitPostsData).sort(dateSort)} />
+              <Blog postIndex={this.state.postIndex} posts={handleGitPosts(this.props.gitPostsData).sort(dateSort)} />
             </div>
           ) : (
             null
@@ -59,7 +52,6 @@ class BlogContainer extends React.Component {
 // makes blog data from store accessable
 const mapStateToProps = state => {
   return({
-    postsData: state.posts,
     gitPostsData: state.gitPosts
   })
 }
