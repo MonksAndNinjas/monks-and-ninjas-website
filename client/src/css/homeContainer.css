@@ -41,7 +41,7 @@ div.homeButtonWrapper {
 }
 
 div.news {
-  padding: 5px 5px 0 5px;
+  padding: 5px 9px 0 5px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   display: inline-block;
   margin: 6px 10px;
@@ -57,4 +57,70 @@ div.homeAnchorWrapper div.content {
 
 #highlight-1 img, #hightlight-2 img, #hightlight-3 img {
   max-height: 300px;
+}
+
+.postHeader {
+  width: 100%;
+  padding: 5px 2px;
+  background-image: -webkit-repeating-linear-gradient(left, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0)   6%, hsla(0,0%,100%, .1) 7.5%),
+    -webkit-repeating-linear-gradient(left, hsla(0,0%,  0%,0) 0%, hsla(0,0%,  0%,0)   4%, hsla(0,0%,  0%,.03) 4.5%),
+    -webkit-repeating-linear-gradient(left, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0) 1.2%, hsla(0,0%,100%,.15) 2.2%),
+
+    linear-gradient(180deg, hsl(0,0%,78%)  0%, hsl(0,0%,90%) 47%,
+    hsl(0,0%,78%) 53%,
+    hsl(0,0%,70%)100%);
+  box-shadow: 0 3px 6px grey;
+}
+
+.postPic {
+  width: 100%;
+  height: 150px;
+  border-style: inset;
+}
+
+.postBody {
+  height: 150px;
+  margin-top: 9px;
+}
+
+#highlight-post-1, #highlight-post-2, #highlight-post-3 {
+  width: 350px;
+  height: 350px;
+}
+
+#highlight-project-1, #highlight-project-2 {
+  width: 550px;
+  height: 350px;
+}
+
+.projectTitle {
+  width: 100%;
+  padding: 5px 2px;
+  background-image: -webkit-repeating-linear-gradient(left, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0)   6%, hsla(0,0%,100%, .1) 7.5%),
+    -webkit-repeating-linear-gradient(left, hsla(0,0%,  0%,0) 0%, hsla(0,0%,  0%,0)   4%, hsla(0,0%,  0%,.03) 4.5%),
+    -webkit-repeating-linear-gradient(left, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0) 1.2%, hsla(0,0%,100%,.15) 2.2%),
+
+    linear-gradient(180deg, hsl(0,0%,78%)  0%, hsl(0,0%,90%) 47%,
+    hsl(0,0%,78%) 53%,
+    hsl(0,0%,70%)100%);
+  box-shadow: 0 3px 6px grey;
+}
+
+.projectPic {
+  width: 40%;
+  height: 315px;
+  border-right-style: double;
+  float: left;
+}
+
+.projectDesc {
+  width: 59%;
+  height: 315px;
+  float: left;
+}
+
+#highlight-project-1:after, #highlight-project-2:after {
+  content: "";
+  display: table;
+  clear: both;
 }

@@ -25,6 +25,20 @@ class HomeContainer extends React.Component {
 
     return (photos.drawings.length > 0 && photos.digital.length > 0 && photos.signature.length > 0 && photos.paintings.length > 0)
   }
+  // should blog posts be displayed?
+  displayBlogPosts = () => {
+    let gitPosts = this.props.gitPostsData
+    let gitPostsSize = gitPosts.gitPosts.length
+
+    return (gitPosts !== undefined && gitPostsSize > 0 && gitPosts.loading === false)
+  }
+
+  displayProjects = () => {
+    let projects = this.props.projectsData
+    let projectsSize = this.props.projectsData.projects.length
+
+    return (projects !== undefined && projectsSize > 0 && projects.loading === false)
+  }
   // consider moving homeHeaderWrapper and homeAnchorWrapper to their own component
   render() {
     return (
@@ -43,14 +57,22 @@ class HomeContainer extends React.Component {
           <div id="postAnchor">
             <h1>Posts News</h1>
             <div className="content">
-              <HomeBlog posts={this.props.gitPostsData} />
+              { this.displayBlogPosts() ? (
+                  <HomeBlog posts={this.props.gitPostsData.gitPosts} />
+                ) : (
+                  null
+              )}
             </div>
           </div>
 
           <div id="portfolioAnchor">
             <h1>Project News</h1>
             <div className="content">
-              <HomePortfolio projects={this.props.projectsData} />
+              { this.displayProjects() ? (
+                  <HomePortfolio projects={this.props.projectsData.projects} />
+                ) : (
+                  null
+              )}
             </div>
           </div>
 

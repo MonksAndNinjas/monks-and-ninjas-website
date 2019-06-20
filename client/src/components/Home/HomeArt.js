@@ -10,6 +10,7 @@ class HomeArt extends React.Component {
       var x1 = generate(),
           x2 = generate(),
           x3 = generate();
+      //console.log(x1, x2, x3)
 
     return (
       <div id="homeArtWrapper">
