@@ -6,6 +6,12 @@ import HomeBlog from '../components/Home/HomeBlog';
 import HomePortfolio from '../components/Home/HomePortfolio';
 import HomeArt from '../components/Home/HomeArt';
 import HomeAbout from '../components/Home/HomeAbout';
+// functions to decide if content should be displayed
+import { displayBlogPosts } from '../helpers/displayContent';
+import { displayPhotos } from '../helpers/displayContent';
+import { displayProjects } from '../helpers/displayContent';
+// generates random number within projects array length
+import { makeRandomRange } from '../helpers/makeRandomRange';
 // styling
 import '../css/homeContainer.css'
 // renders Home page
@@ -20,24 +26,26 @@ class HomeContainer extends React.Component {
     }
   }
 
-  displayPhotos = () => {
-    let photos = this.props.photosData.photos
+  generateValues = range => {
+    var generate = makeRandomRange(range)
+    var x1 = generate(),
+        x2 = generate(),
+        x3 = generate();
 
-    return (photos.drawings.length > 0 && photos.digital.length > 0 && photos.signature.length > 0 && photos.paintings.length > 0)
-  }
-  // should blog posts be displayed?
-  displayBlogPosts = () => {
-    let gitPosts = this.props.gitPostsData
-    let gitPostsSize = gitPosts.gitPosts.length
-
-    return (gitPosts !== undefined && gitPostsSize > 0 && gitPosts.loading === false)
+    return [x1, x2, x3]
   }
 
-  displayProjects = () => {
-    let projects = this.props.projectsData
-    let projectsSize = this.props.projectsData.projects.length
+  photosLength = () => {
+    var drawingsLength = this.props.photosData.photos.drawings.length;
+    var paintingsLength = this.props.photosData.photos.paintings.length;
+    var digitalsLength = this.props.photosData.photos.digital.length;
+    var signatureLength = this.props.photosData.photos.signature.length;
 
-    return (projects !== undefined && projectsSize > 0 && projects.loading === false)
+    return drawingsLength + paintingsLength + digitalsLength + signatureLength
+  }
+
+  combinePhotos = () => {
+    return [...this.props.photosData.photos.drawings, ...this.props.photosData.photos.signature, ...this.props.photosData.photos.digital, ...this.props.photosData.photos.paintings]
   }
   // consider moving homeHeaderWrapper and homeAnchorWrapper to their own component
   render() {
@@ -57,8 +65,8 @@ class HomeContainer extends React.Component {
           <div id="postAnchor">
             <h1>Posts News</h1>
             <div className="content">
-              { this.displayBlogPosts() ? (
-                  <HomeBlog posts={this.props.gitPostsData.gitPosts} />
+              { displayBlogPosts(this.props.gitPostsData) ? (
+                  <HomeBlog posts={this.props.gitPostsData.gitPosts} indexArray={this.generateValues(this.props.gitPostsData.gitPosts.length)} />
                 ) : (
                   null
               )}
@@ -68,8 +76,8 @@ class HomeContainer extends React.Component {
           <div id="portfolioAnchor">
             <h1>Project News</h1>
             <div className="content">
-              { this.displayProjects() ? (
-                  <HomePortfolio projects={this.props.projectsData.projects} />
+              { displayProjects(this.props.projectsData) ? (
+                  <HomePortfolio projects={this.props.projectsData.projects} indexArray={this.generateValues(this.props.projectsData.projects.length)} />
                 ) : (
                   null
               )}
@@ -79,8 +87,8 @@ class HomeContainer extends React.Component {
           <div id="artAnchor">
             <h1>Art News</h1>
             <div className="content">
-              { this.displayPhotos() ? (
-                  <HomeArt photos={this.props.photosData.photos} />
+              { displayPhotos(this.props.photosData) ? (
+                  <HomeArt photosArray={this.combinePhotos()} indexArray={this.generateValues(this.photosLength())} />
                 ) : (
                   null
               )}
@@ -98,10 +106,9 @@ class HomeContainer extends React.Component {
     )
   }
 }
-
+// makes data from store accessable
 const mapStateToProps = state => {
   return({
-    postsData: state.posts,
     gitPostsData: state.gitPosts,
     projectsData: state.projects,
     photosData: state.photos

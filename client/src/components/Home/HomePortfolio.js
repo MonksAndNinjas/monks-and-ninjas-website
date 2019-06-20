@@ -1,14 +1,11 @@
 import React from 'react';
-
+// generates random number within projects array length
 import { makeRandomRange } from '../../helpers/makeRandomRange';
-
+// handles portfolio data in Home page
 class HomePortfolio extends React.Component {
   render() {
-    
-    var generate = makeRandomRange(this.props.projects.length)
-    var x1 = generate(),
-        x2 = generate();
-    //console.log(x1, x2)
+
+    console.log(this.props.indexArray)
 
     return (
       <div id="homePortfolioWrapper">

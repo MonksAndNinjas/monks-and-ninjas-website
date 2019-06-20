@@ -1,7 +1,7 @@
 import React from 'react';
-
+// generates random number within projects array length
 import { makeRandomRange } from '../../helpers/makeRandomRange';
-
+// handles blog data in Home page
 class HomeBlog extends React.Component {
   render() {
 

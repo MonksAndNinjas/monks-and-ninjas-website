@@ -9,6 +9,8 @@ import react from '../images/react.png';
 import rails from '../images/RailsJS.png';
 import sinatra from '../images/sinatra.png';
 import cli from '../images/cli.png';
+// should projects be displayed?
+import { displayProjects } from '../helpers/displayContent';
 
 import '../css/projectContainer.css';
 // handles portfolio data
@@ -18,13 +20,6 @@ class PortfolioContainer extends React.Component {
     projectImages: [cli, sinatra, rails, rails, react], // this should be moved to Rails CLI
     projectIndex: 0        // index of project to be displayed, default is most recent post
   }
-  // should project be displayed?
-  displayProjects = () => {
-    let projects = this.props.projectsData
-    let projectsSize = this.props.projectsData.projects.length
-
-    return (projects !== undefined && projectsSize > 0 && projects.loading === false)
-  }
   // sets state of post to display
   displayProject = (index) => {
     this.setState({ projectIndex: index })
@@ -33,7 +28,6 @@ class PortfolioContainer extends React.Component {
   changeStyle = (index) => {
     var buttonActive = document.querySelectorAll('button')[index]
     var buttonPrev = document.querySelectorAll('button')[this.state.projectIndex]
-
 
     if (index !== this.state.projectIndex) {
       buttonActive.setAttribute("class", "activeProject");
@@ -46,7 +40,7 @@ class PortfolioContainer extends React.Component {
       <div className="container">
         <h1>Portfolio</h1>
 
-        { this.displayProjects() ? (
+        { displayProjects(this.props.projectsData) ? (
             <div className="portfolioWrapper">
               <ProjectArchive images={this.state.projectImages} changeStyle={this.changeStyle} displayProject={this.displayProject} projects={this.props.projectsData.projects} />
               <Project projectIndex={this.state.projectIndex} projects={this.props.projectsData.projects}/>
