@@ -5,7 +5,10 @@ import { makeRandomRange } from '../../helpers/makeRandomRange';
 class HomePortfolio extends React.Component {
   render() {
 
-    console.log(this.props.indexArray)
+    const projectsArray = this.props.projects;
+    const project1 = projectsArray[this.props.indexArray[0]];
+    const project2 = projectsArray[this.props.indexArray[1]];
+    console.log(project1, project2)
 
     return (
       <div id="homePortfolioWrapper">

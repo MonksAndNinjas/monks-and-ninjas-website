@@ -7,11 +7,16 @@ What is this app?
 What am I currently working on?
 
   => Home page layout
-  => setup anchors
-  => most recent posts in home page (3 most recent, with pictures)
-  => most recent project displayed in home page (1 project)
-  => artwork spotlight (1 piece), most recent (1 piece)
   => About me philosophy, bio, hobbies
+
+  => only display up to a number of characters of blog post
+  => display title for art
+  => display pic for project
+  => pic for blog post
+  => title for blog
+  => title for project
+  => video project
+  => add button for clicking action
 
 What are some things to work on later?
 
@@ -22,7 +27,6 @@ What are some things to work on later?
   => have projects able to link to it's blog post
   => have correct labeling of class or id for use in css. Sometimes when I have class it should be id.
   => add ability to subscribe to blog or newsletter type thing, notificaitons for new additions
-  => add title info for art anchor
 
 bugs?
 

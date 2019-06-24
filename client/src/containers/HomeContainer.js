@@ -12,11 +12,11 @@ import { displayPhotos } from '../helpers/displayContent';
 import { displayProjects } from '../helpers/displayContent';
 // generates random number within projects array length
 import { makeRandomRange } from '../helpers/makeRandomRange';
+import { handleGitPosts } from '../helpers/gitPosts';
 // styling
 import '../css/homeContainer.css'
 // renders Home page
 class HomeContainer extends React.Component {
-
   handleClick = event => {
     event.preventDefault()
     let top = document.getElementById(event.target.value)
@@ -25,7 +25,7 @@ class HomeContainer extends React.Component {
       top.scrollIntoView();
     }
   }
-
+  // random values that will highlight content from specific anchor
   generateValues = range => {
     var generate = makeRandomRange(range)
     var x1 = generate(),
@@ -34,7 +34,7 @@ class HomeContainer extends React.Component {
 
     return [x1, x2, x3]
   }
-
+  // returns length of all photos combined
   photosLength = () => {
     var drawingsLength = this.props.photosData.photos.drawings.length;
     var paintingsLength = this.props.photosData.photos.paintings.length;
@@ -43,7 +43,7 @@ class HomeContainer extends React.Component {
 
     return drawingsLength + paintingsLength + digitalsLength + signatureLength
   }
-
+  // returns array of all photos combined
   combinePhotos = () => {
     return [...this.props.photosData.photos.drawings, ...this.props.photosData.photos.signature, ...this.props.photosData.photos.digital, ...this.props.photosData.photos.paintings]
   }
@@ -66,7 +66,7 @@ class HomeContainer extends React.Component {
             <h1>Posts News</h1>
             <div className="content">
               { displayBlogPosts(this.props.gitPostsData) ? (
-                  <HomeBlog posts={this.props.gitPostsData.gitPosts} indexArray={this.generateValues(this.props.gitPostsData.gitPosts.length)} />
+                  <HomeBlog posts={handleGitPosts(this.props.gitPostsData)} indexArray={this.generateValues(this.props.gitPostsData.gitPosts.length)} />
                 ) : (
                   null
               )}

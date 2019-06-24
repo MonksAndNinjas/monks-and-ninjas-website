@@ -15,9 +15,9 @@ class HomeArt extends React.Component {
       <div id="homeArtWrapper">
         <h2>Art Spotlight</h2>
 
-        <div id="highlight-1" className="news"><img src={pic1} alt="artwork" /></div>
-        <div id="hightlight-2" className="news"><img src={pic2} alt="artwork" /></div>
-        <div id="hightlight-3" className="news"><img src={pic3} alt="artwork" /></div>
+        <div id="highlight-art-1" className="news"><img src={pic1} alt="artwork" /></div>
+        <div id="highlight-art-2" className="news"><img src={pic2} alt="artwork" /></div>
+        <div id="highlight-art-3" className="news"><img src={pic3} alt="artwork" /></div>
       </div>
     )
   }
