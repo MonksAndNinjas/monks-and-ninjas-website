@@ -124,20 +124,34 @@ div.news {
 }
 
 .projectPic {
-  width: 40%;
+  width: 220px;
   height: 100%;
   border-right-style: outset;
 }
 
 .projectExpand {
   color: cornflowerblue;
-  margin: 50% 0;
+  margin: 20% 0;
+}
+
+.projectLinks {
+  margin: 20% 0;
+}
+
+.projectLinks a {
+  text-decoration: none;
+  color: cornflowerblue;
 }
 
 .projectClose {
   color: cornflowerblue;
-  margin: 20% 0 0 50%;
+  margin: 20% 0 0 48%;
   font-size: 1.5em;
+}
+
+.projectContent {
+  display: none;
+  border-left-style: inset;
 }
 
 .projectClose {
@@ -150,7 +164,7 @@ div.news {
 }
 
 .projectDesc {
-  width: 54%;
+  width: 310px;
   height: 97%;
   overflow: auto;
   padding: 10px 16px 0 16px;

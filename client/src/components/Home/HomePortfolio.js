@@ -23,13 +23,36 @@ class HomePortfolio extends React.Component {
     var removeSide = document.getElementById(removeProjectId);
     var enlargeSide = document.getElementById(enlargeProjectId);
     var enlargeButton = enlargeSide.getElementsByClassName('projectExpand')[0];
-    var closeButton = document.getElementsByClassName('projectClose')[0];
-    console.log(enlargeButton, closeButton)
+    var closeButton = enlargeSide.getElementsByClassName('projectClose')[0];
+    var extraContent = enlargeSide.getElementsByClassName('projectContent')[0];
+    console.log(extraContent)
 
     removeSide.style.display = 'none';
     enlargeButton.style.display = 'none';
     closeButton.style.display = 'block';
     enlargeSide.style.width = '1000px';
+    extraContent.style.display = 'block';
+  }
+
+  handleClose = event => {
+    event.preventDefault();
+    event.persist();
+
+    var value = event.target.value.split(' ');
+    var index = value[0];
+    var addProjectId = value[1];
+    var reduceProjectId = value[2];
+    var addSide = document.getElementById(addProjectId);
+    var reduceSide = document.getElementById(reduceProjectId);
+    var enlargeButton = reduceSide.getElementsByClassName('projectExpand')[0];
+    var closeButton = reduceSide.getElementsByClassName('projectClose')[0];
+    var extraContent = reduceSide.getElementsByClassName('projectContent')[0];
+
+    reduceSide.style.width = '550px';
+    extraContent.style.display = 'none';
+    addSide.style.display = '';
+    closeButton.style.display = 'none';
+    enlargeButton.style.display = '';
   }
 
   render() {
@@ -37,7 +60,7 @@ class HomePortfolio extends React.Component {
     const projectsArray = this.props.projects;
     const project1 = projectsArray[this.props.indexArray[0]];
     const project2 = projectsArray[this.props.indexArray[1]];
-    console.log(projectsArray)
+    console.log(project1, project2)
 
     return (
       <div id="homePortfolioWrapper">
@@ -48,10 +71,15 @@ class HomePortfolio extends React.Component {
           <div className="lower">
             <div className="projectPic">
               <img src={this.state.projectImages[this.props.indexArray[0]]} alt={project1.title} />
+              <div className="projectLinks">
+                <a href={project1.github}>GitHub</a><br/>
+                <a href={project1.video}>Demo</a><br/>
                 <button className="projectExpand" value={`${this.props.indexArray[0]} highlight-project-2 highlight-project-1`} onClick={event => this.handleClick(event)}>learn more</button>
-                <button className="projectClose">&times;</button>
+                <button className="projectClose" value={`${this.props.indexArray[0]} highlight-project-2 highlight-project-1`} onClick={event => this.handleClose(event)}>&times;</button>
+              </div>
             </div>
             <div className="projectDesc">{project1.description}</div>
+            <div className="projectContent">extra content!</div>
           </div>
         </div>
 
@@ -60,10 +88,15 @@ class HomePortfolio extends React.Component {
           <div className="lower">
             <div className="projectPic">
                 <img src={this.state.projectImages[this.props.indexArray[1]]} alt={project1.title} />
-                <button className="projectExpand" value={`${this.props.indexArray[1]} highlight-project-1 highlight-project-2`} onClick={event => this.handleClick(event)}>learn more</button>
-                <button className="projectClose">&times;</button>
+                <div className="projectLinks">
+                  <a href={project2.github}>GitHub</a><br/>
+                  <a href={project2.video}>Demo</a><br/>
+                  <button className="projectExpand" value={`${this.props.indexArray[1]} highlight-project-1 highlight-project-2`} onClick={event => this.handleClick(event)}>learn more</button>
+                  <button className="projectClose" value={`${this.props.indexArray[1]} highlight-project-1 highlight-project-2`} onClick={event => this.handleClose(event)}>&times;</button>
+                </div>
             </div>
             <div className="projectDesc">{project2.description}</div>
+            <div className="projectContent">extra content!</div>
           </div>
         </div>
       </div>
