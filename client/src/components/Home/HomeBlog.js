@@ -12,16 +12,7 @@ class HomeBlog extends React.Component {
     const post2 = postsArray[this.props.indexArray[1]];
     const post3 = postsArray[this.props.indexArray[2]];
     //console.log(post1, post2, post3)
-//  <ReactMarkdown source={renderPost.content} />
-
-/*<div id="highlight-post-1" className="news">
-  <div className="top"><p>{post1.title}</p></div>
-  <div className="postHeader">{post1.title}</div>
-  <div>
-    <div className="postPic">Pic Goes Here!</div>
-    <div className="postBody"><ReactMarkdown source={post1.content.substring(0, 300) + '...'} /></div>
-  </div>
-</div>*/
+    
     return (
       <div id="homeBlogWrapper">
         <h2>Most Recent 3 posts</h2>

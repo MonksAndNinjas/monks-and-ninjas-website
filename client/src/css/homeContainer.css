@@ -1,8 +1,10 @@
+/*////////////////////// button ///////////////////*/
+/* makes title visible when hover */
 div.homeButtonWrapper button:hover span {
   opacity: 1;
   padding-left: 15px;
 }
-
+/* changes styling of button when hover */
 .homeButtonWrapper button:hover {
   border: 2px solid black;
   box-shadow: 0px 8px 7px 0px rgba(0,0,0,0.2);
@@ -28,6 +30,8 @@ div.homeButtonWrapper {
   top: 30%;
 }
 
+/*////////////////////// anchors //////////////////*/
+/* bottom border for every anchor and header */
 div.homeAnchorWrapper .content, div.homeHeaderWrapper {
   border-bottom: 1px solid #d5d5d5;
 }
@@ -44,21 +48,19 @@ div.homeAnchorWrapper div.content {
   transform: translate(-50%, -50%);
 }
 
+/*/////////////////// news content ////////////////*/
 div.news {
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   display: inline-block;
   margin: 6px 10px;
 }
 
-
 #postAnchor, #aboutAnchor, #artAnchor, #portfolioAnchor {
   text-align: center;
 }
 
-#highlight-art-1 img, #highlight-art-2 img, #highlight-art-3 img {
-  max-height: 300px;
-}
-
+/*////////////////// posts /////////////*/
+/* top lower left right creates look of container for each post */
 .top {
   height: 40px;
   background: black;
@@ -68,7 +70,8 @@ div.news {
 
 .lower {
   display: -webkit-inline-box;
-  height: 371px;
+  height: 370px;
+  width: 100%;
 }
 
 .left {
@@ -86,7 +89,7 @@ div.news {
 .right {
   width: 290px;
 }
-
+/* post data styling */
 .postPic {
   height: 100px;
 }
@@ -96,49 +99,46 @@ div.news {
   display: table-footer-group;
 }
 
+.postBody p {
+  padding: 0 10px 0 10px;
+}
+
 #highlight-post-1, #highlight-post-2, #highlight-post-3 {
   width: 390px;
   height: 410px;
   display: inline-block;
 }
 
+/*///////////////// portfolio //////////////////////*/
 #highlight-project-1, #highlight-project-2 {
   width: 550px;
-  height: 350px;
+  height: 410px;
 }
 
 .projectTitle {
-  width: 100px;
-  padding: 5px 2px;
-  background-image: -webkit-repeating-linear-gradient(left, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0)   6%, hsla(0,0%,100%, .1) 7.5%),
-    -webkit-repeating-linear-gradient(left, hsla(0,0%,  0%,0) 0%, hsla(0,0%,  0%,0)   4%, hsla(0,0%,  0%,.03) 4.5%),
-    -webkit-repeating-linear-gradient(left, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0) 1.2%, hsla(0,0%,100%,.15) 2.2%),
-
-    linear-gradient(180deg, hsl(0,0%,78%)  0%, hsl(0,0%,90%) 47%,
-    hsl(0,0%,78%) 53%,
-    hsl(0,0%,70%)100%);
+  height: 40px;
+  background: black;
+  color: white;
+  width: 100%;
   box-shadow: 0 3px 6px grey;
 }
 
 .projectPic {
   width: 40%;
-  height: 315px;
-  border-right-style: double;
-  float: left;
+  height: 100%;
+  border-right-style: outset;
 }
 
 .projectDesc {
-  width: 59%;
-  height: 315px;
-  float: left;
+  width: 60%;
+  height: 100%;
 }
 
-#highlight-project-1:after, #highlight-project-2:after {
-  content: "";
-  display: table;
-  clear: both;
+/*//////////////// art //////////////////*/
+#highlight-art-1 img, #highlight-art-2 img, #highlight-art-3 img {
+  max-height: 300px;
 }
 
 div#highlight-art-1.news, div#highlight-art-2.news, div#highlight-art-3.news {
-  padding: 5px 9px 0 5px;
+  padding: 5px 5px 0 5px;
 }

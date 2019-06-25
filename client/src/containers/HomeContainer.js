@@ -18,9 +18,10 @@ import '../css/homeContainer.css'
 // renders Home page
 class HomeContainer extends React.Component {
   handleClick = event => {
-    event.preventDefault()
-    let top = document.getElementById(event.target.value)
-
+    event.preventDefault();
+    event.persist();
+    let top = document.getElementById(event.target.attributes[0].value)
+    
     if (top) {
       top.scrollIntoView();
     }
@@ -51,13 +52,12 @@ class HomeContainer extends React.Component {
   render() {
     return (
       <div className="container">
-        <h1>Home Page!</h1>
         <div className="homeHeaderWrapper" style={{ height: '500px' }}>
           <div className="homeButtonWrapper">
-            <button value="postAnchor" onClick={event => this.handleClick(event)}><span>Posts</span></button><br/>
-            <button value="portfolioAnchor" onClick={event => this.handleClick(event)}><span>Projects</span></button><br/>
-            <button value="artAnchor" onClick={event => this.handleClick(event)}><span>Art</span></button><br/>
-            <button value="aboutAnchor" onClick={event => this.handleClick(event)}><span>About Me</span></button><br/>
+            <button value="postAnchor" onClick={event => this.handleClick(event)}><span value="postAnchor">Posts</span></button><br/>
+            <button value="portfolioAnchor" onClick={event => this.handleClick(event)}><span value="portfolioAnchor">Projects</span></button><br/>
+            <button value="artAnchor" onClick={event => this.handleClick(event)}><span value="artAnchor">Art</span></button><br/>
+            <button value="aboutAnchor" onClick={event => this.handleClick(event)}><span value="aboutAnchor">About Me</span></button><br/>
           </div>
         </div>
 

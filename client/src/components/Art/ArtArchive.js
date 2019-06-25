@@ -10,7 +10,7 @@ class ArtArchive extends React.Component {
   handleClick = event => {
     event.preventDefault();
     event.persist();
-    // if clicked on the correct portion of theimage
+    // if clicked on the correct portion of the image
     if (event.target.attributes[1]) {
       var modalImg = document.getElementsByClassName('modal-content')[0]
       var modal = document.getElementById('artWrapper')
