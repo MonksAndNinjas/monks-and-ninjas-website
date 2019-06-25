@@ -5,22 +5,30 @@ import { makeRandomRange } from '../../helpers/makeRandomRange';
 const ReactMarkdown = require('react-markdown')
 // handles blog data in Home page
 class HomeBlog extends React.Component {
-
+  // which post to display
+  state = {
+    postIndex: '0'
+  }
+  // displays individual blog post
   handleClick = event => {
     event.preventDefault();
     event.persist();
-    // if clicked on the correct portion of the image
-      var postModal = document.getElementById('viewPostWrapper')
-      var highlight1 = document.getElementById('highlight-post-1')
-      var highlight2 = document.getElementById('highlight-post-2')
-      var highlight3 = document.getElementById('highlight-post-3')
-      // changes style of modal so it can show individual enlarged photo
-      highlight1.style.display = 'none';
-      highlight2.style.display = 'none';
-      highlight3.style.display = 'none';
-      postModal.style.display = 'block';
-    }
+    // pass value and set state
+    var value = event.target.value
 
+    this.setState({ postIndex: value })
+    // get all relevant tag data
+    var postModal = document.getElementById('viewPostWrapper')
+    var highlight1 = document.getElementById('highlight-post-1')
+    var highlight2 = document.getElementById('highlight-post-2')
+    var highlight3 = document.getElementById('highlight-post-3')
+    // changes style of modal so it can show individual enlarged photo
+    highlight1.style.display = 'none';
+    highlight2.style.display = 'none';
+    highlight3.style.display = 'none';
+    postModal.style.display = 'block';
+  }
+  // closes individual blog post
   handleClose = event => {
     event.preventDefault();
 
@@ -49,54 +57,54 @@ class HomeBlog extends React.Component {
 
         <div id="highlight-post-1" className="news">
           <div className="top">{post1.title}</div>
-
           <div className="lower">
             <div className="left"></div>
             <div className="right">
               <div className="postPic">Pic Goes Here!</div>
-
-
               <div className="postBody"><ReactMarkdown source={post1.content.substring(0, 300) + '...'} />
-                <button onClick={event => this.handleClick(event)} style={{ color: 'cornflowerblue' }}>
+                <button value={this.props.indexArray[0]} onClick={event => this.handleClick(event)} style={{ color: 'cornflowerblue' }}>
                   continue reading
                 </button>
               </div>
-
-
             </div>
-            </div>
+          </div>
         </div>
 
         <div id="highlight-post-2" className="news">
           <div className="top">{post2.title}</div>
-
           <div className="lower">
             <div className="left"></div>
             <div className="right">
               <div className="postPic">Pic Goes Here!</div>
-              <div className="postBody"><ReactMarkdown source={post2.content.substring(0, 300) + '...'} /><span style={{ color: 'cornflowerblue' }}>continue reading</span></div>
+              <div className="postBody"><ReactMarkdown source={post2.content.substring(0, 300) + '...'} />
+                <button value={this.props.indexArray[1]} onClick={event => this.handleClick(event)} style={{ color: 'cornflowerblue' }}>
+                  continue reading
+                </button>
+              </div>
             </div>
-            </div>
+          </div>
         </div>
 
         <div id="highlight-post-3" className="news">
           <div className="top">{post3.title}</div>
-
           <div className="lower">
             <div className="left"></div>
             <div className="right">
               <div className="postPic">Pic Goes Here!</div>
-              <div className="postBody"><ReactMarkdown source={post3.content.substring(0, 300) + '...'} /><span style={{ color: 'cornflowerblue' }}>continue reading</span></div>
+              <div className="postBody"><ReactMarkdown source={post3.content.substring(0, 300) + '...'} />
+                <button value={this.props.indexArray[2]} onClick={event => this.handleClick(event)} style={{ color: 'cornflowerblue' }}>
+                  continue reading
+                </button>
+              </div>
             </div>
-            </div>
+          </div>
         </div>
 
         <div id="viewPostWrapper">
         <span onClick={event => this.handleClose(event)} className="postClose">&times;</span>
           <div id="viewPost" className="post-modal">
-
             <div className="post-modal-content">
-              <ReactMarkdown source={post1.content} />
+              <ReactMarkdown source={postsArray[this.state.postIndex].title + postsArray[this.state.postIndex].content} />
             </div>
           </div>
         </div>

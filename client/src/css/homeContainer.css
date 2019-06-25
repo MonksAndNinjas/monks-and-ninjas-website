@@ -209,3 +209,36 @@ div#highlight-art-1.news, div#highlight-art-2.news, div#highlight-art-3.news {
   text-decoration: none;
   cursor: pointer;
 }
+
+#viewPostWrapper:after {
+  content: "";
+  position: absolute;
+  margin: auto 17%;
+  z-index: 1;
+  top: 65em;
+  left: 0;
+  background-image: linear-gradient(to bottom,
+                    rgba(255,255,255, 0),
+                    rgba(255,255,255, 1) 90%);
+  width: 66%;
+  height: 2.5em;
+}
+/* text and images in modal */
+.post-modal-content pre {
+  overflow: scroll;
+  background-color: lightgrey;
+}
+
+.post-modal-content p:first-of-type {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.post-modal-content p:last-of-type {
+  padding-bottom: 30px;
+}
+
+.post-modal-content p img {
+  width: 70%;
+  height: 70%;
+}
