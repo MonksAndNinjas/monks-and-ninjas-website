@@ -8,10 +8,31 @@ class HomeBlog extends React.Component {
 
   handleClick = event => {
     event.preventDefault();
+    event.persist();
+    // if clicked on the correct portion of the image
+      var postModal = document.getElementById('viewPost')
+      var highlight1 = document.getElementById('highlight-post-1')
+      var highlight2 = document.getElementById('highlight-post-2')
+      var highlight3 = document.getElementById('highlight-post-3')
+      // changes style of modal so it can show individual enlarged photo
+      highlight1.style.display = 'none';
+      highlight2.style.display = 'none';
+      highlight3.style.display = 'none';
+      postModal.style.display = 'block';
+    }
 
-    var modal = document.getElementById("viewPost");
+  handleClose = event => {
+    event.preventDefault();
 
-    modal.style.display = "none";
+    var postModal = document.getElementById('viewPost')
+    var highlight1 = document.getElementById('highlight-post-1')
+    var highlight2 = document.getElementById('highlight-post-2')
+    var highlight3 = document.getElementById('highlight-post-3')
+    // changes style of modal so it can show individual enlarged photo
+    highlight1.style.display = 'inline-block';
+    highlight2.style.display = 'inline-block';
+    highlight3.style.display = 'inline-block';
+    postModal.style.display = "none";
   }
 
   render() {
@@ -69,10 +90,6 @@ class HomeBlog extends React.Component {
             </div>
             </div>
         </div>
-
-
-
-
 
         <div id="viewPost" className="post-modal">
           <span onClick={event => this.handleClose(event)} className="close">&times;</span>
