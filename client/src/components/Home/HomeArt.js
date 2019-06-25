@@ -9,7 +9,7 @@ class HomeArt extends React.Component {
     const pic1 = photoArray[this.props.indexArray[0]].download_url;
     const pic2 = photoArray[this.props.indexArray[1]].download_url;
     const pic3 = photoArray[this.props.indexArray[2]].download_url;
-    console.log(pic1, pic2, pic3)
+    //console.log(pic1, pic2, pic3)
 
     return (
       <div id="homeArtWrapper">
