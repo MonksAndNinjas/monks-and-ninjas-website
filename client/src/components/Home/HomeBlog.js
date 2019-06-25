@@ -10,7 +10,7 @@ class HomeBlog extends React.Component {
     event.preventDefault();
     event.persist();
     // if clicked on the correct portion of the image
-      var postModal = document.getElementById('viewPost')
+      var postModal = document.getElementById('viewPostWrapper')
       var highlight1 = document.getElementById('highlight-post-1')
       var highlight2 = document.getElementById('highlight-post-2')
       var highlight3 = document.getElementById('highlight-post-3')
@@ -24,7 +24,7 @@ class HomeBlog extends React.Component {
   handleClose = event => {
     event.preventDefault();
 
-    var postModal = document.getElementById('viewPost')
+    var postModal = document.getElementById('viewPostWrapper')
     var highlight1 = document.getElementById('highlight-post-1')
     var highlight2 = document.getElementById('highlight-post-2')
     var highlight3 = document.getElementById('highlight-post-3')
@@ -91,10 +91,13 @@ class HomeBlog extends React.Component {
             </div>
         </div>
 
-        <div id="viewPost" className="post-modal">
-          <span onClick={event => this.handleClose(event)} className="close">&times;</span>
-          <div className="modal-content">
-            <ReactMarkdown source={post1.content} />
+        <div id="viewPostWrapper">
+        <span onClick={event => this.handleClose(event)} className="postClose">&times;</span>
+          <div id="viewPost" className="post-modal">
+
+            <div className="post-modal-content">
+              <ReactMarkdown source={post1.content} />
+            </div>
           </div>
         </div>
       </div>
