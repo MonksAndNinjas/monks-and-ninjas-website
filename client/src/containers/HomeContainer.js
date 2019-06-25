@@ -21,9 +21,9 @@ class HomeContainer extends React.Component {
     event.preventDefault();
     event.persist();
     let top = document.getElementById(event.target.attributes[0].value)
-    
+
     if (top) {
-      top.scrollIntoView();
+      top.scrollIntoView({ behavior: 'smooth' });
     }
   }
   // random values that will highlight content from specific anchor
