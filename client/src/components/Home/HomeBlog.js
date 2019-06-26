@@ -22,11 +22,26 @@ class HomeBlog extends React.Component {
     var highlight1 = document.getElementById('highlight-post-1')
     var highlight2 = document.getElementById('highlight-post-2')
     var highlight3 = document.getElementById('highlight-post-3')
-    // changes style of modal so it can show individual enlarged photo
-    highlight1.style.display = 'none';
-    highlight2.style.display = 'none';
-    highlight3.style.display = 'none';
-    postModal.style.display = 'block';
+
+    highlight1.addEventListener("animationend", function() {
+      highlight1.style.display = 'none';
+    })
+
+    highlight2.addEventListener("animationend", function() {
+      highlight2.style.display = 'none';
+    })
+
+    highlight3.addEventListener("animationend", function() {
+      highlight3.style.display = 'none';
+      postModal.style.display = 'block';
+    })
+
+    highlight1.setAttribute("style", "animation-name: shrink; animation-duration: 0.6s; animation-fill-mode: forwards;")
+    highlight2.setAttribute("style", "animation-name: shrink; animation-duration: 0.6s; animation-fill-mode: forwards;")
+    highlight3.setAttribute("style", "animation-name: shrink; animation-duration: 0.6s; animation-fill-mode: forwards;")
+  //  highlight2.style.display = 'none';
+  //  highlight3.style.display = 'none';
+
   }
   // closes individual blog post
   handleClose = event => {
@@ -37,6 +52,10 @@ class HomeBlog extends React.Component {
     var highlight2 = document.getElementById('highlight-post-2')
     var highlight3 = document.getElementById('highlight-post-3')
     // changes style of modal so it can show individual enlarged photo
+    highlight1.setAttribute("style", "animation-name: ''; animation-:duration: ''; animation-fill-mode: '';")
+    highlight2.setAttribute("style", "animation-name: ''; animation-:duration: ''; animation-fill-mode: '';")
+    highlight3.setAttribute("style", "animation-name: ''; animation-:duration: ''; animation-fill-mode: '';")
+
     highlight1.style.display = 'inline-block';
     highlight2.style.display = 'inline-block';
     highlight3.style.display = 'inline-block';

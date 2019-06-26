@@ -103,6 +103,11 @@ div.news {
   padding: 0 10px 0 10px;
 }
 
+@keyframes shrink {
+  from {transform:scale(1)}
+  to {transform:scale(0)}
+}
+
 #highlight-post-1, #highlight-post-2, #highlight-post-3 {
   width: 390px;
   height: 410px;
@@ -235,9 +240,11 @@ div.news {
   font-size: 1em;
   margin-left: 15px;
   height: 40px;
+  color: cornflowerblue;
 }
 
 /*///////////////////// post modal //////////////////*/
+
 
 #viewPostWrapper {
   display: none;
