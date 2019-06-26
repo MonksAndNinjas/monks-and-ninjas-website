@@ -1,6 +1,8 @@
 import React from 'react';
 // allows use of helper functions
 import { makeRandomRange } from '../../helpers/makeRandomRange';
+import { onClickAnimation } from '../../helpers/blogAnimation';
+import { onCloseAnimation } from '../../helpers/blogAnimation';
 // used for translating markdown code
 const ReactMarkdown = require('react-markdown')
 // handles blog data in Home page
@@ -9,19 +11,29 @@ class HomeBlog extends React.Component {
   state = {
     postIndex: '0'
   }
+  // gathers necessary data for animation
+  gatherVariables = () => {
+    var postModal = document.getElementById('viewPostWrapper')
+    var highlight1 = document.getElementById('highlight-post-1')
+    var highlight2 = document.getElementById('highlight-post-2')
+    var highlight3 = document.getElementById('highlight-post-3')
+
+    return [postModal, highlight1, highlight2, highlight3]
+  }
   // displays individual blog post
   handleClick = event => {
     event.preventDefault();
     event.persist();
-    // pass value and set state
-    var value = event.target.value
-
-    this.setState({ postIndex: value })
-    // get all relevant tag data
+    // set state
+    this.setState({ postIndex: event.target.value })
+    // apply animation
+    onClickAnimation(this.gatherVariables());
   }
   // closes individual blog post
   handleClose = event => {
     event.preventDefault();
+    // apply animation
+    onCloseAnimation(this.gatherVariables());
   }
 
   render() {

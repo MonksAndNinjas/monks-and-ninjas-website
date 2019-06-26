@@ -116,12 +116,14 @@ div.news {
 .run-animation {
   animation-name: shrink;
   animation-duration: 0.6s;
+  animation-direction: normal;
   animation-fill-mode: forwards;
 }
 
 .reverse-animation {
   animation-name: enlarge;
   animation-duration: 0.6s;
+  animation-direction: normal;
   animation-fill-mode: forwards;
 }
 

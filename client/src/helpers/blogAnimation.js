@@ -1,65 +1,71 @@
+// array = [postModal, highlight1, highlight2, highlight3]
 // call backs for toggling display
-// call back function 1 from
+// call back function 1 from onClickAnimation
 function cb (el) {
-  el.style.display = 'none';
+  setTimeout(function() {
+    el.style.display = 'none';
+  }, 600); // .6 seconds
 }
-// call back function 2 from
-function cb2 (el, el2) => {
-  el.style.display = 'none';
-  el2.classList.add("reverse-animation");
-  el2.style.display = 'block';
+// call back function 2 from onClickAnimation
+function cb2 (el, el2) {
+  setTimeout(function() {
+    el.style.display = 'none';
+    el2.classList.add("reverse-animation");
+    el2.style.display = 'block';
+  }, 600); // .6 seconds
 }
-// call back function 3 from
-function cb3 (el, el2, el3, el4) => {
-  el.style.display = 'none';
-  el2.style.display = 'inline-block';
-  el3.style.display = 'inline-block';
-  el4.style.display = 'inline-block';
+// call back function 3 from onCloseAnimation
+function cb3 (array) {
+  setTimeout(function() {
+    array[0].style.display = 'none';
+    array[1].style.display = 'inline-block';
+    array[2].style.display = 'inline-block';
+    array[3].style.display = 'inline-block';
 
-  what2.classList.add("reverse-animation");
-  what3.classList.add("reverse-animation");
-  what4.classList.add("reverse-animation");
+    array[1].classList.add("reverse-animation");
+    array[2].classList.add("reverse-animation");
+    array[3].classList.add("reverse-animation");
+  }, 600); // .6 seconds
+}
+//remove animation class
+function removeClass (array, class1, class2) {
+  // remove animation class
+  array[0].classList.remove(class1);
+  array[1].classList.remove(class2);
+  array[2].classList.remove(class2);
+  array[3].classList.remove(class2);
+  // triggering reflow so animation can start again
+  void array[0].offsetWidth;
+  void array[1].offsetWidth;
+  void array[2].offsetWidth;
+  void array[3].offsetWidth;
 }
 // animation functions
 // displays single post and removes highlight posts
-export const onClickAnimation = () =>  {
-  var postModal = document.getElementById('viewPostWrapper')
-  var highlight1 = document.getElementById('highlight-post-1')
-  var highlight2 = document.getElementById('highlight-post-2')
-  var highlight3 = document.getElementById('highlight-post-3')
+export const onClickAnimation = (array) =>  {
   // remove listener
-  postModal.removeEventListener("animationend", this.a4)
+  array[0].removeEventListener("animationend", cb3)
+
+  removeClass(array, "run-animation", "reverse-animation")
   // add listeners
-  highlight1.addEventListener("animationend", cb(highlight1))
-  highlight2.addEventListener("animationend", cb(highlight2))
-  highlight3.addEventListener("animationend", cb2(highlight3, postModal))
+  array[1].addEventListener("animationend", cb(array[1]))
+  array[2].addEventListener("animationend", cb(array[2]))
+  array[3].addEventListener("animationend", cb2(array[3], array[0]))
   // add animation
-  highlight1.classList.add("run-animation")
-  highlight2.classList.add("run-animation")
-  highlight3.classList.add("run-animation")
+  array[1].classList.add("run-animation")
+  array[2].classList.add("run-animation")
+  array[3].classList.add("run-animation")
 }
 // displays highlight posts and removes single post
-export const onCloseAnimation = () => {
-  var postModal = document.getElementById('viewPostWrapper')
-  var highlight1 = document.getElementById('highlight-post-1')
-  var highlight2 = document.getElementById('highlight-post-2')
-  var highlight3 = document.getElementById('highlight-post-3')
+export const onCloseAnimation = (array) => {
   // remove listeners
-  highlight1.removeEventListener("animationend", this.a1)
-  highlight2.removeEventListener("animationend", this.a1)
-  highlight3.removeEventListener("animationend", this.a2)
+  array[1].removeEventListener("animationend", cb)
+  array[2].removeEventListener("animationend", cb)
+  array[3].removeEventListener("animationend", cb2)
+
+  removeClass(array, "reverse-animation", "run-animation")
   // add listener
-  postModal.classList.remove("reverse-animation")
-  highlight1.classList.remove("run-animation")
-  highlight2.classList.remove("run-animation")
-  highlight3.classList.remove("run-animation")
-  // triggering reflow so animation can start again
-  void postModal.offsetWidth;
-  void highlight1.offsetWidth;
-  void highlight2.offsetWidth;
-  void highlight3.offsetWidth;
+  array[0].addEventListener("animationend", cb3(array))
 
-  postModal.addEventListener("animationend", cb3(postModal, highlight1, highlight2, highlight3))
-
-  postModal.classList.add("run-animation")
+  array[0].classList.add("run-animation")
 }
