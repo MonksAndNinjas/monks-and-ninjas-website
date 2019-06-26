@@ -1,7 +1,8 @@
 import React from 'react';
 // imports functions to apply masonry layout
-import { resizeAllGridItems } from '../../helpers/masonryLayout.js';
-import { resizeInstance } from '../../helpers/masonryLayout.js';
+import { resizeAllGridItems } from '../../helpers/masonryLayout';
+import { resizeInstance } from '../../helpers/masonryLayout';
+import { parseTitle } from '../../helpers/parseTitle';
 // allows use of imagesLoaded
 var imagesLoaded = require('imagesloaded');
 // renders Art from category passed down from ArtArchive.js
@@ -22,22 +23,6 @@ class ArtArchive extends React.Component {
     }
   }
 
-  parseTitle = titleData => {
-    // string array
-    let sArray = titleData.split("-");
-    let sLength = sArray.length
-    // last word of string isolated and .jpg removed
-    let lastWord = sArray[sLength - 1].split(".jpg")[0]
-    // string without the last word
-    let partialString = sArray.slice(0, sLength - 1).join(" ")
-    // combined strings
-    let titleRaw = `${partialString} ${lastWord}`
-    // capitalizes first letter of every word
-    let title = titleRaw.toLowerCase().split(' ').map((s) => s.charAt(0).toUpperCase() + s.substring(1)).join(' ');
-
-    return title
-  }
-
   render() {
 
     const renderCategory = this.props.category.map((photo, index) => (
@@ -46,7 +31,7 @@ class ArtArchive extends React.Component {
                 <img id={index} value={`${this.props.type}-${index}`} src={photo.download_url} alt={photo.name} />
                 <div className="middle">
                   <div className="text">
-                    <span>{this.parseTitle(photo.name)}</span>
+                    <span>{parseTitle(photo.name)}</span>
                   </div>
                 </div>
               </button>

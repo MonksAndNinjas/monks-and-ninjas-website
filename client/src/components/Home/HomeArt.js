@@ -3,6 +3,7 @@ import React from 'react';
 import { makeRandomRange } from '../../helpers/makeRandomRange';
 import { onClickAnimation } from '../../helpers/artAnimation';
 import { onCloseAnimation } from '../../helpers/artAnimation';
+import { parseTitle } from '../../helpers/parseTitle';
 // handles art data in Home page
 class HomeArt extends React.Component {
   state = {
@@ -14,48 +15,15 @@ class HomeArt extends React.Component {
     event.persist();
 
     var value = event.target.attributes[0].value;
-
     this.setState({ artIndex: value })
 
-    var removeImg1 = document.getElementById('highlight-art-1');
-    var removeImg2 = document.getElementById('highlight-art-2');
-    var removeImg3 = document.getElementById('highlight-art-3');
-    var artContent = document.getElementById('viewArtWrapper')
-
-    removeImg1.style.display = 'none';
-    removeImg2.style.display = 'none';
-    removeImg3.style.display = 'none';
-    artContent.style.display = 'inline-flex';
+    onClickAnimation();
   }
   // closes individual blog post
   handleClose = event => {
     event.preventDefault();
 
-    var removeImg1 = document.getElementById('highlight-art-1');
-    var removeImg2 = document.getElementById('highlight-art-2');
-    var removeImg3 = document.getElementById('highlight-art-3');
-    var artContent = document.getElementById('viewArtWrapper')
-
-    removeImg1.style.display = 'inline-table';
-    removeImg2.style.display = 'inline-table';
-    removeImg3.style.display = 'inline-table';
-    artContent.style.display = 'none';
-  }
-
-  parseTitle = titleData => {
-    // string array
-    let sArray = titleData.split("-");
-    let sLength = sArray.length
-    // last word of string isolated and .jpg removed
-    let lastWord = sArray[sLength - 1].split(".jpg")[0]
-    // string without the last word
-    let partialString = sArray.slice(0, sLength - 1).join(" ")
-    // combined strings
-    let titleRaw = `${partialString} ${lastWord}`
-    // capitalizes first letter of every word
-    let title = titleRaw.toLowerCase().split(' ').map((s) => s.charAt(0).toUpperCase() + s.substring(1)).join(' ');
-
-    return title
+    onCloseAnimation();
   }
 
   render() {
@@ -75,7 +43,7 @@ class HomeArt extends React.Component {
             <img value={this.props.indexArray[0]} src={pic1.download_url} alt="artwork" />
             <div className="middleArt">
               <div className="textArt">
-                <span>{this.parseTitle(pic1.name)}</span>
+                <span>{parseTitle(pic1.name)}</span>
               </div>
             </div>
           </button>
@@ -86,7 +54,7 @@ class HomeArt extends React.Component {
             <img value={this.props.indexArray[1]} src={pic2.download_url} alt="artwork" />
             <div className="middleArt">
               <div className="textArt">
-                <span>{this.parseTitle(pic2.name)}</span>
+                <span>{parseTitle(pic2.name)}</span>
               </div>
             </div>
           </button>
@@ -97,7 +65,7 @@ class HomeArt extends React.Component {
             <img value={this.props.indexArray[2]} src={pic3.download_url} alt="artwork" />
             <div className="middleArt">
               <div className="textArt">
-                <span>{this.parseTitle(pic3.name)}</span>
+                <span>{parseTitle(pic3.name)}</span>
               </div>
             </div>
           </button>
@@ -106,7 +74,7 @@ class HomeArt extends React.Component {
         <div id="viewArtWrapper">
           <img src={this.props.photosArray[this.state.artIndex].download_url} alt={this.props.photosArray[this.state.artIndex].name} />
           <button className="artClose" onClick={event => this.handleClose(event)}>&times;</button>
-          <div id="viewArt"><p>Title: {this.parseTitle(this.props.photosArray[this.state.artIndex].name)}</p></div>
+          <div id="viewArt"><p>Title: {parseTitle(this.props.photosArray[this.state.artIndex].name)}</p></div>
         </div>
       </div>
     )
