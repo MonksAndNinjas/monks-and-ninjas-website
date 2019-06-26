@@ -104,8 +104,25 @@ div.news {
 }
 
 @keyframes shrink {
-  from {transform:scale(1)}
-  to {transform:scale(0)}
+  from {transform: scale(1)}
+  to {transform: scale(0)}
+}
+
+@keyframes enlarge {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+.run-animation {
+  animation-name: shrink;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+}
+
+.reverse-animation {
+  animation-name: enlarge;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
 }
 
 #highlight-post-1, #highlight-post-2, #highlight-post-3 {
