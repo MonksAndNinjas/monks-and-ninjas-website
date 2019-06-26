@@ -25,7 +25,6 @@ class HomePortfolio extends React.Component {
     var enlargeButton = enlargeSide.getElementsByClassName('projectExpand')[0];
     var closeButton = enlargeSide.getElementsByClassName('projectClose')[0];
     var extraContent = enlargeSide.getElementsByClassName('projectContent')[0];
-    console.log(extraContent)
 
     removeSide.style.display = 'none';
     enlargeButton.style.display = 'none';
@@ -60,7 +59,7 @@ class HomePortfolio extends React.Component {
     const projectsArray = this.props.projects;
     const project1 = projectsArray[this.props.indexArray[0]];
     const project2 = projectsArray[this.props.indexArray[1]];
-    console.log(project1, project2)
+    //console.log(project1, project2)
 
     return (
       <div id="homePortfolioWrapper">

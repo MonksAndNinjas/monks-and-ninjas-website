@@ -3,6 +3,42 @@ import React from 'react';
 import { makeRandomRange } from '../../helpers/makeRandomRange';
 // handles art data in Home page
 class HomeArt extends React.Component {
+  state = {
+    artIndex: '0'
+  }
+
+  handleClick = event => {
+    event.preventDefault();
+    event.persist();
+
+    var value = event.target.attributes[0].value;
+
+    this.setState({ artIndex: value })
+
+    var removeImg1 = document.getElementById('highlight-art-1');
+    var removeImg2 = document.getElementById('highlight-art-2');
+    var removeImg3 = document.getElementById('highlight-art-3');
+    var artContent = document.getElementById('viewArtWrapper')
+
+    removeImg1.style.display = 'none';
+    removeImg2.style.display = 'none';
+    removeImg3.style.display = 'none';
+    artContent.style.display = 'inline-flex';
+  }
+  // closes individual blog post
+  handleClose = event => {
+    event.preventDefault();
+
+    var removeImg1 = document.getElementById('highlight-art-1');
+    var removeImg2 = document.getElementById('highlight-art-2');
+    var removeImg3 = document.getElementById('highlight-art-3');
+    var artContent = document.getElementById('viewArtWrapper')
+
+    removeImg1.style.display = 'inline-table';
+    removeImg2.style.display = 'inline-table';
+    removeImg3.style.display = 'inline-table';
+    artContent.style.display = 'none';
+  }
 
   parseTitle = titleData => {
     // string array
@@ -33,8 +69,8 @@ class HomeArt extends React.Component {
         <h2>Art Spotlight</h2>
 
         <div id="highlight-art-1" className="news">
-          <button>
-            <img src={pic1.download_url} alt="artwork" />
+          <button onClick={event => this.handleClick(event)}>
+            <img value={this.props.indexArray[0]} src={pic1.download_url} alt="artwork" />
             <div className="middleArt">
               <div className="textArt">
                 <span>{this.parseTitle(pic1.name)}</span>
@@ -44,8 +80,8 @@ class HomeArt extends React.Component {
         </div>
 
         <div id="highlight-art-2" className="news">
-          <button>
-            <img src={pic2.download_url} alt="artwork" />
+          <button onClick={event => this.handleClick(event)}>
+            <img value={this.props.indexArray[1]} src={pic2.download_url} alt="artwork" />
             <div className="middleArt">
               <div className="textArt">
                 <span>{this.parseTitle(pic2.name)}</span>
@@ -55,8 +91,8 @@ class HomeArt extends React.Component {
         </div>
 
         <div id="highlight-art-3" className="news">
-          <button>
-            <img src={pic3.download_url} alt="artwork" />
+          <button onClick={event => this.handleClick(event)}>
+            <img value={this.props.indexArray[2]} src={pic3.download_url} alt="artwork" />
             <div className="middleArt">
               <div className="textArt">
                 <span>{this.parseTitle(pic3.name)}</span>
@@ -64,19 +100,15 @@ class HomeArt extends React.Component {
             </div>
           </button>
         </div>
+
+        <div id="viewArtWrapper">
+          <img src={this.props.photosArray[this.state.artIndex].download_url} alt={this.props.photosArray[this.state.artIndex].name} />
+          <button className="artClose" onClick={event => this.handleClose(event)}>&times;</button>
+          <div id="viewArt"><p>Title: {this.parseTitle(this.props.photosArray[this.state.artIndex].name)}</p></div>
+        </div>
       </div>
     )
   }
 }
 
 export default HomeArt;
-
-
-/*  <button onClick={event => this.handleClick(event)}>
-    <img id={index} value={`${this.props.type}-${index}`} src={photo.download_url} alt={photo.name} />
-    <div className="middle">
-      <div className="text">
-        <span>{this.parseTitle(photo.name)}</span>
-      </div>
-    </div>
-  </button>*/
