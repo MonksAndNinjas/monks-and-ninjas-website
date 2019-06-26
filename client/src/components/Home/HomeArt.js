@@ -1,6 +1,8 @@
 import React from 'react';
 // generates random number within projects array length
 import { makeRandomRange } from '../../helpers/makeRandomRange';
+import { onClickAnimation } from '../../helpers/artAnimation';
+import { onCloseAnimation } from '../../helpers/artAnimation';
 // handles art data in Home page
 class HomeArt extends React.Component {
   state = {
