@@ -9,50 +9,6 @@ class HomeBlog extends React.Component {
   state = {
     postIndex: '0'
   }
-
-  a1 = what => {
-    what.style.display = 'none';
-  }
-
-  a2 = (what, what2) => {
-    what.style.display = 'none';
-    what2.classList.add("reverse-animation")
-    what2.style.display = 'block';
-  }
-
-  a3 = (what, what2, what3, what4) => {
-    what.style.display = 'none';
-
-    what2.classList.add("reverse-animation")
-    what3.classList.add("reverse-animation")
-    what4.classList.add("reverse-animation")
-
-    what2.style.display = 'inline-block';
-    what3.style.display = 'inline-block';
-    what4.style.display = 'inline-block';
-
-    what.classList.remove("run-animation")
-    what2.classList.remove("reverse-animation")
-    what3.classList.remove("reverse-animation")
-    what4.classList.remove("reverse-animation")
-
-    void what.offsetWidth;
-    void what2.offsetWidth;
-    void what3.offsetWidth;
-    void what4.offsetWidth;
-  }
-
-  a4 = (what, what2, what3, what4) => {
-    what.style.display = 'none';
-
-    what2.style.display = 'inline-block';
-    what3.style.display = 'inline-block';
-    what4.style.display = 'inline-block';
-
-    what2.classList.add("reverse-animation");
-    what3.classList.add("reverse-animation");
-    what4.classList.add("reverse-animation");
-  }
   // displays individual blog post
   handleClick = event => {
     event.preventDefault();
@@ -62,48 +18,10 @@ class HomeBlog extends React.Component {
 
     this.setState({ postIndex: value })
     // get all relevant tag data
-    var postModal = document.getElementById('viewPostWrapper')
-    var highlight1 = document.getElementById('highlight-post-1')
-    var highlight2 = document.getElementById('highlight-post-2')
-    var highlight3 = document.getElementById('highlight-post-3')
-
-    postModal.removeEventListener("animationend", this.a4)
-
-    highlight1.addEventListener("animationend", this.a1(highlight1))
-    highlight2.addEventListener("animationend", this.a1(highlight2))
-    highlight3.addEventListener("animationend", this.a2(highlight3, postModal))
-
-    highlight1.classList.add("run-animation")
-    highlight2.classList.add("run-animation")
-    highlight3.classList.add("run-animation")
   }
   // closes individual blog post
   handleClose = event => {
     event.preventDefault();
-
-    var postModal = document.getElementById('viewPostWrapper')
-    var highlight1 = document.getElementById('highlight-post-1')
-    var highlight2 = document.getElementById('highlight-post-2')
-    var highlight3 = document.getElementById('highlight-post-3')
-    var postClose = document.getElementById('postClose')
-
-    highlight1.removeEventListener("animationend", this.a1)
-    highlight2.removeEventListener("animationend", this.a1)
-    highlight3.removeEventListener("animationend", this.a2)
-
-    postModal.classList.remove("reverse-animation")
-    highlight1.classList.remove("run-animation")
-    highlight2.classList.remove("run-animation")
-    highlight3.classList.remove("run-animation")
-
-    void postModal.offsetWidth;
-    void highlight1.offsetWidth;
-    void highlight2.offsetWidth;
-    void highlight3.offsetWidth;
-
-    postModal.addEventListener("animationend", this.a4(postModal, highlight1, highlight2, highlight3))
-
-    postModal.classList.add("run-animation")
   }
 
   render() {
