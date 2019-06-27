@@ -40,12 +40,12 @@ div.homeAnchorWrapper div.content {
   min-height: 500px;
 }
 
-#homeBlogWrapper, #homePortfolioWrapper, #homeArtWrapper, #homeAboutWrapper {
+#homeBlogWrapper, #homePortfolioWrapper, #homeAboutWrapper {
   display: contents;
-  position: relative;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+/*  position: relative;*/
+  /*left: 50%;*/
+  /*top: 50%;*/
+  /*transform: translate(-50%, -50%);*/
 }
 
 /*/////////////////// news content ////////////////*/
@@ -103,25 +103,25 @@ div.news {
   padding: 0 10px 0 10px;
 }
 
-@keyframes shrink {
+@keyframes postShrink {
   from {transform: scale(1)}
   to {transform: scale(0)}
 }
 
-@keyframes enlarge {
+@keyframes postEnlarge {
   from {transform: scale(0)}
   to {transform: scale(1)}
 }
 
 .run-animation {
-  animation-name: shrink;
+  animation-name: postShrink;
   animation-duration: 0.6s;
   animation-direction: normal;
   animation-fill-mode: forwards;
 }
 
 .reverse-animation {
-  animation-name: enlarge;
+  animation-name: postEnlarge;
   animation-duration: 0.6s;
   animation-direction: normal;
   animation-fill-mode: forwards;
@@ -137,13 +137,20 @@ div.news {
 #highlight-project-1, #highlight-project-2 {
   width: 550px;
   height: 410px;
+  /*position: relative;*/
+}
+
+.projectlower {
+  display: -webkit-inline-box;
+  height: 370px;
+/*width: 100%;*/
 }
 
 .projectTitle {
   height: 40px;
   background: black;
   color: white;
-  width: 100%;
+/*  width: 100%;*/
   box-shadow: 0 3px 6px grey;
 }
 
@@ -167,12 +174,6 @@ div.news {
   color: cornflowerblue;
 }
 
-.projectClose {
-  color: cornflowerblue;
-  margin: 20% 0 0 48%;
-  font-size: 1.5em;
-}
-
 .projectContent {
   display: none;
   border-left-style: inset;
@@ -180,6 +181,9 @@ div.news {
 
 .projectClose {
   display: none;
+  color: cornflowerblue;
+  margin: 20% 0 0 48%;
+  font-size: 1.5em;
 }
 
 .projectPic img {
@@ -188,10 +192,34 @@ div.news {
 }
 
 .projectDesc {
-  width: 310px;
-  height: 97%;
+  width: 50%;
+/*  height: 97%;*/
   overflow: auto;
   padding: 10px 16px 0 16px;
+}
+
+@keyframes portfolioEnlarge {
+  from {width: 550px}
+  to {width: 1000px}
+}
+
+@keyframes portfolioShrink {
+  from {transform: scale(1); width: 550px;}
+  to {transform: scale(0); width: 0px}
+}
+
+.enlarge-portfolio-animation {
+  animation-name: portfolioEnlarge;
+  animation-duration: 2s;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
+
+.shrink-portfolio-animation {
+  animation-name: portfolioShrink;
+  animation-duration: .6s;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
 }
 
 /*//////////////// art //////////////////*/

@@ -13,21 +13,33 @@ class HomePortfolio extends React.Component {
   state = {
     projectImages: [cli, sinatra, rails, rails, react], // this should be moved to Rails CLI
   }
+  // gathers necessary data fro animation
+  gatherVariables = value => {
+    var data = value.split(' ');
+    var firstSide = document.getElementById(data[0]);
+    var secondSide = document.getElementById(data[1]);
+    var extraContent = secondSide.getElementsByClassName('projectContent')[0];
+    var title = firstSide.getElementsByClassName('projectTitle')[0];
+    var enlargeButton = secondSide.getElementsByClassName('projectExpand')[0];
+    var closeButton = secondSide.getElementsByClassName('projectClose')[0];
+    var image = firstSide.getElementsByClassName('projectPic')[0];
+    var desc = firstSide.getElementsByClassName('projectDesc')[0];
+
+    return [firstSide, secondSide, extraContent, title, enlargeButton, closeButton, image, desc];
+  }
 
   handleClick = event => {
     event.preventDefault();
     event.persist();
 
-    var value = event.target.value.split(' ');
-    onClickAnimation(value);
+    onClickAnimation(this.gatherVariables(event.target.value));
   }
 
   handleClose = event => {
     event.preventDefault();
     event.persist();
 
-    var value = event.target.value.split(' ');
-    onCloseAnimation(value);
+    onCloseAnimation(this.gatherVariables(event.target.value));
   }
 
   render() {
@@ -43,14 +55,14 @@ class HomePortfolio extends React.Component {
 
         <div id="highlight-project-1" className="news">
           <div className="projectTitle">{project1.title}</div>
-          <div className="lower">
+          <div className="projectlower">
             <div className="projectPic">
               <img src={this.state.projectImages[this.props.indexArray[0]]} alt={project1.title} />
               <div className="projectLinks">
                 <a href={project1.github}>GitHub</a><br/>
                 <a href={project1.video}>Demo</a><br/>
-                <button className="projectExpand" value={`${this.props.indexArray[0]} highlight-project-2 highlight-project-1`} onClick={event => this.handleClick(event)}>learn more</button>
-                <button className="projectClose" value={`${this.props.indexArray[0]} highlight-project-2 highlight-project-1`} onClick={event => this.handleClose(event)}>&times;</button>
+                <button className="projectExpand" value="highlight-project-2 highlight-project-1" onClick={event => this.handleClick(event)}>learn more</button>
+                <button className="projectClose" value="highlight-project-2 highlight-project-1" onClick={event => this.handleClose(event)}>&times;</button>
               </div>
             </div>
             <div className="projectDesc">{project1.description}</div>
@@ -60,14 +72,14 @@ class HomePortfolio extends React.Component {
 
         <div id="highlight-project-2" className="news">
           <div className="projectTitle">{project2.title}</div>
-          <div className="lower">
+          <div className="projectlower">
             <div className="projectPic">
                 <img src={this.state.projectImages[this.props.indexArray[1]]} alt={project1.title} />
                 <div className="projectLinks">
                   <a href={project2.github}>GitHub</a><br/>
                   <a href={project2.video}>Demo</a><br/>
-                  <button className="projectExpand" value={`${this.props.indexArray[1]} highlight-project-1 highlight-project-2`} onClick={event => this.handleClick(event)}>learn more</button>
-                  <button className="projectClose" value={`${this.props.indexArray[1]} highlight-project-1 highlight-project-2`} onClick={event => this.handleClose(event)}>&times;</button>
+                  <button className="projectExpand" value="highlight-project-1 highlight-project-2" onClick={event => this.handleClick(event)}>learn more</button>
+                  <button className="projectClose" value="highlight-project-1 highlight-project-2" onClick={event => this.handleClose(event)}>&times;</button>
                 </div>
             </div>
             <div className="projectDesc">{project2.description}</div>
