@@ -3,6 +3,8 @@ import React from 'react';
 import { makeRandomRange } from '../../helpers/makeRandomRange';
 import { onClickAnimation } from '../../helpers/blogAnimation';
 import { onCloseAnimation } from '../../helpers/blogAnimation';
+// styling
+import '../../css/homeBlog.css';
 // used for translating markdown code
 const ReactMarkdown = require('react-markdown')
 // handles blog data in Home page

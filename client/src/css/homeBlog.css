@@ -1,0 +1,73 @@
+/*////////////////// posts /////////////*/
+/* top lower left right creates look of container for each post */
+.top {
+  height: 40px;
+  background: black;
+  color: white;
+  box-shadow: 0 3px 6px grey;
+}
+
+.lower {
+  display: -webkit-inline-box;
+  height: 370px;
+  width: 100%;
+}
+
+.left {
+  width: 100px;
+  background-image: -webkit-repeating-linear-gradient(left, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0)   6%, hsla(0,0%,100%, .1) 7.5%),
+    -webkit-repeating-linear-gradient(left, hsla(0,0%,  0%,0) 0%, hsla(0,0%,  0%,0)   4%, hsla(0,0%,  0%,.03) 4.5%),
+    -webkit-repeating-linear-gradient(left, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0) 1.2%, hsla(0,0%,100%,.15) 2.2%),
+
+    linear-gradient(180deg, hsl(0,0%,78%)  0%, hsl(0,0%,90%) 47%,
+    hsl(0,0%,78%) 53%,
+    hsl(0,0%,70%)100%);
+  box-shadow: 0 3px 6px grey;
+}
+
+.right {
+  width: 290px;
+}
+/* post data styling */
+.postPic {
+  height: 100px;
+}
+
+.postBody {
+  height: 271px;
+  display: table-footer-group;
+}
+
+.postBody p {
+  padding: 0 10px 0 10px;
+}
+
+@keyframes postShrink {
+  from {transform: scale(1)}
+  to {transform: scale(0)}
+}
+
+@keyframes postEnlarge {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+.run-animation {
+  animation-name: postShrink;
+  animation-duration: 0.6s;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
+
+.reverse-animation {
+  animation-name: postEnlarge;
+  animation-duration: 0.6s;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
+
+#highlight-post-1, #highlight-post-2, #highlight-post-3 {
+  width: 390px;
+  height: 410px;
+  display: inline-block;
+}
