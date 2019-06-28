@@ -8,6 +8,8 @@ import react from '../../images/react.png';
 import rails from '../../images/RailsJS.png';
 import sinatra from '../../images/sinatra.png';
 import cli from '../../images/cli.png';
+// styling
+import '../../css/homePortfolio.css';
 // handles portfolio data in Home page
 class HomePortfolio extends React.Component {
   state = {
