@@ -57,7 +57,7 @@ class HomeArt extends React.Component {
             <img value={`${this.props.indexArray[0]}`} src={pic1.download_url} alt="artwork" />
             <div className="middleArt">
               <div className="textArt">
-                <span>{parseTitle(pic1.name)}</span>
+                <span>{parseTitle(pic1.name)[0]}</span>
               </div>
             </div>
           </button>
@@ -68,7 +68,7 @@ class HomeArt extends React.Component {
             <img value={`${this.props.indexArray[1]}`} src={pic2.download_url} alt="artwork" />
             <div className="middleArt">
               <div className="textArt">
-                <span>{parseTitle(pic2.name)}</span>
+                <span>{parseTitle(pic2.name)[0]}</span>
               </div>
             </div>
           </button>
@@ -79,7 +79,7 @@ class HomeArt extends React.Component {
             <img value={`${this.props.indexArray[2]}`} src={pic3.download_url} alt="artwork" />
             <div className="middleArt">
               <div className="textArt">
-                <span>{parseTitle(pic3.name)}</span>
+                <span>{parseTitle(pic3.name)[0]}</span>
               </div>
             </div>
           </button>
@@ -88,7 +88,12 @@ class HomeArt extends React.Component {
         <div id="viewArtWrapper">
           <img src={this.props.photosArray[this.state.artIndex].download_url} alt={this.props.photosArray[this.state.artIndex].name} />
           <button className="artClose" onClick={event => this.handleClose(event)}>&times;</button>
-          <div id="viewArt"><p>Title: {parseTitle(this.props.photosArray[this.state.artIndex].name)}</p></div>
+          <div id="viewArt">
+            <p>Title: {parseTitle(this.props.photosArray[this.state.artIndex].name)[0]}</p>
+            <p>Category: {parseTitle(this.props.photosArray[this.state.artIndex].name)[1]}</p>
+            <p>Medium: {parseTitle(this.props.photosArray[this.state.artIndex].name)[2]}</p>
+            <p>Dimensions: {parseTitle(this.props.photosArray[this.state.artIndex].name)[3]}</p>
+          </div>
         </div>
       </div>
     )

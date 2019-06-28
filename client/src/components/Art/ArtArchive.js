@@ -31,7 +31,7 @@ class ArtArchive extends React.Component {
                 <img id={index} value={`${this.props.type}-${index}`} src={photo.download_url} alt={photo.name} />
                 <div className="middle">
                   <div className="text">
-                    <span>{parseTitle(photo.name)}</span>
+                    <span>{parseTitle(photo.name)[0]}</span>
                   </div>
                 </div>
               </button>

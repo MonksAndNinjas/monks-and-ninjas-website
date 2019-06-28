@@ -1,4 +1,5 @@
 export const parseTitle = dataString => {
+  console.log(dataString)
   // parse data
   let dataArray = dataString.split("-")
   let dataTitle = dataArray[0];
@@ -10,5 +11,5 @@ export const parseTitle = dataString => {
   let medium =  dataMedium.split("+").map((m) => m.split("_").map((s) => s.charAt(0).toUpperCase() + s.substring(1)).join(" ")).join(", ");
   let size = `${dataSize.split(".")[0]}in`;
 
-  return title
+  return [title, category, medium, size]
 }
