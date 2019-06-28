@@ -210,7 +210,7 @@ div.news {
 
 .enlarge-portfolio-animation {
   animation-name: portfolioEnlarge;
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-direction: normal;
   animation-fill-mode: forwards;
 }
@@ -261,6 +261,7 @@ div.news {
 
 #viewArtWrapper {
   display: none;
+  opacity: 0;
   height: 400px;
   max-width: 1300px;
   align-items: center;
@@ -289,6 +290,35 @@ div.news {
   height: 40px;
   color: cornflowerblue;
 }
+
+#highlight-art-1, #highlight-art-2, #highlight-art-3 {
+  position: relative;
+}
+
+@keyframes fadeOut {
+  from {opacity: 1}
+  to {opacity: 0}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
+.fadeout {
+  animation-name: fadeOut;
+  animation-duration: 1s;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
+
+.fadein {
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
+
 
 /*///////////////////// post modal //////////////////*/
 

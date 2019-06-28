@@ -7,7 +7,7 @@ function cb (array) {
   setTimeout(function() {
     array[2].style.display = 'block';
     array[5].style.display = 'block';
-  }, 2000)
+  }, 1300)
 }
 // call back function 2 from onClickAnimation
 function cb2 (array) {
@@ -20,7 +20,7 @@ function cb2 (array) {
     array[0].style.display = 'none';
     array[3].style.display = 'none';
     array[1].classList.add("enlarge-portfolio-animation");
-  }, 500)
+  }, 300)
 }
 // call back function 3 from onCloseAnimation
 //array = [0: addSide, 1: reduceSide, 2: extraContent, 3: title, 4: enlargeButton, 5: closeButton, 6: image, 7: desc]
@@ -35,14 +35,14 @@ function c3 (array) {
     array[0].classList.add("shrink-portfolio-animation");
     array[3].style.display = 'block';
     array[4].style.display = 'inline-block';
-  }, 2000);
+  }, 1000);
 
   setTimeout(function() {
     // add remaining content to project that will be added
     array[5].style.display = 'none';
     array[6].style.display = 'block';
     array[7].style.display = 'block';
-  }, 2000)
+  }, 1000)
 }
 // remove animation class
 function removeClass (array, class1, class2) {
