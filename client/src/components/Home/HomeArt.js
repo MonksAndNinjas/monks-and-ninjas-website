@@ -5,6 +5,8 @@ import { onClickAnimation } from '../../helpers/artAnimation';
 import { onCloseAnimation } from '../../helpers/artAnimation';
 import { artMove } from '../../helpers/artAnimation';
 import { parseTitle } from '../../helpers/parseTitle';
+// styling
+import '../../css/homeArt.css';
 // handles art data in Home page
 class HomeArt extends React.Component {
   state = {
