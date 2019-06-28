@@ -9,14 +9,12 @@ What am I currently working on?
   => Home page layout
   => About me philosophy, bio, hobbies
 
-  => only display up to a number of characters of blog post
-  => display title for art
-  => display pic for project
   => pic for blog post
-  => title for blog
-  => title for project
   => video project
-  => add button for clicking action
+  => extra project content; points from resume, replace desc with resume project desc
+  => extra art data; medium, type of art
+
+  => main art for home page
 
 What are some things to work on later?
 
@@ -35,3 +33,7 @@ bugs?
   => not easy to click on bullet to go to anchors
   => set easing for speed of scroll to anchor
   => navbar only displays when hovering over logo not to the right of it
+
+
+about setion
+pic of myself, bio, philosophy from resume, keep traits, little animation pieces

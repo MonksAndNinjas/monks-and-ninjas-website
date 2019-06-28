@@ -13,35 +13,31 @@ class HomeArt extends React.Component {
     artIndex: '0'
   }
 
+  gatherVariables = () => {
+    var highlightImg1 = document.getElementById('highlight-art-1');
+    var highlightImg2 = document.getElementById('highlight-art-2');
+    var highlightImg3 = document.getElementById('highlight-art-3');
+    var artContent = document.getElementById('viewArtWrapper')
+
+    return [highlightImg1, highlightImg2, highlightImg3, artContent];
+  }
+
   handleClick = event => {
     event.preventDefault();
     event.persist();
 
     var value = event.target.attributes[0].value.split('-');
     var index = value[0]
-    var highlightImg1 = document.getElementById('highlight-art-1');
-    var highlightImg2 = document.getElementById('highlight-art-2');
-    var highlightImg3 = document.getElementById('highlight-art-3');
-    var artContent = document.getElementById('viewArtWrapper')
-
-    const array = [highlightImg1, highlightImg2, highlightImg3, artContent];
 
     this.setState({ artIndex: index })
 
-    onClickAnimation(array);
+    onClickAnimation(this.gatherVariables());
   }
   // closes individual blog post
   handleClose = event => {
     event.preventDefault();
 
-    var highlightImg1 = document.getElementById('highlight-art-1');
-    var highlightImg2 = document.getElementById('highlight-art-2');
-    var highlightImg3 = document.getElementById('highlight-art-3');
-    var artContent = document.getElementById('viewArtWrapper')
-
-    const array = [highlightImg1, highlightImg2, highlightImg3, artContent];
-
-    onCloseAnimation(array);
+    onCloseAnimation(this.gatherVariables());
   }
 
   render() {
