@@ -35,7 +35,7 @@ function c3 (array) {
     array[0].classList.add("shrink-portfolio-animation");
     array[3].style.display = 'block';
     array[4].style.display = 'inline-block';
-  }, 1000);
+  }, 900);
 
   setTimeout(function() {
     // add remaining content to project that will be added

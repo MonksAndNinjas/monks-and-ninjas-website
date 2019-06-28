@@ -12,7 +12,7 @@ What am I currently working on?
   => pic for blog post
   => video project
   => extra project content; points from resume, replace desc with resume project desc
-  => extra art data; medium, type of art
+  => extra art data; medium, type of art, size
 
   => main art for home page
 
