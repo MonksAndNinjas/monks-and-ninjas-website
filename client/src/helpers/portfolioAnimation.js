@@ -11,16 +11,15 @@ function cb (array) {
 }
 // call back function 2 from onClickAnimation
 function cb2 (array) {
-  // remove content from inside shrinking div
-  array[6].style.display = 'none';
-  array[7].style.display = 'none';
+  // display content within selected project
+  array[4].style.display = 'none';
 
   setTimeout(function() {
-    // remove remaining content and enlarge clicked on project
     array[0].style.display = 'none';
-    array[3].style.display = 'none';
-    array[1].classList.add("enlarge-portfolio-animation");
-  }, 300)
+    array[1].style.width = '1000px';
+    array[2].style.display = 'block';
+    array[5].style.display = 'block';
+  }, 1000)
 }
 // call back function 3 from onCloseAnimation
 //array = [0: addSide, 1: reduceSide, 2: extraContent, 3: title, 4: enlargeButton, 5: closeButton, 6: image, 7: desc]
@@ -57,28 +56,32 @@ function removeClass (array, class1, class2) {
 // displays single project and removes the other
 export const onClickAnimation = (array) => {
   // remove listener
-  array[0].removeEventListener("animationstart", c3)
+    //array[0].removeEventListener("animationstart", c3)
   // reset animation direction
-  array[0].setAttribute("style", "animation-direction: normal;")
-  array[1].setAttribute("style", "animation-direction: normal;")
+      //array[0].setAttribute("style", "animation-direction: normal;")
+      //  array[1].setAttribute("style", "animation-direction: normal;")
 
-  removeClass(array, "enlarge-portfolio-animation", "shrink-portfolio-animation");
+      //removeClass(array, "enlarge-portfolio-animation", "shrink-portfolio-animation");
   // add listeners
-  array[0].addEventListener("animationstart", cb2(array));
-  array[1].addEventListener("animationstart", cb(array));
+  array[1].addEventListener("animationstart", cb2(array));
+      //array[1].addEventListener("animationstart", cb(array));
   // add animation
-  array[0].classList.add("shrink-portfolio-animation")
+  array[0].classList.add("move-left-animation")//array[0].classList.add("shrink-portfolio-animation")
+  array[1].classList.add("fadeOutIn")
 }
 // displays highlight projects and shrinks single post
 export const onCloseAnimation = (array) => {
   // remove listeners
-  array[0].removeEventListener("animationstart", cb2)
+    //array[0].removeEventListener("animationstart", cb2)
   array[1].removeEventListener("animationstart", cb)
 
-  removeClass(array, "shrink-portfolio-animation", "enlarge-portfolio-animation");
+  removeClass(array, "move-left-animation", "fadeOutIn");
   // add listener
-  array[1].addEventListener("animationstart", c3(array))
+        //array[1].addEventListener("animationstart", c3(array))
   // add animation
-  array[1].setAttribute("style", "animation-direction: reverse;");
-  array[1].classList.add("enlarge-portfolio-animation");
+    array[0].style.steps = '(50, start)';
+    array[0].classList.add("fadeOutIn");
+
+        //array[1].setAttribute("style", "animation-direction: reverse;");
+        //array[1].classList.add("enlarge-portfolio-animation");
 }

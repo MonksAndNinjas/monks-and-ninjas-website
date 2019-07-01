@@ -2,6 +2,7 @@
 #highlight-project-1, #highlight-project-2 {
   width: 550px;
   height: 410px;
+  opacity: 1;
   /*position: relative;*/
 }
 
@@ -63,17 +64,50 @@
   padding: 10px 16px 0 16px;
 }
 
-@keyframes portfolioEnlarge {
-  from {width: 550px}
-  to {width: 1000px}
+@keyframes moveLeft {
+  from {transform: translate(0)}
+  to {transform: translate(-3000px)}
 }
 
-@keyframes portfolioShrink {
+@keyframes moveRight {
+  from {transform: translate(0)}
+  to {transform: translate(3000px)}
+}
+
+
+@keyframes fadeOutIn {
+  0% {opacity: 1}
+  50% {opacity: 0}
+  100% {opacity: 1}
+}
+
+/*@keyframes portfolioShrink {
   from {transform: scale(1); width: 550px;}
   to {transform: scale(0); width: 0px}
+}*/
+
+.fadeOutIn {
+  animation-name: fadeOutIn;
+  animation-duration: 2s;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
 }
 
-.enlarge-portfolio-animation {
+.move-left-animation {
+  animation-name: moveLeft;
+  animation-duration: 1s;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
+
+.move-right-animation {
+  animation-name:  moveRight;
+  animation-duration: 1s;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
+
+/*.enlarge-portfolio-animation {
   animation-name: portfolioEnlarge;
   animation-duration: 1s;
   animation-direction: normal;
@@ -85,4 +119,4 @@
   animation-duration: .6s;
   animation-direction: normal;
   animation-fill-mode: forwards;
-}
+}*/
