@@ -1,4 +1,4 @@
-import React from 'react';
+  import React from 'react';
 // imports component to display categories
 class Art extends React.Component {
 
@@ -14,8 +14,10 @@ class Art extends React.Component {
     return (
       <div id="artWrapper" className="modal">
         <span onClick={event => this.handleClick(event)} className="close">&times;</span>
-        <img className="modal-content" id="modal-img"/>
-        <div id="caption"></div>
+        <div style={{ display: 'inline-flex'} }>
+          <img className="modal-content" id="modal-img"/>
+          <div id="caption"></div>
+        </div>
       </div>
     )
   }

@@ -16,10 +16,21 @@ class ArtArchive extends React.Component {
       var modalImg = document.getElementsByClassName('modal-content')[0]
       var modal = document.getElementById('artWrapper')
       var imgData = event.target.attributes[1].value.split("-")
-      var imgId = imgData[1]
+      var imgId = imgData[1];
+      var dataArray = parseTitle(this.props.category[imgId].name);
+      var caption = document.getElementById('caption');
+
       // changes style of modal so it can show individual enlarged photo
       modalImg.setAttribute('src', this.props.category[imgId].download_url)
+
       modal.style.display = 'block';
+      // places caption in at the right height based on image
+      setTimeout(function() {
+        var imgHeight = document.getElementById('modal-img').getBoundingClientRect().height;
+        caption.style.margin = `${imgHeight/2}px auto`;
+        caption.innerHTML = `<p>Title: ${dataArray[0]}</p><p>Category: ${dataArray[1]}</p><p>Medium: ${dataArray[2]}</p><p>Dimensions: ${dataArray[3]}</p>`;
+      }, 200)
+
     }
   }
 
