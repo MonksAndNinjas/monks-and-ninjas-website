@@ -1,3 +1,3 @@
 class Note < ApplicationRecord
-  belongs_to :notes
+  belongs_to :project
 end
