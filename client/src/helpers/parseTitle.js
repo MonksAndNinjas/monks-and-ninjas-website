@@ -1,5 +1,5 @@
 export const parseTitle = dataString => {
-  console.log(dataString)
+  //console.log(dataString)
   // parse data
   let dataArray = dataString.split("-")
   let dataTitle = dataArray[0];

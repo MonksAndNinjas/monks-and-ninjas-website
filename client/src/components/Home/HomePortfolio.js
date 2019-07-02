@@ -20,14 +20,11 @@ class HomePortfolio extends React.Component {
     var data = value.split(' ');
     var firstSide = document.getElementById(data[0]);
     var secondSide = document.getElementById(data[1]);
-    var extraContent = secondSide.getElementsByClassName('projectContent')[0];
-    var title = firstSide.getElementsByClassName('projectTitle')[0];
-    var enlargeButton = secondSide.getElementsByClassName('projectExpand')[0];
-    var closeButton = secondSide.getElementsByClassName('projectClose')[0];
-    var image = firstSide.getElementsByClassName('projectPic')[0];
-    var desc = firstSide.getElementsByClassName('projectDesc')[0];
+    var extraContent = firstSide.getElementsByClassName('projectContent')[0];
+    var enlargeButton = firstSide.getElementsByClassName('projectExpand')[0];
+    var closeButton = firstSide.getElementsByClassName('projectClose')[0];
 
-    return [firstSide, secondSide, extraContent, title, enlargeButton, closeButton, image, desc];
+    return [firstSide, secondSide, extraContent, enlargeButton, closeButton];
   }
 
   handleClick = event => {
@@ -63,8 +60,8 @@ class HomePortfolio extends React.Component {
               <div className="projectLinks">
                 <a href={project1.github}>GitHub</a><br/>
                 <a href={project1.video}>Demo</a><br/>
-                <button className="projectExpand" value="highlight-project-2 highlight-project-1" onClick={event => this.handleClick(event)}>learn more</button>
-                <button className="projectClose" value="highlight-project-2 highlight-project-1" onClick={event => this.handleClose(event)}>&times;</button>
+                <button className="projectExpand" value="highlight-project-1 highlight-project-2" onClick={event => this.handleClick(event)}>learn more</button>
+                <button className="projectClose" value="highlight-project-1 highlight-project-2" onClick={event => this.handleClose(event)}>&times;</button>
               </div>
             </div>
             <div className="projectDesc">{project1.description}</div>
@@ -80,8 +77,8 @@ class HomePortfolio extends React.Component {
                 <div className="projectLinks">
                   <a href={project2.github}>GitHub</a><br/>
                   <a href={project2.video}>Demo</a><br/>
-                  <button className="projectExpand" value="highlight-project-1 highlight-project-2" onClick={event => this.handleClick(event)}>learn more</button>
-                  <button className="projectClose" value="highlight-project-1 highlight-project-2" onClick={event => this.handleClose(event)}>&times;</button>
+                  <button className="projectExpand" value="highlight-project-2 highlight-project-1" onClick={event => this.handleClick(event)}>learn more</button>
+                  <button className="projectClose" value="highlight-project-2 highlight-project-1" onClick={event => this.handleClose(event)}>&times;</button>
                 </div>
             </div>
             <div className="projectDesc">{project2.description}</div>

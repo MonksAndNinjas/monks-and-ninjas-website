@@ -7,9 +7,7 @@ import HomePortfolio from '../components/Home/HomePortfolio';
 import HomeArt from '../components/Home/HomeArt';
 import HomeAbout from '../components/Home/HomeAbout';
 // functions to decide if content should be displayed
-import { displayBlogPosts } from '../helpers/displayContent';
-import { displayPhotos } from '../helpers/displayContent';
-import { displayProjects } from '../helpers/displayContent';
+import { display } from '../helpers/displayContent';
 // generates random number within projects array length
 import { makeRandomRange } from '../helpers/makeRandomRange';
 import { handleGitPosts } from '../helpers/gitPosts';
@@ -65,7 +63,7 @@ class HomeContainer extends React.Component {
           <div id="postAnchor">
             <h1>Posts News</h1>
             <div className="content">
-              { displayBlogPosts(this.props.gitPostsData) ? (
+              { display(this.props) ? (
                   <HomeBlog posts={handleGitPosts(this.props.gitPostsData)} indexArray={this.generateValues(this.props.gitPostsData.gitPosts.length)} />
                 ) : (
                   null
@@ -76,7 +74,7 @@ class HomeContainer extends React.Component {
           <div id="portfolioAnchor">
             <h1>Project News</h1>
             <div className="content">
-              { displayProjects(this.props.projectsData) ? (
+              { display(this.props) ? (
                   <HomePortfolio projects={this.props.projectsData.projects} indexArray={this.generateValues(this.props.projectsData.projects.length)} />
                 ) : (
                   null
@@ -87,7 +85,7 @@ class HomeContainer extends React.Component {
           <div id="artAnchor">
             <h1>Art News</h1>
             <div className="content">
-              { displayPhotos(this.props.photosData) ? (
+              { display(this.props) ? (
                   <HomeArt photosArray={this.combinePhotos()} indexArray={this.generateValues(this.photosLength())} />
                 ) : (
                   null

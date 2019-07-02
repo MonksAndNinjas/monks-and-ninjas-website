@@ -17,3 +17,11 @@ export const displayProjects = (projectsData) => {
 
     return (projectsData !== undefined && projectsSize > 0 && projectsData.loading === false)
   }
+
+  export const display = (propsData) => {
+    let gitPostsData = propsData.gitPostsData;
+    let photosData = propsData.photosData;
+    let projectsData = propsData.projectsData;
+
+    return (displayBlogPosts(gitPostsData) && displayPhotos(photosData) && displayProjects(projectsData)) ? true : false
+  }
