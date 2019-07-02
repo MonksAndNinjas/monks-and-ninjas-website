@@ -12,6 +12,7 @@ post = Post.create(title: 'test', content: 'this is a test post', datePublished:
 
 
 # new format for projects
+# Project has many notes, and notes belongs to a project
 # projectN = Project.create(
 #  title:
 #  description:
