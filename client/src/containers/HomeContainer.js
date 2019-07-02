@@ -106,6 +106,7 @@ class HomeContainer extends React.Component {
 }
 // makes data from store accessable
 const mapStateToProps = state => {
+  //console.log(state)
   return({
     gitPostsData: state.gitPosts,
     projectsData: state.projects,

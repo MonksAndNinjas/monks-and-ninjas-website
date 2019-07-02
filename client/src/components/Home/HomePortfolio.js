@@ -44,9 +44,17 @@ class HomePortfolio extends React.Component {
   render() {
 
     const projectsArray = this.props.projects;
-    const project1 = projectsArray[this.props.indexArray[0]];
-    const project2 = projectsArray[this.props.indexArray[1]];
-    //console.log(project1, project2)
+    const project1 = projectsArray[this.props.indexArray[0]][0];
+    const project2 = projectsArray[this.props.indexArray[1]][0];
+
+    const notes1 = projectsArray[this.props.indexArray[0]][1].map((note, index) => (
+      <p key={index}>{note.summary}</p>
+    ));
+
+    const notes2 = projectsArray[this.props.indexArray[1]][1].map((note, index) => (
+      <p key={index}>{note.summary}</p>
+    ));
+    console.log(projectsArray[this.props.indexArray[0]][1])
 
     return (
       <div id="homePortfolioWrapper">
@@ -65,7 +73,7 @@ class HomePortfolio extends React.Component {
               </div>
             </div>
             <div className="projectDesc">{project1.description}</div>
-            <div className="projectContent">extra content!</div>
+            <div className="projectContent">{notes1}</div>
           </div>
         </div>
 
@@ -82,7 +90,7 @@ class HomePortfolio extends React.Component {
                 </div>
             </div>
             <div className="projectDesc">{project2.description}</div>
-            <div className="projectContent">extra content!</div>
+            <div className="projectContent">{notes2}</div>
           </div>
         </div>
       </div>

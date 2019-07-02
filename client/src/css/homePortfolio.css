@@ -43,6 +43,12 @@
 .projectContent {
   display: none;
   border-left-style: inset;
+  text-align: left;
+  max-width: 240px;
+}
+
+.projectContent p {
+  padding: 5px;
 }
 
 .projectClose {

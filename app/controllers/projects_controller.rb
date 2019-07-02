@@ -3,9 +3,11 @@ class ProjectsController < ApplicationController
   def index
     @projects = Project.all
 
+    @projectsHash = @projects.collect { |p| [p, p.notes] }
+
     render(
       status: 200,
-      json: @projects
+      json: @projectsHash
     )
   end
 end
