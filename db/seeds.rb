@@ -24,6 +24,10 @@ post = Post.create(title: 'test', content: 'this is a test post', datePublished:
 #)
 
 # projects for portfolios
+#note1Project1 = Note.create(summary:)
+#note2Project1 = Note.create(summary:)
+#note3Project1 = Note.create(summary:)
+
 project1 = Project.create(
              title: "CLI Data Gem",
              description: "This Ruby Gem provides a CLI to view the world's most popular martial arts taken from a www.singpatong-sitnumnoi.com; Users can also learn more information about the style such as (wiki-website, description, name, country, fighting-focus). styles, can be searched by country, or fighting-focus. I have also added code to collect incomplete data from the scrape if one has the desire to add code to retrieve it.",
@@ -32,6 +36,11 @@ project1 = Project.create(
              video: "https://www.youtube.com/watch?v=l0_jHQvCLZg&t=29s",
              embed: "l0_jHQvCLZg"
              )
+
+#note1Project2 = Note.create()
+#note2Project2 = Note.create()
+#note3Project2 = Note.create()
+#note4Project2 = Note.create()
 
 project2 = Project.create(
              title: "Sinatra App",
@@ -42,6 +51,11 @@ project2 = Project.create(
              embed: "pw0EEr80du8"
              )
 
+#note1Project3 = Note.create(summary:)
+#note2Project3 = Note.create(summary:)
+#note3Project3 = Note.create(summary:)
+#note4Project3 = Note.create(summary:)
+
 project3 = Project.create(
              title: "Rails App",
              description: "The Monks and Ninjas Life Manager App allows users to efficiently structure and promote meaning in ones life. Once the app is setup the user will have access to recording family members, online subscriptions, short-term and long-term goals, weekly priorities, inspirations, and controlling bad habits.",
@@ -51,6 +65,11 @@ project3 = Project.create(
              embed: "zQ3gvS1YwPo"
              )
 
+#note1Project4 = Note.create(summary:)
+#note2Project4 = Note.create(summary:)
+#note3Project4 = Note.create(summary:)
+#note4Project4 = Note.create(summary:)
+
 project4 = Project.create(
              title: "Rails JavaScript App",
              description: "The Monks and Ninjas Life Manager App allows users to efficiently structure and promote meaning in ones life. Once the app is setup the user will have access to recording family members, online subscriptions, short-term and long-term goals, weekly priorities, inspirations, and controlling bad habits. The page 'my life', which are accessible through the icon on the top right of the screen is similar to all the other attribute pages except that it uses the Ruby code of those pages and implements it through Javascript. All the attributes and their features are accessible through just one page. The Javascript code makes use of Rails active model serializer and uses Javascript object models to make use of the JSON response. The page 'my quests' is also accessible through the icon on the top right of the screen. This page serves as a show page for the quests attribute and it display a bit more information than normal using Javascript                 to handle the data.",
@@ -59,6 +78,11 @@ project4 = Project.create(
              video: "https://www.youtube.com/watch?v=3veaiRz-DBA&t=171s",
              embed: "3veaiRz-DBA"
              )
+
+#note1Project5 = Note.create(summary:)
+#note2Project5 = Note.create(summary:)
+#note3Project5 = Note.create(summary:)
+#note4Project5 = Note.create(summary:)
 
 project5 = Project.create(
              title: "React",
