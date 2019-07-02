@@ -11,6 +11,17 @@ date = Time.now.strftime("%A, %d %Y - %T - %Z")
 post = Post.create(title: 'test', content: 'this is a test post', datePublished: date, lastPublished: date)
 
 
+# new format for projects
+# projectN = Project.create(
+#  title:
+#  description:
+#  notes: [note1, note2, note3, note4]
+#  date:
+#  github:
+#  video:
+#  embed:
+#)
+
 # projects for portfolios
 project1 = Project.create(
              title: "CLI Data Gem",

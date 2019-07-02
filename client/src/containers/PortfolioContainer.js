@@ -36,6 +36,8 @@ class PortfolioContainer extends React.Component {
   }
 
   render() {
+
+    console.log(this.props.projectsData)
     return (
       <div className="container">
         <h1>Portfolio</h1>
