@@ -46,8 +46,13 @@ class HomeContainer extends React.Component {
   combinePhotos = () => {
     return [...this.props.photosData.photos.drawings, ...this.props.photosData.photos.signature, ...this.props.photosData.photos.digital, ...this.props.photosData.photos.paintings]
   }
+
+  constructContactData = () => {
+    return [this.props.profileData.profile[0][0].phone, this.props.profileData.profile[0][0].email, this.props.profileData.profile[0][0].github]
+  }
   // consider moving homeHeaderWrapper and homeAnchorWrapper to their own component
   render() {
+    //console.log(this.props)
     return (
       <div className="container">
         <div className="homeHeaderWrapper" style={{ height: '500px' }}>
@@ -97,7 +102,7 @@ class HomeContainer extends React.Component {
             <h1>About Me</h1>
             <div className="content">
               { display(this.props) ? (
-                  <HomeAbout profile={this.props.profileData.profile} />
+                  <HomeAbout profileData={this.props.profileData.profile[0][0]} resources={this.constructContactData()} technicalSkills={this.props.profileData.profile[0][1]} miscSkills={this.props.profileData.profile[0][2]} />
                 ) : (
                   null
               )}
