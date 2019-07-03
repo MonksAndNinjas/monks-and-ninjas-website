@@ -3,9 +3,11 @@ class ProfilesController < ApplicationController
   def index
     @profiles = Profile.all
 
+    @profileHash = @profiles.collect { |p| [p, p.technical_skills, p.misc_skills] }
+
     render(
       status: 200,
-      json: @profiles
+      json: @profileHash
     )
   end
 end
