@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_02_180335) do
+ActiveRecord::Schema.define(version: 2019_07_03_011547) do
+
+  create_table "misc_skills", force: :cascade do |t|
+    t.integer "profile_id"
+    t.string "name"
+    t.index ["profile_id"], name: "index_misc_skills_on_profile_id"
+  end
 
   create_table "notes", force: :cascade do |t|
     t.integer "project_id"
@@ -25,6 +31,14 @@ ActiveRecord::Schema.define(version: 2019_07_02_180335) do
     t.string "lastPublished"
   end
 
+  create_table "profiles", force: :cascade do |t|
+    t.string "bio"
+    t.string "summary"
+    t.decimal "phone"
+    t.string "email"
+    t.string "github"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string "title"
     t.string "description"
@@ -32,6 +46,12 @@ ActiveRecord::Schema.define(version: 2019_07_02_180335) do
     t.string "github"
     t.string "video"
     t.string "embed"
+  end
+
+  create_table "technical_skills", force: :cascade do |t|
+    t.integer "profile_id"
+    t.string "name"
+    t.index ["profile_id"], name: "index_technical_skills_on_profile_id"
   end
 
 end
