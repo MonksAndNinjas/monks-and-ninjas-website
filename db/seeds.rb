@@ -12,6 +12,36 @@ post = Post.create(title: 'test', content: 'this is a test post', datePublished:
 
 ###############################################################################
 
+profile = Profile.create(
+  bio: "",
+  summary: "Full stack web developer with a passion for problem solving, design, code-efficiency, and experimentation. Studying and running my own martial arts business has given me considerable experience in business building, leadership, teaching, marketing, and discipline, skills that translate to any business. With experience in Ruby on Rails, JavaScript, and React and a background in P5.js and C++, I discovered web development by continuing to pursue my academic interests since my days working at a physics lab. I am excited to bring together all my skills and help companies enhance or develop a sharp brand that doesn't distract from their vision and user experience.",
+  phone: 7202201556,
+  email: "joseph@monksandninjas.com",
+  github: "https://github.com/MonksAndNinjas"
+)
+
+tSkill1 = profile.technical_skills.build(name: "Ruby")
+tSkill2 = profile.technical_skills.build(name: "Rails")
+tSkill3 = profile.technical_skills.build(name: "SQL")
+tSkill4 = profile.technical_skills.build(name: "Active Record")
+tSkill5 = profile.technical_skills.build(name: "JavaScript")
+tSkill6 = profile.technical_skills.build(name: "React")
+tSkill7 = profile.technical_skills.build(name: "P5.js")
+tSkill8 = profile.technical_skills.build(name: "C++")
+tSkill9 = profile.technical_skills.build(name: "Photoshop")
+tSkill10 = profile.technical_skills.build(name: "Illustrator")
+tSkill11 = profile.technical_skills.build(name: "Inkscape")
+tSkill12 = profile.technical_skills.build(name: "Linux")
+
+mSkill1 = profile.misc_skills.build(name: "Hard Sciences: Physics and Math")
+mSkill2 = profile.misc_skills.build(name: "Fitness business owner")
+mSkill3 = profile.misc_skills.build(name: "Fluent in Spanish")
+mSkill4 = profile.misc_skills.build(name: "Black Belt Martial Artist")
+
+profile.save
+
+###############################################################################
+
 project1 = Project.create(
   title: "CLI Data Gem",
   description: "This Ruby Gem provides a CLI to view the world’s most popular martial arts, providing information on country, fighting-focus, and style",
