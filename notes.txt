@@ -10,8 +10,9 @@ What am I currently working on?
   => pic for blog post
   => video project
   => rearrange formatting for home Project, Project
-  => Art data display
-  => remove posts from /db and /model and /controller 
+  => Art data size and dimensions correct
+  => remove posts from /db and /model and /controller
+  => socialmedia
 
   => main art for home page
 

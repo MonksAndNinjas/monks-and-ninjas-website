@@ -1,14 +1,26 @@
 #tskill, #mskill {
   text-align: left;
-  width: 50%;
+}
+
+#tskill {
+  float: right;
+}
+
+#mskill {
+  float: left;
 }
 
 #contact {
   text-align: center;
+  padding-bottom: 20px;
+}
+
+#contact p {
+  display: block;
 }
 
 #contact span {
-  display: block;
+  font-weight: 500;
 }
 
 #tskill h3, #mskill h3 {
@@ -20,6 +32,12 @@
   padding-right: 20px;
 }
 
-.skill {
+.skills {
   display: inline-flex;
+}
+
+#summary, #bio {
+  width: 90%;
+  margin: auto;
+  padding: 20px 0;
 }
