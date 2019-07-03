@@ -12,6 +12,7 @@ import gitReducer from './reducers/gitReducer';
 import blogReducer from './reducers/blogReducer';
 import projectReducer from './reducers/projectReducer';
 import photoReducer from './reducers/photoReducer';
+import profileReducer from './reducers/profileReducer';
 // styling
 import './css/index.css';
 // imports pages for rendering routes
@@ -30,7 +31,8 @@ const rootReducer = combineReducers({
   posts: blogReducer,
   gitPosts: gitReducer,
   projects: projectReducer,
-  photos: photoReducer
+  photos: photoReducer,
+  profile: profileReducer
 })
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
