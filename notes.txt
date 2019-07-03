@@ -5,14 +5,13 @@ What is this app?
   my former art website.
 
 What am I currently working on?
-
-  => Home page layout
   => About me philosophy, bio, hobbies
 
   => pic for blog post
   => video project
-  => extra project content; points from resume, replace desc with resume project desc
-  => extra art data; medium, type of art, size
+  => rearrange formatting for home Project, Project
+  => Art data display
+  => remove posts from /db and /model and /controller 
 
   => main art for home page
 
