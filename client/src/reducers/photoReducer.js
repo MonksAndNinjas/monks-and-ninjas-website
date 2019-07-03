@@ -23,7 +23,7 @@ export default function blogReducer(
 
       case 'FETCH_PHOTOS':
         state.photos[`${action.name}`] = action.payload
-      
+
         return {photosLoading: false, photos: state.photos, name: action.name}
 
       default:

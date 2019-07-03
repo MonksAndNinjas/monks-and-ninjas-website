@@ -65,3 +65,14 @@ export function fetchPhotos() {
       }).then(photos => dispatch({ type: 'FETCH_PHOTOS_DATA', payload: photos }))
   }
 }
+// fetches profile data from Rails API
+export function fetchProfile() {
+  return (dispatch) => {
+    dispatch({ type: 'LOADING_PROFILE' });
+
+    return fetch('api/profiles', {
+      accept: 'application/json',
+    }).then(response => response.json())
+      .then(profile => dispatch({ type: 'FETCH_PROFILE', payload: profile }))
+  }
+}

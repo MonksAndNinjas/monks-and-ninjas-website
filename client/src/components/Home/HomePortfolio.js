@@ -54,7 +54,7 @@ class HomePortfolio extends React.Component {
     const notes2 = projectsArray[this.props.indexArray[1]][1].map((note, index) => (
       <p key={index}>{note.summary}</p>
     ));
-    console.log(projectsArray[this.props.indexArray[0]][1])
+    //console.log(projectsArray[this.props.indexArray[0]][1])
 
     return (
       <div id="homePortfolioWrapper">

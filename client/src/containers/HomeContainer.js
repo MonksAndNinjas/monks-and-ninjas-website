@@ -96,7 +96,11 @@ class HomeContainer extends React.Component {
           <div id="aboutAnchor">
             <h1>About Me</h1>
             <div className="content">
-              <HomeAbout />
+              { display(this.props) ? (
+                  <HomeAbout profile={this.props.profileData.profile} />
+                ) : (
+                  null
+              )}
             </div>
           </div>
         </div>
@@ -110,7 +114,8 @@ const mapStateToProps = state => {
   return({
     gitPostsData: state.gitPosts,
     projectsData: state.projects,
-    photosData: state.photos
+    photosData: state.photos,
+    profileData: state.profile
   })
 }
 

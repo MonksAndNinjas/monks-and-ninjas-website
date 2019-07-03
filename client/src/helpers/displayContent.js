@@ -1,4 +1,10 @@
  // should blog posts be displayed?
+export const displayProfile = (profileData) => {
+  let profileSize = profileData.profile.length
+
+  return (profileData !== undefined && profileSize > 0 && profileData.loading === false)
+}
+
 export const displayBlogPosts = (gitPostsData) => {
   //  let gitPosts = this.props.gitPostsData
     let gitPostsSize = gitPostsData.gitPosts.length
@@ -22,6 +28,7 @@ export const displayProjects = (projectsData) => {
     let gitPostsData = propsData.gitPostsData;
     let photosData = propsData.photosData;
     let projectsData = propsData.projectsData;
+    let profileData = propsData.profileData;
 
-    return (displayBlogPosts(gitPostsData) && displayPhotos(photosData) && displayProjects(projectsData)) ? true : false
+    return (displayBlogPosts(gitPostsData) && displayPhotos(photosData) && displayProjects(projectsData) && displayProfile(profileData)) ? true : false
   }
