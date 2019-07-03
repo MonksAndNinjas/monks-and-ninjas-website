@@ -6,6 +6,7 @@ import { fetchBlogPosts } from './actions/fetch'; // Rails api, could change Blo
 import { fetchGitHubPosts } from './actions/fetch'; // monksandninjas.github.io
 import { fetchProjects } from './actions/fetch'; // files in github
 import { fetchPhotos } from './actions/fetch';  // monksandninjas.github.io
+import { fetchProfile } from './actions/fetch'; // Rails api
 
 class App extends React.Component {
   render() {
@@ -20,6 +21,7 @@ class App extends React.Component {
     this.props.fetchGitHubPosts()
     this.props.fetchProjects()
     this.props.fetchPhotos()
+    this.props.fetchProfile()
   }
 }
 
@@ -28,8 +30,9 @@ const mapStateToProps = state => {
     postsData: state.posts,
     gitPostsData: state.gitPosts,
     projectsData: state.projects,
-    photosData: state.photos
+    photosData: state.photos,
+    profileData: state.profile
   })
 }
 
-export default connect(mapStateToProps, { fetchBlogPosts, fetchGitHubPosts, fetchProjects, fetchPhotos })(App);
+export default connect(mapStateToProps, { fetchBlogPosts, fetchGitHubPosts, fetchProjects, fetchPhotos, fetchProfile })(App);
