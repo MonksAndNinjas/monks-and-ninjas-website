@@ -1,0 +1,25 @@
+#tskill, #mskill {
+  text-align: left;
+  width: 50%;
+}
+
+#contact {
+  text-align: center;
+}
+
+#contact span {
+  display: block;
+}
+
+#tskill h3, #mskill h3 {
+  text-align: center;
+}
+
+#tskill {
+  border-right-style: solid;
+  padding-right: 20px;
+}
+
+.skill {
+  display: inline-flex;
+}
