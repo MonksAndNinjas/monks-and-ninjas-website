@@ -7,7 +7,6 @@ class HomeAbout extends React.Component {
 
     const renderBio = this.props.profileData.bio
     const renderSummary = this.props.profileData.summary
-    const a = ["Phone", "Email", "Github"]
 
     const renderTSkills = this.props.technicalSkills.map((skill, index) => (
       <li key={index}>{skill.name}</li>
@@ -15,13 +14,12 @@ class HomeAbout extends React.Component {
     const renderMSkills = this.props.miscSkills.map((skill, index) => (
       <li key={index}>{skill.name}</li>
     ));
-  //  const renderResources = this.props.resources.map((resource, index) => (
-    //  <p key={index}><span>{a[index]}: </span>{resource}</p>
-    //));
 
     const renderPhone = <p><span>Phone: </span>{this.props.resources[0]}</p>
     const renderGit = <span>GitHub: <a href={this.props.resources[1]}>MonksAndNinjas</a></span>
     const renderEmail = <span>Email: <a href={this.props.resources[2]}>{this.props.resources[2]}</a></span>
+
+    //console.log(this.props.resources)
 
     return (
       <div id="homeAboutWrapper">
