@@ -1,4 +1,6 @@
 import React from 'react';
+// pic
+import self_portrait_painting from '../../images/self_portrait_painting.jpg'
 // styling
 import '../../css/homeAbout.css';
 
@@ -32,14 +34,20 @@ class HomeAbout extends React.Component {
           {renderSummary}
         </div>
 
-        <div className="skills">
-          <div id="tskill">
-            <h3>Technical Skills</h3>
-            <ul>{renderTSkills}</ul>
+        <div>
+          <div>
+            <img src={self_portrait_painting} />
           </div>
-          <div id="mskill">
-            <h3>Other Skills</h3>
-            <ul>{renderMSkills}</ul>
+
+          <div className="skills">
+            <div id="tskill">
+              <h3>Technical Skills</h3>
+              <ul>{renderTSkills}</ul>
+            </div>
+            <div id="mskill">
+              <h3>Other Skills</h3>
+              <ul>{renderMSkills}</ul>
+            </div>
           </div>
         </div>
 

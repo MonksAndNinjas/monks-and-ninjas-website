@@ -33,7 +33,3 @@ bugs?
   => not easy to click on bullet to go to anchors
   => set easing for speed of scroll to anchor
   => navbar only displays when hovering over logo not to the right of it
-
-
-about setion
-pic of myself, bio, philosophy from resume, keep traits, little animation pieces
