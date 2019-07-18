@@ -34,8 +34,8 @@ class HomeAbout extends React.Component {
           {renderSummary}
         </div>
 
-        <div>
-          <div>
+        <div id="center">
+          <div id="portrait">
             <img src={self_portrait_painting} />
           </div>
 
