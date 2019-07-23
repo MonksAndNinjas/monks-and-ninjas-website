@@ -11,6 +11,9 @@ import { display } from '../helpers/displayContent';
 // generates random number within projects array length
 import { makeRandomRange } from '../helpers/makeRandomRange';
 import { handleGitPosts } from '../helpers/gitPosts';
+// image
+import drawing from '../images/mainpagedrawing.jpg'
+import homeDrawing from '../images/homeDrawing.svg';
 // styling
 import '../css/homeContainer.css'
 // renders Home page
@@ -61,6 +64,9 @@ class HomeContainer extends React.Component {
             <button value="portfolioAnchor" onClick={event => this.handleClick(event)}><span value="portfolioAnchor">Projects</span></button><br/>
             <button value="artAnchor" onClick={event => this.handleClick(event)}><span value="artAnchor">Art</span></button><br/>
             <button value="aboutAnchor" onClick={event => this.handleClick(event)}><span value="aboutAnchor">About Me</span></button><br/>
+          </div>
+          <div className="homeImage">
+            <img src={homeDrawing} alt='homeDrawing' />
           </div>
         </div>
 

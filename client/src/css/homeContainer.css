@@ -1,3 +1,20 @@
+div.homeHeaderWrapper {
+  display: -webkit-inline-box;
+  width: 100%;
+}
+
+.homeImage {
+  width: 90%;
+  height: 100%;
+  text-align: center;
+}
+
+div.homeImage img {
+  height: 100%;
+ filter: drop-shadow(67px 70px 15px rgba(0,0,0,0.9));
+
+}
+
 /*////////////////////// button ///////////////////*/
 /* makes title visible when hover */
 div.homeButtonWrapper button:hover span {

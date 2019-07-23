@@ -53,3 +53,7 @@
   display: inline-flex;
   float: left;
 }
+
+#portrait img {
+  width: 100%;
+}
