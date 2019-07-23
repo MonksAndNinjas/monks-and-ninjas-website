@@ -1,6 +1,7 @@
 div.homeHeaderWrapper {
   display: -webkit-inline-box;
   width: 100%;
+  padding-bottom: 15%;
 }
 
 .homeImage {
@@ -49,9 +50,17 @@ div.homeButtonWrapper {
 
 /*////////////////////// anchors //////////////////*/
 /* bottom border for every anchor and header */
-div.homeAnchorWrapper .content, div.homeHeaderWrapper {
+.homeBlogPic {
+  width: 100%;
   border-bottom: 1px solid #d5d5d5;
+  border-top: 1px solid #d5d5d5;
 }
+
+.homeBlogPic img {
+  width: 100%;
+  margin: -4% 0 0 0;
+}
+
 
 div.homeAnchorWrapper div.content {
   min-height: 500px;
@@ -74,6 +83,8 @@ div.news {
 
 #postAnchor, #aboutAnchor, #artAnchor, #portfolioAnchor {
   text-align: center;
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 
 /*///////////////////// post modal //////////////////*/

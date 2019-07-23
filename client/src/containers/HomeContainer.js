@@ -14,6 +14,7 @@ import { handleGitPosts } from '../helpers/gitPosts';
 // image
 import drawing from '../images/mainpagedrawing.jpg'
 import homeDrawing from '../images/homeDrawing.svg';
+import samurai from '../images/samuraiHomeBlog.svg';
 // styling
 import '../css/homeContainer.css'
 // renders Home page
@@ -69,6 +70,8 @@ class HomeContainer extends React.Component {
             <img src={homeDrawing} alt='homeDrawing' />
           </div>
         </div>
+
+        <div style={{ width: '100%' }} className="homeBlogPic"><img style={{ width: '100%' }} src={samurai} alt="samurai" /></div>
 
         <div className="homeAnchorWrapper">
           <div id="postAnchor">
