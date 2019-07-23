@@ -15,6 +15,7 @@ import { handleGitPosts } from '../helpers/gitPosts';
 import drawing from '../images/mainpagedrawing.jpg'
 import homeDrawing from '../images/homeDrawing.svg';
 import samurai from '../images/samuraiHomeBlog.svg';
+import jetli from '../images/jetHomeArt.svg';
 // styling
 import '../css/homeContainer.css'
 // renders Home page
@@ -95,6 +96,8 @@ class HomeContainer extends React.Component {
               )}
             </div>
           </div>
+
+          <div style={{ width: '100%' }} className="homeArtPic"><img style={{ width: '100%' }} src={jetli} alt="jetli Home"/></div>
 
           <div id="artAnchor">
             <h1>Art News</h1>
