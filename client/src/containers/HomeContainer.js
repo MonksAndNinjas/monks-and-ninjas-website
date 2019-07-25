@@ -16,6 +16,7 @@ import drawing from '../images/mainpagedrawing.jpg'
 import homeDrawing from '../images/homeDrawing.svg';
 import samurai from '../images/samuraiHomeBlog.svg';
 import jetli from '../images/jetHomeArt.svg';
+import monk from '../images/monkDrawing.svg';
 // styling
 import '../css/homeContainer.css'
 // renders Home page
@@ -109,6 +110,8 @@ class HomeContainer extends React.Component {
               )}
             </div>
           </div>
+
+          <div style={{ width: '100%' }} className="homeAboutPic"><img style={{ width: '100%' }} src={monk} alt="monk"/></div>
 
           <div id="aboutAnchor">
             <h1>About Me</h1>

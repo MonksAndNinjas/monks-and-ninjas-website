@@ -50,9 +50,13 @@ div.homeButtonWrapper {
 
 /*////////////////////// anchors //////////////////*/
 /* bottom border for every anchor and header */
-.homeBlogPic, .homeArtPic {
+.homeBlogPic, .homeArtPic, .homeAboutPic {
   border-bottom: 1px solid #d5d5d5;
   border-top: 1px solid #d5d5d5;
+}
+
+.homeAboutPic img {
+  margin: -21% 0 0 0;
 }
 
 .homeBlogPic img {
