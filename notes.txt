@@ -33,3 +33,4 @@ bugs?
   => not easy to click on bullet to go to anchors
   => set easing for speed of scroll to anchor
   => navbar only displays when hovering over logo not to the right of it
+  => art home images not clickable when click on name

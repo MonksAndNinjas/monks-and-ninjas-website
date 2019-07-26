@@ -17,6 +17,7 @@ import homeDrawing from '../images/homeDrawing.svg';
 import samurai from '../images/samuraiHomeBlog.svg';
 import jetli from '../images/jetHomeArt.svg';
 import monk from '../images/monkDrawing.svg';
+import ninja from '../images/ninjaDrawing.svg';
 // styling
 import '../css/homeContainer.css'
 // renders Home page
@@ -86,6 +87,8 @@ class HomeContainer extends React.Component {
               )}
             </div>
           </div>
+
+          <div style={{ width: '100%' }} className="homeProjectPic"><img style={{ width: '100%' }} src={ninja} alt="ninja"/></div>
 
           <div id="portfolioAnchor">
             <h1>Project News</h1>
