@@ -3,6 +3,10 @@ import React from 'react';
 import { makeRandomRange } from '../../helpers/makeRandomRange';
 import { onClickAnimation } from '../../helpers/blogAnimation';
 import { onCloseAnimation } from '../../helpers/blogAnimation';
+// blog pics
+import pic1 from '../../images/blog1pic.svg';
+import pic2 from '../../images/blog2pic.svg';
+import pic3 from '../../images/blog3pic.svg';
 // styling
 import '../../css/homeBlog.css';
 // used for translating markdown code
@@ -55,7 +59,7 @@ class HomeBlog extends React.Component {
           <div className="lower">
             <div className="left"></div>
             <div className="right">
-              <div className="postPic">Pic Goes Here!</div>
+              <div className="postPic"><img style={{ height: '100%' }} src={pic1} alt="blog pic 1" /></div>
               <div className="postBody"><ReactMarkdown source={post1.content.substring(0, 300) + '...'} />
                 <button value={this.props.indexArray[0]} onClick={event => this.handleClick(event)} style={{ color: 'cornflowerblue' }}>
                   continue reading
@@ -70,7 +74,7 @@ class HomeBlog extends React.Component {
           <div className="lower">
             <div className="left"></div>
             <div className="right">
-              <div className="postPic">Pic Goes Here!</div>
+              <div className="postPic"><img style={{ height: '100%' }} src={pic2} alt="blog pic 2" /></div>
               <div className="postBody"><ReactMarkdown source={post2.content.substring(0, 300) + '...'} />
                 <button value={this.props.indexArray[1]} onClick={event => this.handleClick(event)} style={{ color: 'cornflowerblue' }}>
                   continue reading
@@ -85,7 +89,7 @@ class HomeBlog extends React.Component {
           <div className="lower">
             <div className="left"></div>
             <div className="right">
-              <div className="postPic">Pic Goes Here!</div>
+              <div className="postPic"><img style={{ height: '100%' }} src={pic3} alt="blog pic 3" /></div>
               <div className="postBody"><ReactMarkdown source={post3.content.substring(0, 300) + '...'} />
                 <button value={this.props.indexArray[2]} onClick={event => this.handleClick(event)} style={{ color: 'cornflowerblue' }}>
                   continue reading
