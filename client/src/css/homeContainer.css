@@ -45,8 +45,8 @@
 }
 
 .homeButtonWrapper {
-  padding-left: 2%;
   position: relative;
+  margin-left: 20px;
   top: 30%;
 }
 
@@ -71,9 +71,8 @@
 
 .homeButtonWrapper img {
   height: 40%;
-  width: 200%;
   top: -10px;
-  left: -25px;
+  left: -60px;
   position: absolute;
   z-index: -1;
 }

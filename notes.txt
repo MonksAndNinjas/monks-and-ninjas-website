@@ -11,6 +11,7 @@ What am I currently working on?
   => Art data size and dimensions correct
   => remove posts from /db and /model and /controller
   => socialmedia
+  => Change text for bizarre
 
 What are some things to work on later?
 
