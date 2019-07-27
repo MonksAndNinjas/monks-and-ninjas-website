@@ -18,6 +18,7 @@ import samurai from '../images/samuraiHomeBlog.svg';
 import jetli from '../images/jetHomeArt.svg';
 import monk from '../images/monkDrawing.svg';
 import ninja from '../images/ninjaDrawing.svg';
+import news from '../images/news.jpg';
 // styling
 import '../css/homeContainer.css'
 // renders Home page
@@ -64,10 +65,11 @@ class HomeContainer extends React.Component {
       <div className="container">
         <div className="homeHeaderWrapper" style={{ height: '500px' }}>
           <div className="homeButtonWrapper">
+            <img src={news} alt="news" />
             <button value="postAnchor" onClick={event => this.handleClick(event)}><span value="postAnchor">Posts</span></button><br/>
             <button value="portfolioAnchor" onClick={event => this.handleClick(event)}><span value="portfolioAnchor">Projects</span></button><br/>
             <button value="artAnchor" onClick={event => this.handleClick(event)}><span value="artAnchor">Art</span></button><br/>
-            <button value="aboutAnchor" onClick={event => this.handleClick(event)}><span value="aboutAnchor">About Me</span></button><br/>
+            <button value="aboutAnchor" onClick={event => this.handleClick(event)}><span value="aboutAnchor">About</span></button><br/>
           </div>
           <div className="homeImage">
             <img src={homeDrawing} alt='homeDrawing' />
