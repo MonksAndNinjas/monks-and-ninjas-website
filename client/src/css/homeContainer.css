@@ -1,4 +1,6 @@
-div.homeHeaderWrapper {
+/*///////////////////// header /////////////////////////*/
+
+.homeHeaderWrapper {
   display: -webkit-inline-box;
   width: 100%;
   padding-bottom: 15%;
@@ -10,14 +12,14 @@ div.homeHeaderWrapper {
   text-align: center;
 }
 
-div.homeImage img {
+.homeImage img {
   height: 100%;
- filter: drop-shadow(67px 70px 15px rgba(0,0,0,0.9));
+  filter: drop-shadow(67px 70px 15px rgba(0,0,0,0.9));
 }
 
-/*////////////////////// button ///////////////////*/
+/*////////////////////// anchor buttons ///////////////////*/
 /* makes title visible when hover */
-div.homeButtonWrapper button:hover span {
+.homeButtonWrapper button:hover span {
   opacity: 1;
   padding-left: 30px;
   font-size: 1.5em;
@@ -42,13 +44,13 @@ div.homeButtonWrapper button:hover span {
   text-shadow: 1px 1px 6px grey;
 }
 
-div.homeButtonWrapper {
+.homeButtonWrapper {
   padding-left: 2%;
   position: relative;
   top: 30%;
 }
 
-/*////////////////////// anchors //////////////////*/
+/*////////////////////// anchors and anchor pics //////////////////*/
 /* bottom border for every anchor and header */
 .homeBlogPic, .homeArtPic, .homeAboutPic, .homeProjectPic {
   border-bottom: 1px solid #d5d5d5;
@@ -82,10 +84,6 @@ div.homeAnchorWrapper div.content {
 
 #homeBlogWrapper, #homePortfolioWrapper, #homeAboutWrapper {
   display: contents;
-/*  position: relative;*/
-  /*left: 50%;*/
-  /*top: 50%;*/
-  /*transform: translate(-50%, -50%);*/
 }
 
 /*/////////////////// news content ////////////////*/
@@ -102,7 +100,6 @@ div.news {
 }
 
 /*///////////////////// post modal //////////////////*/
-
 
 #viewPostWrapper {
   display: none;

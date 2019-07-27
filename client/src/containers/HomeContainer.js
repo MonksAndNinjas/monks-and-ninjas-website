@@ -11,14 +11,13 @@ import { display } from '../helpers/displayContent';
 // generates random number within projects array length
 import { makeRandomRange } from '../helpers/makeRandomRange';
 import { handleGitPosts } from '../helpers/gitPosts';
-// image
-import drawing from '../images/mainpagedrawing.jpg'
-import homeDrawing from '../images/homeDrawing.svg';
-import samurai from '../images/samuraiHomeBlog.svg';
-import jetli from '../images/jetHomeArt.svg';
-import monk from '../images/monkDrawing.svg';
-import ninja from '../images/ninjaDrawing.svg';
+// images
 import news from '../images/news.jpg';
+import landingPic from '../images/landingPic.svg';
+import samurai from '../images/samurai.svg';
+import jetli from '../images/jetLi.svg';
+import monk from '../images/monkDrawing.svg';
+import ninja from '../images/ninja.svg';
 // styling
 import '../css/homeContainer.css'
 // renders Home page
@@ -72,7 +71,7 @@ class HomeContainer extends React.Component {
             <button value="aboutAnchor" onClick={event => this.handleClick(event)}><span value="aboutAnchor">About</span></button><br/>
           </div>
           <div className="homeImage">
-            <img src={homeDrawing} alt='homeDrawing' />
+            <img src={landingPic} alt='landing pic' />
           </div>
         </div>
 
