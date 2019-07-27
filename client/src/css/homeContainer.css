@@ -67,6 +67,15 @@ div.homeButtonWrapper {
   margin: -4% 0 0 0;
 }
 
+.homeButtonWrapper img {
+  height: 40%;
+  width: 200%;
+  top: -10px;
+  left: -25px;
+  position: absolute;
+  z-index: -1;
+}
+
 div.homeAnchorWrapper div.content {
   min-height: 500px;
 }
