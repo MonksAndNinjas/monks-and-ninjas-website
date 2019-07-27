@@ -6,18 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-#"Joseph Jimenez was born in Hollywood, California to immigrant parents from Mexico and El Salvador.
-#The rough Los Angeles neighborhood of his youth provided an essential backdrop to his development as
-#his early years were spent either cocooned in his home, his playmates the video games, electronics, and cartoons that
-#became his early inspirations, or at his local dojo practicing martial arts. At a young age Joseph’s
-#interest in programing started to take form, tinkering with electronics trying to understand how
-#they worked. Working with hand-me-down computers he had to learn to code in order to use them properly.
-#Over the years
-#visits to museums, and hours spent with any large coffee table art book he could find, Joseph was
-#introduced to the classical and modern masters. He spent many years with these artistic masters as inspirations, experimenting with
-#styles and studying their composition and technique. Noticing how contemporary artists express
-#themselves with themes and techniques rooted in their individual experiences and influences came the
-#crystallization of Joseph’s own style."
 # test blog post
 date = Time.now.strftime("%A, %d %Y - %T - %Z")
 post = Post.create(title: 'test', content: 'this is a test post', datePublished: date, lastPublished: date)
@@ -27,9 +15,21 @@ post = Post.create(title: 'test', content: 'this is a test post', datePublished:
 
 
 profile = Profile.create(
-  bio: "",
-  summary: "Full stack web developer with a passion for problem solving, design, code-efficiency, and experimentation. Studying and running my own martial arts business has given me considerable experience in business building, leadership, teaching, marketing, and discipline, skills that translate to any business. With experience in Ruby on Rails, JavaScript, and React and a background in P5.js and C++, I discovered web development by continuing to pursue my academic interests since my days working at a physics lab. I am excited to bring together all my skills and help companies enhance or develop a sharp brand that doesn't distract from their vision and user experience.",
-  phone: 7202201556,
+  bio: "Joseph Jimenez is a Los Angeles Native born to immigrant parents from Mexico and El Salvador.
+  The rough Los Angeles neighborhood of his youth provided an essential backdrop to his development as
+  his early years were spent either cocooned in his home, his playmates the video games, electronics, and cartoons that
+  became his early inspirations, or at his local dojo practicing martial arts. At a young age Joseph’s
+  interest in programing started to take form, tinkering with electronics trying to understand how
+  they worked. Over the years Joseph nurtured these various disciplines allowing him to develop a unique voice
+  that brings fullfillment in his life. Currently Joseph lives in Boulder, CO with his wife, 4 year old son, and
+  dog.",
+  summary: "Full stack web developer with a passion for problem solving, design, code-efficiency, and experimentation.
+  Studying and running my own martial arts business has given me considerable experience in business building, leadership,
+  teaching, marketing, and discipline, skills that translate to any business. With experience in Ruby on Rails, JavaScript,
+  and React and a background in P5.js and C++, I discovered web development by continuing to pursue my academic interests
+  since my days working at a physics lab. I am excited to bring together all my skills and help companies enhance or
+  develop a sharp brand that doesn't distract from their vision and user experience.",
+  phone: "720.220.1556",
   email: "joseph@monksandninjas.com",
   github: "https://github.com/MonksAndNinjas"
 )

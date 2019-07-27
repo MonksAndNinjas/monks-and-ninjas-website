@@ -5,16 +5,12 @@ What is this app?
   my former art website.
 
 What am I currently working on?
-  => About me philosophy, bio, hobbies
 
-  => pic for blog post
   => video project
   => rearrange formatting for home Project, Project
   => Art data size and dimensions correct
   => remove posts from /db and /model and /controller
   => socialmedia
-
-  => main art for home page
 
 What are some things to work on later?
 
@@ -30,7 +26,5 @@ bugs?
 
   => portfolio images padding change height at times. needs to be consistent
   => React youtube video in portfolio not working
-  => not easy to click on bullet to go to anchors
-  => set easing for speed of scroll to anchor
   => navbar only displays when hovering over logo not to the right of it
   => art home images not clickable when click on name

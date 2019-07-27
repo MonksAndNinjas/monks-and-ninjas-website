@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2019_07_03_011547) do
   create_table "profiles", force: :cascade do |t|
     t.string "bio"
     t.string "summary"
-    t.decimal "phone"
+    t.string "phone"
     t.string "email"
     t.string "github"
   end
