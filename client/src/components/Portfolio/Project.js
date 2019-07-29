@@ -5,16 +5,16 @@ class Project extends React.Component {
 
     const renderProject = this.props.projects[this.props.projectIndex][0]
     const renderNotes = this.props.projects[this.props.projectIndex][1].map((note, index) => (
-      <p key={index}>{note.summary}</p>
+      <li key={index}>{note.summary}</li>
     ));
 
     return (
       <div className="projectWrapper">
         <h2>{renderProject.title}</h2>
 
-        <p>{renderProject.description}</p>
+        <p><span>Description:</span> {renderProject.description}</p><br/>
 
-        {renderNotes}
+        <ul className="notes">{renderNotes}</ul><br/>
 
         <span><a href={renderProject.github}>View Code on GitHub</a></span>
 

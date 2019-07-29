@@ -71,6 +71,10 @@
   padding: 10% 15px 0 15px;
 }
 
+.projectDesc span {
+  font-weight: 500;
+}
+
 .projectContent li {
   margin: 1em 0;
 }
