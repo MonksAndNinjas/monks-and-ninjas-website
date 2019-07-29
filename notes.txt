@@ -6,8 +6,6 @@ What is this app?
 
 What am I currently working on?
 
-  => video project
-  => rearrange formatting for home Project, Project
   => Art data size and dimensions correct
   => remove posts from /db and /model and /controller
   => socialmedia
@@ -25,7 +23,6 @@ What are some things to work on later?
 
 bugs?
 
-  => portfolio images padding change height at times. needs to be consistent
   => React youtube video in portfolio not working
   => navbar only displays when hovering over logo not to the right of it
   => art home images not clickable when click on name

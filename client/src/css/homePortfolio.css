@@ -21,7 +21,7 @@
 }
 
 .projectPic {
-  width: 220px;
+  width: 350px;
   height: 100%;
   border-right-style: outset;
 }
@@ -32,7 +32,7 @@
 }
 
 .projectLinks {
-  margin: 20% 0;
+  margin: 10% 0;
 }
 
 .projectLinks a {
@@ -44,7 +44,8 @@
   display: none;
   border-left-style: inset;
   text-align: left;
-  max-width: 240px;
+  width: 350px;
+  padding: 5% 0;
 }
 
 .projectContent p {
@@ -64,10 +65,14 @@
 }
 
 .projectDesc {
-  width: 50%;
+  width: 250px;
 /*  height: 97%;*/
   overflow: auto;
-  padding: 10px 16px 0 16px;
+  padding: 10% 15px 0 15px;
+}
+
+.projectContent li {
+  margin: 1em 0;
 }
 
 @keyframes moveLeft {

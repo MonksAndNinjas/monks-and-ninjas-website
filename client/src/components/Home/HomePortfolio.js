@@ -23,8 +23,9 @@ class HomePortfolio extends React.Component {
     var extraContent = firstSide.getElementsByClassName('projectContent')[0];
     var enlargeButton = firstSide.getElementsByClassName('projectExpand')[0];
     var closeButton = firstSide.getElementsByClassName('projectClose')[0];
+    var description = firstSide.getElementsByClassName('projectDesc')[0];
 
-    return [firstSide, secondSide, extraContent, enlargeButton, closeButton];
+    return [firstSide, secondSide, extraContent, enlargeButton, closeButton, description];
   }
 
   handleClick = event => {
@@ -48,11 +49,11 @@ class HomePortfolio extends React.Component {
     const project2 = projectsArray[this.props.indexArray[1]][0];
 
     const notes1 = projectsArray[this.props.indexArray[0]][1].map((note, index) => (
-      <p key={index}>{note.summary}</p>
+      <li key={index}>{note.summary}</li>
     ));
 
     const notes2 = projectsArray[this.props.indexArray[1]][1].map((note, index) => (
-      <p key={index}>{note.summary}</p>
+      <li key={index}>{note.summary}</li>
     ));
     //console.log(projectsArray[this.props.indexArray[0]][1])
 
@@ -66,14 +67,14 @@ class HomePortfolio extends React.Component {
             <div className="projectPic">
               <img src={this.state.projectImages[this.props.indexArray[0]]} alt={project1.title} />
               <div className="projectLinks">
-                <a href={project1.github}>GitHub</a><br/>
-                <a href={project1.video}>Demo</a><br/>
+                <a href={project1.github}>View GitHub</a><br/>
+                <a href={project1.video}>View Demo</a><br/>
                 <button className="projectExpand" value="highlight-project-1 highlight-project-2" onClick={event => this.handleClick(event)}>learn more</button>
                 <button className="projectClose" value="highlight-project-1 highlight-project-2" onClick={event => this.handleClose(event)}>&times;</button>
               </div>
             </div>
-            <div className="projectDesc">{project1.description}</div>
-            <div className="projectContent">{notes1}</div>
+            <div className="projectDesc"><span>Description:</span><br/><br/>{project1.description}</div>
+            <div className="projectContent"><ul>{notes1}</ul></div>
           </div>
         </div>
 
@@ -83,14 +84,14 @@ class HomePortfolio extends React.Component {
             <div className="projectPic">
                 <img src={this.state.projectImages[this.props.indexArray[1]]} alt={project1.title} />
                 <div className="projectLinks">
-                  <a href={project2.github}>GitHub</a><br/>
-                  <a href={project2.video}>Demo</a><br/>
+                  <a href={project2.github}>View GitHub</a><br/>
+                  <a href={project2.video}>View Demo</a><br/>
                   <button className="projectExpand" value="highlight-project-2 highlight-project-1" onClick={event => this.handleClick(event)}>learn more</button>
                   <button className="projectClose" value="highlight-project-2 highlight-project-1" onClick={event => this.handleClose(event)}>&times;</button>
                 </div>
             </div>
-            <div className="projectDesc">{project2.description}</div>
-            <div className="projectContent">{notes2}</div>
+            <div className="projectDesc"><span>Description:</span><br/><br/>{project2.description}</div>
+            <div className="projectContent"><ul>{notes2}</ul></div>
           </div>
         </div>
       </div>
