@@ -18,8 +18,8 @@ class HomeAbout extends React.Component {
     ));
 
     const renderPhone = <p><span>Phone: </span>{this.props.resources[0]}</p>
-    const renderGit = <span>GitHub: <a href={this.props.resources[1]}>MonksAndNinjas</a></span>
-    const renderEmail = <span>Email: <a href={this.props.resources[2]}>{this.props.resources[2]}</a></span>
+    const renderGit = <span>GitHub: <a href={this.props.resources[2]}>MonksAndNinjas</a></span>
+    const renderEmail = <span>Email: <a href={this.props.resources[1]}>{this.props.resources[1]}</a></span>
 
     //console.log(this.props.resources)
 
@@ -30,7 +30,7 @@ class HomeAbout extends React.Component {
           {renderBio}
         </div>
         <div id="summary">
-          <h3>Summary</h3>
+          <h3>Mission</h3>
           {renderSummary}
         </div>
 

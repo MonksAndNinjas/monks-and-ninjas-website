@@ -118,7 +118,7 @@ class HomeContainer extends React.Component {
           <div style={{ width: '100%' }} className="homeAboutPic"><img style={{ width: '100%' }} src={monk} alt="monk"/></div>
 
           <div id="aboutAnchor">
-            <h1>About Me</h1>
+            <h1>About</h1>
             <div className="content">
               { display(this.props) ? (
                   <HomeAbout profileData={this.props.profileData.profile[0][0]} resources={this.constructContactData()} technicalSkills={this.props.profileData.profile[0][1]} miscSkills={this.props.profileData.profile[0][2]} />

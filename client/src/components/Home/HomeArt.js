@@ -26,12 +26,14 @@ class HomeArt extends React.Component {
     event.preventDefault();
     event.persist();
 
-    var value = event.target.attributes[0].value.split('-');
-    var index = value[0]
+    if (event.target.attributes[0]) {
+      var value = event.target.attributes[0].value.split('-');
+      var index = value[0]
 
-    this.setState({ artIndex: index })
+      this.setState({ artIndex: index })
 
-    onClickAnimation(this.gatherVariables());
+      onClickAnimation(this.gatherVariables());
+    }
   }
   // closes individual blog post
   handleClose = event => {
