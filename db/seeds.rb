@@ -58,7 +58,7 @@ profile.save
 
 project1 = Project.create(
   title: "CLI Data Gem",
-  description: "This Ruby Gem provides a CLI to view the world’s most popular martial arts, providing information on country, fighting-focus, and style",
+  description: "This Ruby Gem provides a CLI to view the world’s most popular martial arts, providing information on country, fighting-focus, and style.",
   date: "June 7, 2019",
   github: "https://github.com/MonksAndNinjas/Monks-and-Ninjas-React-App",
   video: "https://www.youtube.com/watch?v=l0_jHQvCLZg&t=29s",
