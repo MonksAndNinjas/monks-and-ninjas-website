@@ -9,8 +9,8 @@ class SocialMedia extends React.Component {
   render() {
     return (
       <div id="socialMedia">
-        <SocialIcon style={{ overflow: 'visible', margin: '10px', height: '25px', width: '25px' }} url="https://www.instagram.com/monksandninjas/?hl=en" />
-        <SocialIcon style={{ overflow: 'visible', margin: '10px', height: '25px', width: '25px' }} url="https://www.linkedin.com/in/joseph-jimenez-31794711b/" />
+        <SocialIcon style={{ overflow: 'visible', height: '25px', width: '25px' }} url="https://www.instagram.com/monksandninjas/?hl=en" />
+        <SocialIcon style={{ overflow: 'visible', height: '25px', width: '25px' }} url="https://www.linkedin.com/in/joseph-jimenez-31794711b/" />
       </div>
     );
   }
