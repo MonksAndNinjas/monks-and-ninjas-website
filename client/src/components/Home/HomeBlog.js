@@ -52,7 +52,7 @@ class HomeBlog extends React.Component {
 
     return (
       <div id="homeBlogWrapper">
-        <h2>Most Recent 3 posts</h2>
+        <h2>Posts Spotlight</h2>
 
         <div id="highlight-post-1" className="news">
           <div className="top">{post1.title}</div>

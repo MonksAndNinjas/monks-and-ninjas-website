@@ -59,7 +59,7 @@ class HomePortfolio extends React.Component {
 
     return (
       <div id="homePortfolioWrapper">
-        <h2>Most Recent and project spotlight</h2>
+        <h2>Project Spotlight</h2>
 
         <div id="highlight-project-1" className="news">
           <div className="projectTitle">{project1.title}</div>
@@ -74,7 +74,7 @@ class HomePortfolio extends React.Component {
               </div>
             </div>
             <div className="projectDesc"><span>Description:</span><br/><br/>{project1.description}</div>
-            <div className="projectContent"><ul>{notes1}</ul></div>
+            <div className="projectContent"><span>Features:</span><br/><br/><ul>{notes1}</ul></div>
           </div>
         </div>
 
@@ -91,7 +91,7 @@ class HomePortfolio extends React.Component {
                 </div>
             </div>
             <div className="projectDesc"><span>Description:</span><br/><br/>{project2.description}</div>
-            <div className="projectContent"><ul>{notes2}</ul></div>
+            <div className="projectContent"><span>Features:</span><br/><br/><ul>{notes2}</ul></div>
           </div>
         </div>
       </div>

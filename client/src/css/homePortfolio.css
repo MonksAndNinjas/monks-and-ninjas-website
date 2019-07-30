@@ -43,13 +43,12 @@
 .projectContent {
   display: none;
   border-left-style: inset;
-  text-align: left;
   width: 350px;
   padding: 5% 0;
 }
 
 .projectContent p {
-  padding: 5px;
+  padding: 7%;
 }
 
 .projectClose {
@@ -71,8 +70,12 @@
   padding: 10% 15px 0 15px;
 }
 
-.projectDesc span {
+.projectDesc span, .projectContent span {
   font-weight: 500;
+}
+
+.projectContent ul {
+  text-align: left;
 }
 
 .projectContent li {
@@ -96,11 +99,6 @@
   100% {opacity: 1}
 }
 
-/*@keyframes portfolioShrink {
-  from {transform: scale(1); width: 550px;}
-  to {transform: scale(0); width: 0px}
-}*/
-
 .fadeOutIn {
   animation-name: fadeOutIn;
   animation-duration: 2s;
@@ -121,17 +119,3 @@
   animation-direction: normal;
   animation-fill-mode: forwards;
 }
-
-/*.enlarge-portfolio-animation {
-  animation-name: portfolioEnlarge;
-  animation-duration: 1s;
-  animation-direction: normal;
-  animation-fill-mode: forwards;
-}
-
-.shrink-portfolio-animation {
-  animation-name: portfolioShrink;
-  animation-duration: .6s;
-  animation-direction: normal;
-  animation-fill-mode: forwards;
-}*/

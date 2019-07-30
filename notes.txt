@@ -6,11 +6,11 @@ What is this app?
 
 What am I currently working on?
 
-  => remove posts from /db and /model and /controller
   => Change text for bizarre
 
 What are some things to work on later?
 
+  => remove posts from /db and /model and /controller
   => add artwork data to rails API to display alongside art modal
   => delete unneeded npms (google-sign-in, google-picker, react-pdf)
   => add now loading display funcitonality
