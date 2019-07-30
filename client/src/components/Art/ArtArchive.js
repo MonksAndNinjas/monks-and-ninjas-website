@@ -2,7 +2,8 @@ import React from 'react';
 // imports functions to apply masonry layout
 import { resizeAllGridItems } from '../../helpers/masonryLayout';
 import { resizeInstance } from '../../helpers/masonryLayout';
-import { parseTitle } from '../../helpers/parseTitle';
+import { parseTitle } from '../../helpers/artContent';
+import { displayArtContent } from '../../helpers/artContent';
 // allows use of imagesLoaded
 var imagesLoaded = require('imagesloaded');
 // renders Art from category passed down from ArtArchive.js
@@ -28,16 +29,8 @@ class ArtArchive extends React.Component {
       setTimeout(function() {
         var imgHeight = document.getElementById('modal-img').getBoundingClientRect().height;
         caption.style.margin = `${imgHeight/2}px auto`;
-        // moves this out from here
-        if (dataArray[3] !== 'sizein' && dataArray[2] !== 'Medium') {
-          caption.innerHTML = `<p>Title: ${dataArray[0]}</p><p>Category: ${dataArray[1]}</p><p>Medium: ${dataArray[2]}</p><p>Dimensions: ${dataArray[3]}</p>`;
-        } else if (dataArray[3] === 'sizein' && dataArray[2] !== 'Medium') {
-          caption.innerHTML = `<p>Title: ${dataArray[0]}</p><p>Category: ${dataArray[1]}</p><p>Medium: ${dataArray[2]}</p>`;
-        } else if (dataArray[3] !== 'sizein' && dataArray[2] === 'Medium') {
-          caption.innerHTML = `<p>Title: ${dataArray[0]}</p><p>Category: ${dataArray[1]}</p><p>Dimensions: ${dataArray[3]}</p>`;
-        } else if (dataArray[3] === 'sizein' && dataArray[2] === 'Medium') {
-          caption.innerHTML = `<p>Title: ${dataArray[0]}</p><p>Category: ${dataArray[1]}</p>`;
-        }
+
+        displayArtContent(dataArray, caption);
       }, 200)
 
     }

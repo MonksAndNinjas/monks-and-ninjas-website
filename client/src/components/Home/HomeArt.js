@@ -4,7 +4,8 @@ import { makeRandomRange } from '../../helpers/makeRandomRange';
 import { onClickAnimation } from '../../helpers/artAnimation';
 import { onCloseAnimation } from '../../helpers/artAnimation';
 import { artMove } from '../../helpers/artAnimation';
-import { parseTitle } from '../../helpers/parseTitle';
+import { parseTitle } from '../../helpers/artContent';
+import { displayArtContent } from '../../helpers/artContent';
 // styling
 import '../../css/homeArt.css';
 // handles art data in Home page
@@ -33,6 +34,11 @@ class HomeArt extends React.Component {
       this.setState({ artIndex: index })
 
       onClickAnimation(this.gatherVariables());
+
+      var dataArray = parseTitle(this.props.photosArray[index].name);
+      var caption = document.getElementById('viewArt');
+
+      displayArtContent(dataArray, caption);
     }
   }
   // closes individual blog post
@@ -91,10 +97,6 @@ class HomeArt extends React.Component {
           <img src={this.props.photosArray[this.state.artIndex].download_url} alt={this.props.photosArray[this.state.artIndex].name} />
           <button className="artClose" onClick={event => this.handleClose(event)}>&times;</button>
           <div id="viewArt">
-            <p>Title: {parseTitle(this.props.photosArray[this.state.artIndex].name)[0]}</p>
-            <p>Category: {parseTitle(this.props.photosArray[this.state.artIndex].name)[1]}</p>
-            <p>Medium: {parseTitle(this.props.photosArray[this.state.artIndex].name)[2]}</p>
-            <p>Dimensions: {parseTitle(this.props.photosArray[this.state.artIndex].name)[3]}</p>
           </div>
         </div>
       </div>
