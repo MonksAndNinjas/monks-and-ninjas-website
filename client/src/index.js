@@ -24,6 +24,7 @@ import ResumeContainer from './containers/ResumeContainer';
 import App from './App';
 // imports nav bar for all routes
 import NavBar from './components/NavBar';
+import SocialMedia from './components/SocialMedia';
 
 import * as serviceWorker from './serviceWorker';
 
@@ -41,7 +42,7 @@ const Header = () =>
   <header><NavBar /></header>;
 
 const Footer = () =>
-  <footer></footer>;
+  <footer><SocialMedia /></footer>;
 
 ReactDOM.render((
   <Provider store={store}>
