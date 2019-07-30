@@ -34,7 +34,7 @@ class BlogContainer extends React.Component {
   render() {
     return (
       <div className="container">
-        <h1>Monks and Ninjas Bizarre Adventures</h1>
+        <h1>Monks and Ninjas <span id="flicker">Bi<span className="offset">z</span>ar<span className="offset">r</span>e</span> Adventures</h1>
 
         { displayBlogPosts(this.props.gitPostsData) ? (
             <div className="blogWrapper">

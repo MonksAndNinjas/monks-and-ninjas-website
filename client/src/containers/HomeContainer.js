@@ -59,7 +59,6 @@ class HomeContainer extends React.Component {
   }
   // consider moving homeHeaderWrapper and homeAnchorWrapper to their own component
   render() {
-    //console.log(this.props)
     return (
       <div className="container">
         <div className="homeHeaderWrapper" style={{ height: '500px' }}>
