@@ -7,7 +7,6 @@ What is this app?
 What am I currently working on?
 
   => remove posts from /db and /model and /controller
-  => socialmedia
   => Change text for bizarre
 
 What are some things to work on later?
