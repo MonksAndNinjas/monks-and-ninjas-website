@@ -28,7 +28,16 @@ class ArtArchive extends React.Component {
       setTimeout(function() {
         var imgHeight = document.getElementById('modal-img').getBoundingClientRect().height;
         caption.style.margin = `${imgHeight/2}px auto`;
-        caption.innerHTML = `<p>Title: ${dataArray[0]}</p><p>Category: ${dataArray[1]}</p><p>Medium: ${dataArray[2]}</p><p>Dimensions: ${dataArray[3]}</p>`;
+        // moves this out from here
+        if (dataArray[3] !== 'sizein' && dataArray[2] !== 'Medium') {
+          caption.innerHTML = `<p>Title: ${dataArray[0]}</p><p>Category: ${dataArray[1]}</p><p>Medium: ${dataArray[2]}</p><p>Dimensions: ${dataArray[3]}</p>`;
+        } else if (dataArray[3] === 'sizein' && dataArray[2] !== 'Medium') {
+          caption.innerHTML = `<p>Title: ${dataArray[0]}</p><p>Category: ${dataArray[1]}</p><p>Medium: ${dataArray[2]}</p>`;
+        } else if (dataArray[3] !== 'sizein' && dataArray[2] === 'Medium') {
+          caption.innerHTML = `<p>Title: ${dataArray[0]}</p><p>Category: ${dataArray[1]}</p><p>Dimensions: ${dataArray[3]}</p>`;
+        } else if (dataArray[3] === 'sizein' && dataArray[2] === 'Medium') {
+          caption.innerHTML = `<p>Title: ${dataArray[0]}</p><p>Category: ${dataArray[1]}</p>`;
+        }
       }, 200)
 
     }
