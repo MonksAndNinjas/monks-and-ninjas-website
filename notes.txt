@@ -6,7 +6,6 @@ What is this app?
 
 What am I currently working on?
 
-  => Fix self-portrait in home page and add shadow if saved as svg
   => Fix ninja photo in home page project section
   => review class and id names and usage of css
 

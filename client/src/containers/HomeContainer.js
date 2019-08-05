@@ -74,6 +74,10 @@ class HomeContainer extends React.Component {
           </div>
         </div>
 
+        <div id="catchPhrase">
+          <span>Web Development</span><span>Martial Arts</span><span>Art</span>
+        </div>
+
         <div style={{ width: '100%' }} className="homeBlogPic"><img style={{ width: '100%' }} src={samurai} alt="samurai" /></div>
 
         <div className="homeAnchorWrapper">

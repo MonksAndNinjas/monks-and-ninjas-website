@@ -49,10 +49,10 @@
 }
 
 #portrait {
-  width: 40%;
+  width: 30%;
   display: inline-flex;
   float: left;
-  padding-right: 90px;
+  padding: 30px 90px 0px 0px;
 }
 
 #portrait img {
