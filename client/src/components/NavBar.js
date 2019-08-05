@@ -5,6 +5,8 @@ import { NavLink } from 'react-router-dom';
 import logo from '../images/monks_and_ninjas_logo.svg'
 // styling
 import '../css/navBar.css';
+
+import particles from'../helpers/particles';
 // handles data used for NavBar in all pages
 class NavBar extends React.Component {
   render() {

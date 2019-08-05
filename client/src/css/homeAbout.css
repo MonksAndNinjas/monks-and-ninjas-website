@@ -49,11 +49,13 @@
 }
 
 #portrait {
-  width: 50%;
+  width: 40%;
   display: inline-flex;
   float: left;
+  padding-right: 90px;
 }
 
 #portrait img {
   width: 100%;
+  filter: drop-shadow(50px 50px 30px rgba(0,0,0,0.5));
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 // pic
-import self_portrait_painting from '../../images/self_portrait_painting.jpg'
+import self_portrait_painting from '../../images/self_portrait_painting.jpg';
+import portrait from '../../images/portrait.svg';
 // styling
 import '../../css/homeAbout.css';
 
@@ -36,7 +37,7 @@ class HomeAbout extends React.Component {
 
         <div id="center">
           <div id="portrait">
-            <img src={self_portrait_painting} />
+            <img src={portrait} />
           </div>
 
           <div className="skills">
