@@ -76,6 +76,7 @@
 
 .projectContent ul {
   text-align: left;
+  list-style-image: url('../images/ninjaStar.svg');
 }
 
 .projectContent li {

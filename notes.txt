@@ -21,6 +21,8 @@ What are some things to work on later?
   => add animation bullet point for about home section
   => add animation when navbar is expanded such as glitter, or some kind of confetti
   => make blog3 photo larger and blog2 photo black part smaller
+  => add symbols for github and video demo in home portfolio
+  => add animation for news menu icons
 
 bugs?
 
