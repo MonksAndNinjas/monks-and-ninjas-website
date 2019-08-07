@@ -1,6 +1,5 @@
 import React from 'react';
 // allows use of helper functions
-import { makeRandomRange } from '../../helpers/makeRandomRange';
 import { onClickAnimation } from '../../helpers/blogAnimation';
 import { onCloseAnimation } from '../../helpers/blogAnimation';
 // blog pics

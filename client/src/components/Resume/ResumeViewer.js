@@ -1,5 +1,5 @@
 import React from 'react';
-
+// displays resume
 class ResumeViewer extends React.Component {
   constructor(props) {
     super(props);

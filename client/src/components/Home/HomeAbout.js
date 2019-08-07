@@ -1,10 +1,9 @@
 import React from 'react';
 // pic
-import self_portrait_painting from '../../images/self_portrait_painting.jpg';
 import portrait from '../../images/portraitJJimenez.svg';
 // styling
 import '../../css/homeAbout.css';
-
+// renders about information on home page
 class HomeAbout extends React.Component {
   render() {
 
@@ -37,7 +36,7 @@ class HomeAbout extends React.Component {
 
         <div id="center">
           <div id="portrait">
-            <img src={portrait} />
+            <img src={portrait} alt="self portrait"/>
           </div>
 
           <div className="skills">

@@ -1,15 +1,14 @@
 import React from 'react';
 // generates random number within projects array length
-import { makeRandomRange } from '../../helpers/makeRandomRange';
 import { onClickAnimation } from '../../helpers/artAnimation';
 import { onCloseAnimation } from '../../helpers/artAnimation';
-import { artMove } from '../../helpers/artAnimation';
 import { parseTitle } from '../../helpers/artContent';
 import { displayArtContent } from '../../helpers/artContent';
 // styling
 import '../../css/homeArt.css';
 // handles art data in Home page
 class HomeArt extends React.Component {
+  // which art image to display
   state = {
     artIndex: '0'
   }
@@ -62,7 +61,7 @@ class HomeArt extends React.Component {
 
         <div id="highlight-art-1" className="news">
           <button onClick={event => this.handleClick(event)}>
-            <img value={`${this.props.indexArray[0]}`} src={pic1.download_url} alt="artwork" />
+            <img value={`${this.props.indexArray[0]}`} src={pic1.download_url} alt={parseTitle(pic1.name)[0]} />
             <div className="middleArt">
               <div className="textArt">
                 <span>{parseTitle(pic1.name)[0]}</span>
@@ -73,7 +72,7 @@ class HomeArt extends React.Component {
 
         <div id="highlight-art-2" className="news">
           <button onClick={event => this.handleClick(event)}>
-            <img value={`${this.props.indexArray[1]}`} src={pic2.download_url} alt="artwork" />
+            <img value={`${this.props.indexArray[1]}`} src={pic2.download_url} alt={parseTitle(pic2.name)[0]} />
             <div className="middleArt">
               <div className="textArt">
                 <span>{parseTitle(pic2.name)[0]}</span>
@@ -84,7 +83,7 @@ class HomeArt extends React.Component {
 
         <div id="highlight-art-3" className="news">
           <button onClick={event => this.handleClick(event)}>
-            <img value={`${this.props.indexArray[2]}`} src={pic3.download_url} alt="artwork" />
+            <img value={`${this.props.indexArray[2]}`} src={pic3.download_url} alt={parseTitle(pic3.name)[0]} />
             <div className="middleArt">
               <div className="textArt">
                 <span>{parseTitle(pic3.name)[0]}</span>

@@ -30,7 +30,7 @@ class ProjectArchive extends React.Component {
       </div>
     )
   }
-  // designates active project, changes class to appy css to it
+  // designates active project, changes class to apply css to it
   componentDidMount() {
     var buttonActive = document.querySelectorAll('button')[0]
 
