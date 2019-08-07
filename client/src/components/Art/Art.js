@@ -1,7 +1,7 @@
-  import React from 'react';
+import React from 'react';
 // imports component to display categories
 class Art extends React.Component {
-
+  // closes enlarged image
   handleClick = event => {
     event.preventDefault();
 
@@ -15,7 +15,7 @@ class Art extends React.Component {
       <div id="artWrapper" className="modal">
         <span onClick={event => this.handleClick(event)} className="close">&times;</span>
         <div style={{ display: 'inline-flex'} }>
-          <img className="modal-content" id="modal-img"/>
+          <img className="modal-content" id="modal-img" alt="enlarge"/>
           <div id="caption"></div>
         </div>
       </div>

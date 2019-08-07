@@ -26,6 +26,9 @@
 
 #catchPhrase span {
   padding-right: 10%;
+  padding-left: 10%;
+  font-variant-caps: all-petite-caps;
+  font-weight: 800;
 }
 
 /*////////////////////// anchor buttons ///////////////////*/

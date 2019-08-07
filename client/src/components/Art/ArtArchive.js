@@ -14,15 +14,16 @@ class ArtArchive extends React.Component {
     event.persist();
     // if clicked on the correct portion of the image
     if (event.target.attributes[1]) {
-      var modalImg = document.getElementsByClassName('modal-content')[0]
-      var modal = document.getElementById('artWrapper')
-      var imgData = event.target.attributes[1].value.split("-")
+      var modalImg = document.getElementsByClassName('modal-content')[0];
+      var modal = document.getElementById('artWrapper');
+      var imgData = event.target.attributes[1].value.split("-");
       var imgId = imgData[1];
       var dataArray = parseTitle(this.props.category[imgId].name);
       var caption = document.getElementById('caption');
 
       // changes style of modal so it can show individual enlarged photo
-      modalImg.setAttribute('src', this.props.category[imgId].download_url)
+      modalImg.setAttribute('src', this.props.category[imgId].download_url);
+      modalImg.setAttribute('alt', dataArray[0]);
 
       modal.style.display = 'block';
       // places caption in at the right height based on image

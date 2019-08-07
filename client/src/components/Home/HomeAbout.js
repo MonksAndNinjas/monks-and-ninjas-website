@@ -1,7 +1,7 @@
 import React from 'react';
 // pic
 import self_portrait_painting from '../../images/self_portrait_painting.jpg';
-import portrait from '../../images/portrait.svg';
+import portrait from '../../images/portraitJJimenez.svg';
 // styling
 import '../../css/homeAbout.css';
 
