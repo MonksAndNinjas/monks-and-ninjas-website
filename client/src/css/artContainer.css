@@ -1,3 +1,11 @@
+/*/////////////////// Art //////////////*/
+div.artsWrapper button:hover .middle {
+  opacity: 1;
+}
+
+div.artsWrapper button:hover img {
+  opacity: 0.3;
+}
 /* text on hover */
 div.artsWrapper .middle {
   transition: .5s ease;
@@ -30,16 +38,27 @@ div.artsWrapper {
   grid-auto-rows: 20px
 }
 
-div.artsWrapper button:hover .middle {
-  opacity: 1;
-}
-
-div.artsWrapper button:hover img {
-  opacity: 0.3;
-}
 
 div.artArchiveWrapper span {
   text-shadow: 1px 1px 2px grey;
+}
+
+/* Add Animation */
+.modal-content, #caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+.modal-content {
+  margin: 0;
+  padding: 0 7% 20% 30%;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  max-height: 800px;
+  object-fit: contain;
 }
 
 .modal {
@@ -56,14 +75,8 @@ div.artArchiveWrapper span {
   background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
 }
 
-.modal-content {
-  margin: 0;
-  padding: 0 7% 20% 30%;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-  max-height: 800px;
-  object-fit: contain;
+#caption p {
+  width: 200px;
 }
 
 #caption {
@@ -72,18 +85,6 @@ div.artArchiveWrapper span {
   text-align: left;
   color: #ccc;
   height: 150px;
-}
-
-#caption p {
-  width: 200px;
-}
-
-/* Add Animation */
-.modal-content, #caption {
-  -webkit-animation-name: zoom;
-  -webkit-animation-duration: 0.6s;
-  animation-name: zoom;
-  animation-duration: 0.6s;
 }
 
 @-webkit-keyframes zoom {
@@ -97,6 +98,12 @@ div.artArchiveWrapper span {
 }
 
 /* The Close Button */
+.close:hover, .close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .close {
   position: absolute;
   top: 15px;
@@ -105,10 +112,4 @@ div.artArchiveWrapper span {
   font-size: 40px;
   font-weight: bold;
   transition: 0.3s;
-}
-
-.close:hover, .close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
 }

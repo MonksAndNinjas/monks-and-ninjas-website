@@ -1,3 +1,4 @@
+/*////////////// Blog //////////////////*/
 .postWrapper p img {
   width: 70%;
   height: 70%;
@@ -59,7 +60,6 @@ h1 span {
 .offset {
   animation: letter-flicker 8s linear infinite;
 }
-
 
 @keyframes text-flicker {
   0% {

@@ -1,23 +1,25 @@
-/*///////////////// portfolio //////////////////////*/
+/*///////////////// Home Portfolio //////////////////////*/
 #highlight-project-1, #highlight-project-2 {
   width: 550px;
   height: 410px;
   opacity: 1;
-  /*position: relative;*/
 }
 
 .projectlower {
   display: -webkit-inline-box;
   height: 370px;
-/*width: 100%;*/
 }
 
 .projectTitle {
   height: 40px;
   background: black;
   color: white;
-/*  width: 100%;*/
   box-shadow: 0 3px 6px grey;
+}
+
+.projectPic img {
+  width: 90%;
+  padding: 10px 3px 0 3px;
 }
 
 .projectPic {
@@ -31,47 +33,17 @@
   margin: 20% 0;
 }
 
-.projectLinks {
-  margin: 10% 0;
-}
-
 .projectLinks a {
   text-decoration: none;
   color: cornflowerblue;
 }
 
-.projectContent {
-  display: none;
-  border-left-style: inset;
-  width: 350px;
-  padding: 5% 0;
+.projectLinks {
+  margin: 10% 0;
 }
 
 .projectContent p {
   padding: 7%;
-}
-
-.projectClose {
-  display: none;
-  color: cornflowerblue;
-  margin: 20% 0 0 48%;
-  font-size: 1.5em;
-}
-
-.projectPic img {
-  width: 90%;
-  padding: 10px 3px 0 3px;
-}
-
-.projectDesc {
-  width: 250px;
-/*  height: 97%;*/
-  overflow: auto;
-  padding: 10% 15px 0 15px;
-}
-
-.projectDesc span, .projectContent span {
-  font-weight: 500;
 }
 
 .projectContent ul {
@@ -81,6 +53,30 @@
 
 .projectContent li {
   margin: 1em 0;
+}
+
+.projectContent {
+  display: none;
+  border-left-style: inset;
+  width: 350px;
+  padding: 5% 0;
+}
+
+.projectClose {
+  display: none;
+  color: cornflowerblue;
+  margin: 20% 0 0 48%;
+  font-size: 1.5em;
+}
+
+.projectDesc span, .projectContent span {
+  font-weight: 500;
+}
+
+.projectDesc {
+  width: 250px;
+  overflow: auto;
+  padding: 10% 15px 0 15px;
 }
 
 @keyframes moveLeft {

@@ -29,7 +29,7 @@ class HomeAbout extends React.Component {
           <h3>Bio</h3>
           {renderBio}
         </div>
-        <div id="summary">
+        <div id="mission">
           <h3>Mission</h3>
           {renderSummary}
         </div>

@@ -1,39 +1,37 @@
-#tskill, #mskill {
-  text-align: left;
-}
-
-#tskill {
-  float: right;
-}
-
-#mskill {
-  float: left;
-}
-
-#contact {
-  text-align: center;
-  padding-bottom: 20px;
-}
-
-#contact p {
-  display: block;
-}
-
-#contact span {
-  font-weight: 500;
+/*/////////// Home About ////////////*/
+#tskill ul, #mskill ul {
+  list-style-image: url('../images/ninjaStar.svg');
 }
 
 #tskill h3, #mskill h3 {
   text-align: center;
 }
 
+#tskill, #mskill {
+  text-align: left;
+}
+
 #tskill {
+  float: right;
   border-right-style: solid;
   padding-right: 20px;
 }
 
-div#tskill ul, div#mskill ul {
-  list-style-image: url('../images/ninjaStar.svg');
+#mskill {
+  float: left;
+}
+
+#contact span {
+  font-weight: 500;
+}
+
+#contact p {
+  display: block;
+}
+
+#contact {
+  text-align: center;
+  padding-bottom: 20px;
 }
 
 .skills {
@@ -42,7 +40,7 @@ div#tskill ul, div#mskill ul {
   padding: 73px 0;
 }
 
-#summary, #bio {
+#mission, #bio {
   width: 90%;
   margin: auto;
   padding: 20px 0;
@@ -52,14 +50,14 @@ div#tskill ul, div#mskill ul {
   display: inline-block;
 }
 
+#portrait img {
+  width: 100%;
+  filter: drop-shadow(50px 50px 30px rgba(0,0,0,0.5));
+}
+
 #portrait {
   width: 30%;
   display: inline-flex;
   float: left;
   padding: 30px 25px 0px 15%;
-}
-
-#portrait img {
-  width: 100%;
-  filter: drop-shadow(50px 50px 30px rgba(0,0,0,0.5));
 }

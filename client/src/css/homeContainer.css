@@ -1,9 +1,13 @@
 /*///////////////////// header /////////////////////////*/
-
 .homeHeaderWrapper {
   display: -webkit-inline-box;
   width: 100%;
 /*  padding-bottom: 15%;*/
+}
+
+.homeImage img {
+  height: 100%;
+  filter: drop-shadow(67px 70px 15px rgba(0,0,0,0.9));
 }
 
 .homeImage {
@@ -12,9 +16,11 @@
   text-align: center;
 }
 
-.homeImage img {
-  height: 100%;
-  filter: drop-shadow(67px 70px 15px rgba(0,0,0,0.9));
+#catchPhrase span {
+  padding-right: 10%;
+  padding-left: 10%;
+  font-variant-caps: all-petite-caps;
+  font-weight: 800;
 }
 
 #catchPhrase {
@@ -22,13 +28,6 @@
   width: 100%;
   padding-top: 50px;
   text-align: -webkit-center;
-}
-
-#catchPhrase span {
-  padding-right: 10%;
-  padding-left: 10%;
-  font-variant-caps: all-petite-caps;
-  font-weight: 800;
 }
 
 /*////////////////////// anchor buttons ///////////////////*/
@@ -58,6 +57,14 @@
   text-shadow: 1px 1px 6px grey;
 }
 
+.homeButtonWrapper img {
+  height: 40%;
+  top: -10px;
+  left: -60px;
+  position: absolute;
+  z-index: -1;
+}
+
 .homeButtonWrapper {
   position: relative;
   margin-left: 20px;
@@ -66,11 +73,6 @@
 
 /*////////////////////// anchors and anchor pics //////////////////*/
 /* bottom border for every anchor and header */
-.homeBlogPic, .homeArtPic, .homeAboutPic, .homeProjectPic {
-  border-bottom: 1px solid #d5d5d5;
-  border-top: 1px solid #d5d5d5;
-}
-
 .homeAboutPic img {
   margin: -22% 0 -2% 0;
 }
@@ -83,12 +85,9 @@
   margin: -4% 0 0 0;
 }
 
-.homeButtonWrapper img {
-  height: 40%;
-  top: -10px;
-  left: -60px;
-  position: absolute;
-  z-index: -1;
+.homeBlogPic, .homeArtPic, .homeAboutPic, .homeProjectPic {
+  border-bottom: 1px solid #d5d5d5;
+  border-top: 1px solid #d5d5d5;
 }
 
 div.homeAnchorWrapper div.content {
@@ -112,11 +111,20 @@ div.news {
   padding-bottom: 7%;
 }
 
-/*div#aboutAnchor {
-  border-bottom: 1px solid #d5d5d5;
-}*/
-
 /*///////////////////// post modal //////////////////*/
+#viewPostWrapper:after {
+  content: "";
+  position: absolute;
+  margin: auto 17%;
+  z-index: 1;
+  top: 65em;
+  left: 0;
+  background-image: linear-gradient(to bottom,
+    rgba(255,255,255, 0),
+    rgba(255,255,255, 1) 90%);
+    width: 66%;
+    height: 2.5em;
+}
 
 #viewPostWrapper {
   display: none;
@@ -130,15 +138,24 @@ div.news {
   border-style: solid;
   box-shadow: 0px 8px 7px 0px rgba(0,0,0,0.2);
 }
+/* text and images in modal */
+.post-modal-content p:first-of-type {
+  font-size: 1.5em;
+  font-weight: bold;
+}
 
-.post-modal {
- /* Hidden by default */
-  margin: 0 5%;
-  position: relative;
-  overflow: auto;
-  height: 300px;
-  background-color: white;
+.post-modal-content p:last-of-type {
+  padding-bottom: 30px;
+}
 
+.post-modal-content p img {
+  width: 70%;
+  height: 70%;
+}
+
+.post-modal-content pre {
+  overflow: scroll;
+  background-color: lightgrey;
 }
 
 .post-modal-content {
@@ -158,6 +175,15 @@ div.news {
   animation-duration: 0.6s;
 }
 
+.post-modal {
+ /* Hidden by default */
+  margin: 0 5%;
+  position: relative;
+  overflow: auto;
+  height: 300px;
+  background-color: white;
+}
+
 @-webkit-keyframes zoom {
   from {-webkit-transform:scale(0)}
   to {-webkit-transform:scale(1)}
@@ -169,6 +195,12 @@ div.news {
 }
 
 /* The Close Button */
+.postClose:hover, .postClose:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .postClose {
   position: relative;
   top: 0px;
@@ -177,43 +209,4 @@ div.news {
   font-size: 40px;
   font-weight: bold;
   transition: 0.3s;
-}
-
-.postClose:hover, .postClose:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-#viewPostWrapper:after {
-  content: "";
-  position: absolute;
-  margin: auto 17%;
-  z-index: 1;
-  top: 65em;
-  left: 0;
-  background-image: linear-gradient(to bottom,
-                    rgba(255,255,255, 0),
-                    rgba(255,255,255, 1) 90%);
-  width: 66%;
-  height: 2.5em;
-}
-/* text and images in modal */
-.post-modal-content pre {
-  overflow: scroll;
-  background-color: lightgrey;
-}
-
-.post-modal-content p:first-of-type {
-  font-size: 1.5em;
-  font-weight: bold;
-}
-
-.post-modal-content p:last-of-type {
-  padding-bottom: 30px;
-}
-
-.post-modal-content p img {
-  width: 70%;
-  height: 70%;
 }
