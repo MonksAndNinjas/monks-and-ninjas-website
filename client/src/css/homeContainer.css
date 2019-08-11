@@ -2,7 +2,6 @@
 .homeHeaderWrapper {
   display: -webkit-inline-box;
   width: 100%;
-/*  padding-bottom: 15%;*/
 }
 
 .homeImage img {
@@ -193,7 +192,6 @@ div.news {
   from {transform:scale(0)}
   to {transform:scale(1)}
 }
-
 /* The Close Button */
 .postClose:hover, .postClose:focus {
   color: black;

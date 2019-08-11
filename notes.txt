@@ -6,9 +6,6 @@ What is this app?
 
 What am I currently working on?
 
-  => Fix ninja photo in home page project section
-  => review class and id names and usage of css
-
 What are some things to work on later?
 
   => remove posts from /db and /model and /controller
@@ -23,6 +20,7 @@ What are some things to work on later?
   => make blog3 photo larger and blog2 photo black part smaller
   => add symbols for github and video demo in home portfolio
   => add animation for news menu icons
+  => Fix ninja photo in home page project section
 
 bugs?
 
