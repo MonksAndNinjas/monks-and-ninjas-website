@@ -18,7 +18,6 @@ export const handleGitPosts = (gitPostsData) => {
         datePublished: new Date(parseHeader[0]).toString(),
         lastPublished: new Date(parseHeader[0]).toString()
       }
-
       return gitPost
     });
 
