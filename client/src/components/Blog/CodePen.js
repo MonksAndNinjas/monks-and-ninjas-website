@@ -1,14 +1,14 @@
 import React from 'react';
 // pulls codepen iframe data in string form and turns it into iframe tag
-class Iframe extends React.Component {
+class CodePen extends React.Component {
 
   render() {
 
-    const string = this.props.text.children[0].props.value;
-    const iframeData = string.split('<iframe')[1].split('>')[0];
+    const data = this.props.data.children[0].props.value;
+    const iframeData = data.split('<iframe')[1].split('>')[0];
     const title = iframeData.split('title="')[1].split('" src')[0];
     const source = iframeData.split('src="')[1].split('"')[0];
-    const visitPen = string.split('result">')[1].split("href='")[1].split("'>");
+    const visitPen = data.split('result">')[1].split("href='")[1].split("'>");
 
     //console.log(string);
 
@@ -26,4 +26,4 @@ class Iframe extends React.Component {
   }
 }
 
-export default Iframe;
+export default CodePen;

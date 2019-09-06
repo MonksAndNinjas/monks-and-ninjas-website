@@ -1,5 +1,5 @@
 /*////////////// Blog //////////////////*/
-#postWrapper p img {
+.postWrapper p img {
   width: 70%;
   height: 70%;
 }
@@ -19,7 +19,7 @@
   padding-right: 10px;
 }
 
-#postWrapper {
+.postWrapper {
   float: left;
   width: 60%;
   border: 10px solid transparent;
