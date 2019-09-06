@@ -2,6 +2,8 @@ import React from 'react';
 // allows use of helper functions
 import { onClickAnimation } from '../../helpers/blogAnimation';
 import { onCloseAnimation } from '../../helpers/blogAnimation';
+// imports component
+import CodePen from '../Blog/CodePen';
 // blog pics
 import pic1 from '../../images/blog1pic.svg';
 import pic2 from '../../images/blog2pic.svg';
@@ -47,6 +49,7 @@ class HomeBlog extends React.Component {
     const post1 = postsArray[this.props.indexArray[0]];
     const post2 = postsArray[this.props.indexArray[1]];
     const post3 = postsArray[this.props.indexArray[2]];
+    const renderers: ReactMarkdown.Renderers = { blockquote: (props: string) => (<CodePen data={props} />)};
     //console.log(post1, post2, post3)
 
     return (
@@ -102,7 +105,7 @@ class HomeBlog extends React.Component {
         <span onClick={event => this.handleClose(event)} className="postClose">&times;</span>
           <div id="viewPost" className="post-modal">
             <div className="post-modal-content">
-              <ReactMarkdown source={postsArray[this.state.postIndex].title + postsArray[this.state.postIndex].content} />
+              <ReactMarkdown source={postsArray[this.state.postIndex].title + postsArray[this.state.postIndex].content} renderers={renderers} />
             </div>
           </div>
         </div>
