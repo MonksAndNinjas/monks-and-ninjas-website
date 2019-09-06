@@ -8,8 +8,7 @@ class Blog extends React.Component {
   render() {
 
     const renderPost = this.props.posts[this.props.postIndex]
-    const renderers: ReactMarkdown.Renderers = { blockquote: (props: string) => (<CodePen data={props} />)};
-  //  console.log(renderPost.content)
+    const renderers: ReactMarkdown.Renderers = { blockquote: (props: string) => (<CodePen data={props} />) };
 
     return(
       <div className="postWrapper">
