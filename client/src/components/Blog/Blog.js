@@ -8,7 +8,7 @@ class Blog extends React.Component {
   render() {
 
     const renderPost = this.props.posts[this.props.postIndex]
-    const renderers: ReactMarkdown.Renderers = { text: (props: string) => console.log(text)};
+    const renderers: ReactMarkdown.Renderers = { blockquote: (props: string) => (<Iframe text={props} />)};
   //  console.log(renderPost.content)
 
     return(
@@ -17,7 +17,6 @@ class Blog extends React.Component {
 
         <ReactMarkdown source={renderPost.content}
           renderers={renderers} />
-
         <span style={{ 'color': 'grey'}}>Date Published: {renderPost.lastPublished}</span>
       </div>
     )
