@@ -49,7 +49,7 @@ class HomeBlog extends React.Component {
     const post1 = postsArray[this.props.indexArray[0]];
     const post2 = postsArray[this.props.indexArray[1]];
     const post3 = postsArray[this.props.indexArray[2]];
-    const renderers: ReactMarkdown.Renderers = { blockquote: (props: string) => (<CodePen data={props} />)};
+    const renderers: ReactMarkdown.Renderers = { blockquote: (props: string) => (<CodePen data={props} />) };
     //console.log(post1, post2, post3)
 
     return (

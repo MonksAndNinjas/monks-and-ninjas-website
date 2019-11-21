@@ -10,8 +10,8 @@ What are some things to work on later?
 
   => remove posts from /db and /model and /controller
   => delete unneeded npms (google-sign-in, google-picker, react-pdf)
-  => make all portfolio images same width and height
-  => add now loading display functionality
+  => make all portfolio images in home page same width and height
+  => add now loading display functionality for all pages as needed
   => have projects able to link to it's blog post
   => add ability to subscribe to blog or newsletter type thing, notifications for new additions
   => make social media icons collapsible and expandable?
@@ -21,7 +21,8 @@ What are some things to work on later?
   => add symbols for github and video demo in home portfolio
   => add animation for news menu icons
   => Fix ninja photo in home page project section
+  => Make folder categories for blog page
 
 bugs?
 
-  => navbar only displays when hovering over logo not to the right of it
+  => navbar should only displays when hovering over logo not to the right of it
