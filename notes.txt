@@ -22,6 +22,10 @@ What are some things to work on later?
   => add animation for news menu icons
   => Fix ninja photo in home page project section
   => Make folder categories for blog page
+  => Make artsy mock website and contain in monksandninjas.com
+  => Make page for interactive art
+  => Look into changing look of content containers for home page news sections
+  => Make hash in url go away
 
 bugs?
 
